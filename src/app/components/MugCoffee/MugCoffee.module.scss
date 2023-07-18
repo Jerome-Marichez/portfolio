@@ -1,0 +1,47 @@
+.mugcoffee {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	position: relative;
+	transform: rotate(50);
+}
+
+.mug,
+.coffee,
+.title {
+	position: absolute;
+}
+
+.mug {
+	left: 5.5%;
+	z-index: 2;
+}
+
+.coffee {
+	opacity: 0.85;
+	clip-path: circle(37%);
+	border-radius: 50px;
+	z-index: 1;
+}
+
+.wraptext {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 3;
+
+	@font-face {
+		font-family: 'ShadowsIntoLight-Regular';
+		src: url("./ShadowsIntoLight-Regular.ttf");
+	}
+
+	.title {
+		font-family: 'ShadowsIntoLight-Regular';
+		font-size: 24px;
+		display: inline-flex;
+		white-space: nowrap;
+		min-width: 100%;
+		color: white;
+	}
+}
