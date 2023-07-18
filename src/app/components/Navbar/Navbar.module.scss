@@ -1,0 +1,30 @@
+.navbar {
+	display: flex;
+	justify-content: center;
+
+	.mugcoffee {
+		position: relative;
+
+		.mug,
+		.coffee {
+			position: absolute;
+		}
+
+		.mug {
+			z-index: 2;
+			left: 0;
+		}
+
+		.coffee {
+			clip-path: circle(30%);
+			border-radius: 50px;
+			z-index: 1;
+			position: absolute;
+			left: calc(50% - 20px);
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+	}
+
+}
