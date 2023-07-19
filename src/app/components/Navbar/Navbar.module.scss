@@ -1,0 +1,43 @@
+.navbar {
+	display: flex;
+	align-items: center;
+	gap: 100px;
+	
+	
+	&--center {
+		@extend .navbar;
+		justify-content: center;
+	}
+
+	&--left {
+		@extend .navbar;
+		justify-content: left;
+	}
+	
+}
+
+.menu {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 40px;
+
+	li {
+		text-decoration: none;
+		list-style: none;
+
+		a {
+			font-size: 18px;
+			text-decoration: none;
+			color: #BEBEBE;
+
+			&.active,
+			&:hover {
+				color: #FFFFFF;
+			}
+
+		}
+	}
+
+
+}

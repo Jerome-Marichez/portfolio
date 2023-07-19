@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  background-color: #232020;
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  padding-top: 200px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.layout {
+  display: flex;
+
+  &--home {
+    @extend .layout;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+  }
+
+  &--hover {
+    @extend .layout;
+    justify-content: space-between;
+  }
+}
+
+
+
+.flex {
+  display: flex;
+}
