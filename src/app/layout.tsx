@@ -1,11 +1,20 @@
 import './globals.scss'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Fira_Code } from 'next/font/google'
+import { Navbar } from './components'
 
-const inter = Inter({ subsets: ['latin'] })
+const FiraCode = Fira_Code({ subsets: ['latin'] })
+
+const linksData = [
+  { text: 'about me', href: '/about' },
+  { text: 'projects', href: '#', style: { paddingLeft: '25px' } },
+  { text: 'skills', href: '#', style: { paddingLeft: '50px' } },
+  { text: 'contact me', href: '#', style: { paddingLeft: '25px' } },
+  { text: 'home', href: '#' },
+];
 
 export const metadata: Metadata = {
-  title: 'Jérôme Marichez - Web Developer',
+  title: 'Jérôme Marichez - Web Developer React - Home',
   description: 'Web Developer',
 }
 
@@ -16,7 +25,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={FiraCode.className}>
+        <Navbar links={linksData} />
+        {children}
+      </body>
     </html>
   )
 }

@@ -14,12 +14,13 @@ interface MugCoffeeProps {
 }
 
 /**
+ * Represent a Mug with coffee inside
  * @param scale The scale of the MugCoffee as an integer.
  * @param mugAnimationDuration A float or an integer duration for all animations except coffee.
  * @param rotateCoffeeDuration A float or integer duration of the coffee rotation animation.
  * @param titleBeforeHover A title in the center of our mug before hovering.
  * @param titleAfterHover A title in the center of our mug after hovering.
- * @returns A beautiful mug of coffee with an optional title before & after.
+ * @returns {JSX.Element} - A JSX Element representing the MugCoffee component.
  */
 
 export function MugCoffee(props: MugCoffeeProps): JSX.Element {
@@ -81,7 +82,7 @@ export function MugCoffee(props: MugCoffeeProps): JSX.Element {
 				}}
 			>
 				{props.titleBeforeHover && props.titleAfterHover ?
-					<p className={styles.title}>{isHovered ? "Home" : "Hello World"}</p> : ""}
+					<p style={{ fontSize: `${3.5 * props.scale}px` }} className={styles.title}>{isHovered ? props.titleAfterHover : props.titleBeforeHover}</p> : ""}
 			</motion.div>
 
 			<motion.div
@@ -106,9 +107,6 @@ export function MugCoffee(props: MugCoffeeProps): JSX.Element {
 					<source src={'./coffee.mp4'} type="video/mp4" />
 				</video>
 			</motion.div>
-
 		</motion.div>
-
-
 	);
 }

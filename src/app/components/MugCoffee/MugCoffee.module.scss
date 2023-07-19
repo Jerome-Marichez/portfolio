@@ -16,6 +16,8 @@
 .mug {
 	left: 5.5%;
 	z-index: 2;
+
+
 }
 
 .coffee {
@@ -23,6 +25,7 @@
 	clip-path: circle(37%);
 	border-radius: 50px;
 	z-index: 1;
+	
 }
 
 .wraptext {
@@ -38,7 +41,6 @@
 
 	.title {
 		font-family: 'ShadowsIntoLight-Regular';
-		font-size: 24px;
 		display: inline-flex;
 		white-space: nowrap;
 		min-width: 100%;

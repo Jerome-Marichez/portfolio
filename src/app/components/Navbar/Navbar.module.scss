@@ -1,4 +1,33 @@
 .navbar {
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	gap: 100px;
+	padding: 50px;
+}
+
+.menu {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 40px;
+
+	li {
+		text-decoration: none;
+		list-style: none;
+
+		a {
+			font-size: 18px;
+			text-decoration: none;
+			color: #BEBEBE;
+
+			&.active,
+			&:hover {
+				color: #FFFFFF;
+			}
+
+		}
+	}
+
+
 }
