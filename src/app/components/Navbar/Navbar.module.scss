@@ -1,9 +1,19 @@
 .navbar {
 	display: flex;
-	justify-content: center;
 	align-items: center;
 	gap: 100px;
-	padding: 50px;
+	
+	
+	&--center {
+		@extend .navbar;
+		justify-content: center;
+	}
+
+	&--left {
+		@extend .navbar;
+		justify-content: left;
+	}
+	
 }
 
 .menu {

@@ -12,6 +12,30 @@ body {
   overflow-x: hidden;
 }
 
-.padding-200 {
+body {
   padding-top: 200px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.layout {
+  display: flex;
+
+  &--home {
+    @extend .layout;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+  }
+
+  &--hover {
+    @extend .layout;
+    justify-content: space-between;
+  }
+}
+
+
+
+.flex {
+  display: flex;
 }

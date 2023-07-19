@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation'
 import { MugCoffee } from '../MugCoffee/MugCoffee';
 import Link from 'next/link';
 import styles from "./Navbar.module.scss";
+import { motion } from 'framer-motion';
 
 interface NavbarProps {
 	links: {
@@ -31,15 +32,15 @@ interface NavbarProps {
  * @returns {JSX.Element} - A JSX Element representing the Navbar component.
  */
 export function Navbar(props: NavbarProps): JSX.Element {
-	
-	const pathname = usePathname()
 
+	const pathname = usePathname()
 	const [activePath, setActivePath] = useState<string>("");
+
 	const handleLinkClick = (linkText: string) => {
 		setActivePath(linkText);
 	};
 
-	const isItHome = () => {
+	const isItHome = (): true | false => {
 		if (pathname.length < 2) return true;
 		return false;
 	}
@@ -54,8 +55,8 @@ export function Navbar(props: NavbarProps): JSX.Element {
 	}
 
 	return (
-		<nav className={styles.navbar}>
-			<Link href={isItHome() ? "./about" : './'}>
+		<nav className={isItHome() ? styles['navbar--center'] : styles['navbar--left']}>
+			<Link href={isItHome() ? props.links[0].href : './'}>
 				<MugCoffee
 					scale={8}
 					mugAnimationDuration={0.5}
@@ -67,19 +68,26 @@ export function Navbar(props: NavbarProps): JSX.Element {
 			</Link>
 			{!isItHome() &&
 				<ul className={styles.menu} role="menu">
-					{props.links.map((link) => (
+					{props.links.map((link, index) => (
 						<li key={link.text} className={styles.list}>
-							<Link
-								href={link.href}
-								onClick={() => handleLinkClick(link.text)}
-								style={link.style}
+							<motion.div
+								initial={{ opacity: 0 }}
+								animate={{ opacity: 1 }}
+								transition={{ duration: 0.5 * index + 1 }}
 							>
-								{link.text}
-							</Link>
+								<Link
+									href={link.href}
+									onClick={() => handleLinkClick(link.text)}
+									style={link.style}
+								>
+									{link.text}
+								</Link>
+							</motion.div>
 						</li>
 					))}
 				</ul>
 			}
 		</nav>
 	);
+
 }

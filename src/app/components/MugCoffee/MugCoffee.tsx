@@ -25,10 +25,9 @@ interface MugCoffeeProps {
  */
 
 export function MugCoffee(props: MugCoffeeProps): JSX.Element {
+
 	const heightMug: number = 32.5 * props.scale;
 	const widthMug: number = 36.25 * props.scale;
-
-
 	const [isHovered, setIsHovered] = useState(false);
 
 	const handleHover = () => {
@@ -39,23 +38,27 @@ export function MugCoffee(props: MugCoffeeProps): JSX.Element {
 		setIsHovered(false);
 	};
 
-	const mugVariants = {
+	/** animations */
+	const mugAnimations = {
 		initial: { opacity: 0, scale: 0.5, rotate: 0 },
 		animate: { opacity: 1, scale: 1, rotate: props.rotationCupDegree },
 		hover: { opacity: 1, scale: 1.1, rotate: 150 },
 	};
 
-	const textVariants = {
+	const textAnimations = {
 		initial: { rotate: 35, opacity: 0 },
 		animate: { rotate: isHovered ? 200 : 35, opacity: isHovered ? 0.8 : 0.5 },
 	};
 
+	const coffeeAnimation = { animate: { rotate: [0, 360] } }
+	/** end animations */
+
+
 	return (
 		<motion.div
-			initial={mugVariants.initial}
-			animate={mugVariants.animate}
-			whileHover={mugVariants.hover}
-			variants={mugVariants}
+			initial={mugAnimations.initial}
+			animate={mugAnimations.animate}
+			whileHover={mugAnimations.hover}
 			transition={{ duration: props.mugAnimationDuration }}
 			className={styles.mugcoffee}
 			aria-label="mug coffee"
@@ -74,9 +77,8 @@ export function MugCoffee(props: MugCoffeeProps): JSX.Element {
 
 			<motion.div
 				className={styles.wraptext}
-				initial={textVariants.initial}
-				animate={textVariants.animate}
-				variants={textVariants}
+				initial={textAnimations.initial}
+				animate={textAnimations.animate}
 				transition={{
 					type: "keyframes",
 					duration: props.mugAnimationDuration * 3,
@@ -87,7 +89,7 @@ export function MugCoffee(props: MugCoffeeProps): JSX.Element {
 			</motion.div>
 
 			<motion.div
-				animate={{ rotate: [0, 360] }}
+				animate={coffeeAnimation.animate}
 				className={styles.coffee}
 
 				transition={{
@@ -109,5 +111,6 @@ export function MugCoffee(props: MugCoffeeProps): JSX.Element {
 				</video>
 			</motion.div>
 		</motion.div>
+
 	);
 }
