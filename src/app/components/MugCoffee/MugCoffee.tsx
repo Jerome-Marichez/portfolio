@@ -8,6 +8,7 @@ import { useState } from "react";
 interface MugCoffeeProps {
 	scale: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 	mugAnimationDuration: number;
+	rotationCupDegree: number;
 	rotateCoffeeDuration: number;
 	titleBeforeHover?: string;
 	titleAfterHover?: string;
@@ -40,7 +41,7 @@ export function MugCoffee(props: MugCoffeeProps): JSX.Element {
 
 	const mugVariants = {
 		initial: { opacity: 0, scale: 0.5, rotate: 0 },
-		animate: { opacity: 1, scale: 1, rotate: -35 },
+		animate: { opacity: 1, scale: 1, rotate: props.rotationCupDegree },
 		hover: { opacity: 1, scale: 1.1, rotate: 150 },
 	};
 

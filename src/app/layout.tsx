@@ -26,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={FiraCode.className}>
+        <div className='padding-200'></div>
         <Navbar links={linksData} />
         {children}
       </body>

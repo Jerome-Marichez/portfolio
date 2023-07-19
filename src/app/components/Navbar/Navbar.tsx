@@ -31,17 +31,27 @@ interface NavbarProps {
  * @returns {JSX.Element} - A JSX Element representing the Navbar component.
  */
 export function Navbar(props: NavbarProps): JSX.Element {
+	
 	const pathname = usePathname()
-	console.log(pathname);
-	const isItHome = () => {
-		if (pathname.length < 2) return true;
-		return false;
-	}
 
 	const [activePath, setActivePath] = useState<string>("");
 	const handleLinkClick = (linkText: string) => {
 		setActivePath(linkText);
 	};
+
+	const isItHome = () => {
+		if (pathname.length < 2) return true;
+		return false;
+	}
+
+	const findRotationCup = (topDegree: number) => {
+		const findIndexActive = props.links.findIndex((e) => e.text === activePath)
+		let rotationCupDegree = topDegree;
+		if (findIndexActive >= 0) {
+			rotationCupDegree += findIndexActive * 15;
+		}
+		return rotationCupDegree;
+	}
 
 	return (
 		<nav className={styles.navbar}>
@@ -50,11 +60,12 @@ export function Navbar(props: NavbarProps): JSX.Element {
 					scale={8}
 					mugAnimationDuration={0.5}
 					rotateCoffeeDuration={11}
+					rotationCupDegree={activePath && !isItHome() ? findRotationCup(-60) : -35}
 					titleAfterHover={isItHome() ? "Portfolio" : "Home"}
 					titleBeforeHover={activePath && !isItHome() ? activePath : "Hello World"}
 				/>
 			</Link>
-			{props.links &&
+			{!isItHome() &&
 				<ul className={styles.menu} role="menu">
 					{props.links.map((link) => (
 						<li key={link.text} className={styles.list}>
