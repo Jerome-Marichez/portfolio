@@ -1,0 +1,119 @@
+.codeblock {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+
+	/*
+	Darcula color scheme from the JetBrains family of IDEs
+	*/
+	pre {
+		margin: 0;
+		padding: 0;
+		white-space: pre-line;
+	}
+
+
+	.hljs {
+		display: block;
+		overflow-x: auto;
+		color: #bababa;
+
+		&:hover {
+			color: #cacac9;
+		}
+	}
+
+	.hljs-strong,
+	.hljs-emphasis {
+		color: #a8a8a2;
+
+		&:hover {
+			color: #cacac9;
+		}
+
+
+	}
+
+	.hljs-bullet,
+	.hljs-quote,
+	.hljs-link,
+	.hljs-number,
+	.hljs-regexp,
+	.hljs-literal {
+		color: #6896ba;
+
+		&:hover {
+			color: #72aad4;
+		}
+	}
+
+	.hljs-code,
+	.hljs-selector-class {
+		color: #a6e22e;
+
+		&:hover {
+			color: #b9f345;
+		}
+	}
+
+	.hljs-emphasis {
+		font-style: italic;
+	}
+
+	.hljs-keyword,
+	.hljs-selector-tag,
+	.hljs-section,
+	.hljs-attribute,
+	.hljs-name,
+	.hljs-variable {
+		color: #cb7832;
+
+		&:hover {
+			color: #e08d49;
+		}
+	}
+
+	.hljs-params {
+		color: #b9b9b9;
+
+		&:hover {
+			color: #cacac9;
+		}
+	}
+
+	.hljs-string {
+		color: #6a8759;
+
+		&:hover {
+			color: #7ea06a;
+		}
+	}
+
+	.hljs-subst,
+	.hljs-type,
+	.hljs-built_in,
+	.hljs-builtin-name,
+	.hljs-symbol,
+	.hljs-selector-id,
+	.hljs-selector-attr,
+	.hljs-selector-pseudo,
+	.hljs-template-tag,
+	.hljs-template-variable,
+	.hljs-addition {
+		color: #e0c46c;
+
+		&:hover {
+			color: #fce189;
+		}
+	}
+
+	.hljs-comment,
+	.hljs-deletion,
+	.hljs-meta {
+		color: #7f7f7f;
+
+		&:hover {
+			color: #919090;
+		}
+	}
+}
