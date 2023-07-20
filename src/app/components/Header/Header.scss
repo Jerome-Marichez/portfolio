@@ -1,4 +1,11 @@
 header {
-	min-height: 200px;
-	
+	padding-bottom: 200px;
+
+	>.group {
+		display: flex;
+		position: absolute;
+		justify-content: space-between;
+		width: 100%;
+	}
+
 }
