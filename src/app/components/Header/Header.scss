@@ -1,0 +1,11 @@
+header {
+	padding-bottom: 200px;
+
+	>.group {
+		display: flex;
+		position: absolute;
+		justify-content: space-between;
+		width: 100%;
+	}
+
+}
