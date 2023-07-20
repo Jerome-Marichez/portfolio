@@ -2,6 +2,7 @@ import './globals.scss'
 import type { Metadata } from 'next'
 import { Fira_Code } from 'next/font/google'
 import { LayoutNavProvider } from './layoutNavProvider'
+import Header from './components/Header/Header'
 
 const FiraCode = Fira_Code({ subsets: ['latin'] })
 
@@ -18,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={FiraCode.className}>
+        <Header />
         <LayoutNavProvider>
           {children}
         </LayoutNavProvider>
