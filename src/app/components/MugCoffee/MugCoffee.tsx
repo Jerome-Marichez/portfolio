@@ -4,7 +4,7 @@ import mugPic from "./mug.png";
 import Image from "next/image";
 import { Shadows_Into_Light } from "next/font/google";
 import { motion } from 'framer-motion';
-import { CSSProperties, useState } from "react";
+import { useState } from "react";
 
 const shadowsIntoLight = Shadows_Into_Light({ subsets: ["latin"], weight: "400" })
 
@@ -43,7 +43,7 @@ export function MugCoffee(props: MugCoffeeProps): JSX.Element {
 		setIsHovered(false);
 	};
 
-	const stylesTitle = `${shadowsIntoLight.className} ${styles.title}`;
+	const stylesTitle: string = `${shadowsIntoLight.className} ${styles.title}`;
 
 	/** animations */
 	const mugAnimations = {
