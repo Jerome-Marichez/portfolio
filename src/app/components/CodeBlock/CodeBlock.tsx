@@ -9,7 +9,7 @@ interface CodeBlockProps {
 	text: string;
 	margin?: string;
 	fontSize: number;
-	language: "typescript" | "javascript" | "java" | "php"
+	language: "typescript" | "javascript" | "java" | "php";
 }
 
 /**

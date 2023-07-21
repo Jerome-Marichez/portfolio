@@ -26,8 +26,8 @@ interface MugCoffeeProps {
 
 export function MugCoffee(props: MugCoffeeProps): JSX.Element {
 
-	const heightMug: number = 32.5 * props.scale;
-	const widthMug: number = 36.25 * props.scale;
+	const heightMug: number = Math.floor(32.5 * props.scale);
+	const widthMug: number = Math.floor(36.25 * props.scale);
 	const [isHovered, setIsHovered] = useState(false);
 
 	const handleHover = () => {
@@ -41,7 +41,7 @@ export function MugCoffee(props: MugCoffeeProps): JSX.Element {
 	/** animations */
 	const mugAnimations = {
 		initial: { opacity: 0, scale: 0.5, rotate: 0 },
-		animate: { opacity: 1, scale: 1, rotate: props.rotationCupDegree },
+		animate: { opacity: 1, scale: 1, rotate: Math.floor(props.rotationCupDegree) },
 		hover: { opacity: 1, scale: 1.1, rotate: 150 },
 	};
 
@@ -103,8 +103,8 @@ export function MugCoffee(props: MugCoffeeProps): JSX.Element {
 					autoPlay
 					muted
 					loop
-					width={widthMug * 1.14}
-					height={heightMug * 1.12}
+					width={Math.floor(widthMug * 1.14)}
+					height={Math.floor(heightMug * 1.12)}
 					aria-label="coffee"
 				>
 					<source src={'./coffee.mp4'} type="video/mp4" />

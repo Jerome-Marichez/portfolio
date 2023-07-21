@@ -11,7 +11,14 @@
 .coffee,
 .title {
 	position: absolute;
+
+	img {
+		height: inherit;
+		width: inherit;
+	}
 }
+
+
 
 .mug {
 	left: 5.5%;
@@ -22,7 +29,7 @@
 	opacity: 0.85;
 	clip-path: circle(37%);
 	border-radius: 50px;
-	z-index: 1;	
+	z-index: 1;
 }
 
 .wraptext {
