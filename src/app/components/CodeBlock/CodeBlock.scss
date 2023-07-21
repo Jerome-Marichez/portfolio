@@ -3,9 +3,21 @@
 	flex-direction: row;
 	position: relative;
 
-	/*
-	Darcula color scheme from the JetBrains family of IDEs
-	*/
+	&--small {
+		@extend .codeblock;
+		font-size: 12px;
+	}
+
+	&--medium {
+		@extend .codeblock;
+		font-size: 14px;
+	}
+
+	&--big {
+		@extend .codeblock;
+		font-size: 16px;
+	}
+
 	pre {
 		margin: 0;
 		padding: 0;
@@ -30,8 +42,6 @@
 		&:hover {
 			color: #cacac9;
 		}
-
-
 	}
 
 	.hljs-bullet,
