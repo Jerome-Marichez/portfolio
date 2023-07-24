@@ -1,21 +1,19 @@
 'use client'
 import { useState } from 'react';
-import { usePathname } from 'next/navigation'
 import { MugCoffee } from '../MugCoffee/MugCoffee';
 import Link from 'next/link';
 import styles from "./Navbar.module.scss";
 import { motion } from 'framer-motion';
+import { LinksData } from '@/app/sharedTypes';
 
 interface NavbarProps {
-	links: {
-		text: string;
-		href: string;
-		style?: React.CSSProperties;
-	}[];
+	links: LinksData;
+	home: boolean;
 }
 
 /**
  * Represents a navigation bar component that displays a list of links.
+ * @param home - A boolean true if it's home false if is not home
  * @param links - An array containing links represented as objects with the following properties:
  *
  * - text: The text to be displayed as the link's label.
@@ -27,26 +25,21 @@ interface NavbarProps {
  *   { text: 'about me', href: '/about' },
  *   { text: 'projects', href: '#', style: { paddingLeft: '25px' } },
  * ];
- * return <Navbar links={linksData} />;
+ * return <Navbar links={linksData} home={true} />;
  *
  * @returns {JSX.Element} - A JSX Element representing the Navbar component.
  */
 export function Navbar(props: NavbarProps): JSX.Element {
-
-	const pathname = usePathname()
+	
+	const { home, links } = props;
 	const [activePath, setActivePath] = useState<string>("");
 
 	const handleLinkClick = (linkText: string) => {
 		setActivePath(linkText);
 	};
 
-	const isItHome = (): true | false => {
-		if (pathname.length < 2) return true;
-		return false;
-	}
-
 	const findRotationCup = (topDegree: number) => {
-		const findIndexActive = props.links.findIndex((e) => e.text === activePath)
+		const findIndexActive = links.findIndex((e) => e.text === activePath)
 		let rotationCupDegree = topDegree;
 		if (findIndexActive >= 0) {
 			rotationCupDegree += findIndexActive * 15;
@@ -55,20 +48,20 @@ export function Navbar(props: NavbarProps): JSX.Element {
 	}
 
 	return (
-		<nav className={isItHome() ? styles['navbar--center'] : styles['navbar--left']}>
-			<Link href={isItHome() ? props.links[0].href : './'}>
+		<nav className={home ? styles['navbar--center'] : styles['navbar--left']}>
+			<Link href={home ? links[0].href : links[links.length - 1].href}>
 				<MugCoffee
 					scale={8}
 					mugAnimationDuration={0.5}
 					rotateCoffeeDuration={11}
-					rotationCupDegree={activePath && !isItHome() ? findRotationCup(-60) : -35}
-					titleAfterHover={isItHome() ? "Portfolio" : "Home"}
-					titleBeforeHover={activePath && !isItHome() ? activePath : "Hello World"}
+					rotationCupDegree={activePath && !home ? findRotationCup(-60) : -35}
+					titleAfterHover={home ? "Portfolio" : "Home"}
+					titleBeforeHover={activePath && !home ? activePath : "Hello World"}
 				/>
 			</Link>
-			{!isItHome() &&
+			{!home &&
 				<ul className={styles.menu} role="menu">
-					{props.links.map((link, index) => (
+					{links.map((link, index) => (
 						<li key={link.text} className={styles.list}>
 							<motion.div
 								initial={{ opacity: 0 }}

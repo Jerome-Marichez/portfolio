@@ -28,7 +28,7 @@ export function Header(): JSX.Element {
 					<motion.div key={index}
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 - (index * 0.2) }}
-						transition={{ duration: index + 1 }}
+						transition={{ duration: index  + 1 }}
 					>
 						<CodeBlock language="typescript" text={value.text} fontSize={value.fontSize} margin={value.margin} />
 					</motion.div>

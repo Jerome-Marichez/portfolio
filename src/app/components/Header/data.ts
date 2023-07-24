@@ -2,7 +2,7 @@
 interface CodeSnipetHeader {
 	text: string;
 	margin: string;
-	fontSize: number;
+	fontSize: "small" | "medium" | "big";
 }
 export type CodeSnipetsHeader = Array<CodeSnipetHeader>;
 
@@ -31,7 +31,7 @@ export const codeSnipetsHeader: CodeSnipetsHeader = [
 	}
 	`,
 		margin: `100px 0px 0px 30px`,
-		fontSize: 16,
+		fontSize: `big`
 	},
 	{
 		text: `
@@ -41,7 +41,7 @@ export const codeSnipetsHeader: CodeSnipetsHeader = [
 	
 	`,
 		margin: `0px 150px 0px 0px`,
-		fontSize: 14,
+		fontSize: `medium`,
 
 	},
 	{
@@ -69,7 +69,7 @@ export const codeSnipetsHeader: CodeSnipetsHeader = [
 	}
 	`,
 		margin: `43px 30px 0px 0px`,
-		fontSize: 12,
+		fontSize: `small`,
 
 	}
 ]

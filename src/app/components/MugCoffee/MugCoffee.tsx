@@ -2,8 +2,12 @@
 import styles from "./MugCoffee.module.scss";
 import mugPic from "./mug.png";
 import Image from "next/image";
+import { Shadows_Into_Light } from "next/font/google";
 import { motion } from 'framer-motion';
 import { useState } from "react";
+
+const shadowsIntoLight = Shadows_Into_Light({ subsets: ["latin"], weight: "400" })
+
 
 interface MugCoffeeProps {
 	scale: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
@@ -19,6 +23,7 @@ interface MugCoffeeProps {
  * @param scale The scale of the MugCoffee as an integer.
  * @param mugAnimationDuration A float or an integer duration for all animations except coffee.
  * @param rotateCoffeeDuration A float or integer duration of the coffee rotation animation.
+ * @param rotationCupDegree Set the degree rotation of our mug coffee.
  * @param titleBeforeHover A title in the center of our mug before hovering.
  * @param titleAfterHover A title in the center of our mug after hovering.
  * @returns {JSX.Element} - A JSX Element representing the MugCoffee component.
@@ -26,8 +31,8 @@ interface MugCoffeeProps {
 
 export function MugCoffee(props: MugCoffeeProps): JSX.Element {
 
-	const heightMug: number = 32.5 * props.scale;
-	const widthMug: number = 36.25 * props.scale;
+	const heightMug: number = Math.floor(32.5 * props.scale);
+	const widthMug: number = Math.floor(36.25 * props.scale);
 	const [isHovered, setIsHovered] = useState(false);
 
 	const handleHover = () => {
@@ -38,11 +43,13 @@ export function MugCoffee(props: MugCoffeeProps): JSX.Element {
 		setIsHovered(false);
 	};
 
+	const stylesTitle: string = `${shadowsIntoLight.className} ${styles.title}`;
+
 	/** animations */
 	const mugAnimations = {
 		initial: { opacity: 0, scale: 0.5, rotate: 0 },
-		animate: { opacity: 1, scale: 1, rotate: props.rotationCupDegree },
-		hover: { opacity: 1, scale: 1.1, rotate: 150 },
+		animate: { opacity: 1, scale: 1, rotate: `${Math.floor(props.rotationCupDegree).toString()}deg` },
+		hover: { opacity: 1, scale: 1.1, rotate: '150deg' },
 	};
 
 	const textAnimations = {
@@ -50,8 +57,9 @@ export function MugCoffee(props: MugCoffeeProps): JSX.Element {
 		animate: { rotate: isHovered ? 200 : 35, opacity: isHovered ? 0.8 : 0.5 },
 	};
 
-	const coffeeAnimation = { animate: { rotate: [0, 360] } }
+	const coffeeAnimation = { animate: { rotate: ['0deg', '360deg'] } }
 	/** end animations */
+
 
 
 	return (
@@ -69,9 +77,7 @@ export function MugCoffee(props: MugCoffeeProps): JSX.Element {
 			<Image
 				src={mugPic}
 				className={styles.mug}
-				alt="mug"
-				height={heightMug}
-				width={widthMug}
+				alt="Picture of the mug"
 				priority={true}
 			/>
 
@@ -85,32 +91,28 @@ export function MugCoffee(props: MugCoffeeProps): JSX.Element {
 				}}
 			>
 				{props.titleBeforeHover && props.titleAfterHover ?
-					<p style={{ fontSize: `${3.5 * props.scale}px` }} className={styles.title}>{isHovered ? props.titleAfterHover : props.titleBeforeHover}</p> : ""}
+					<p style={{ fontSize: `${3.5 * props.scale}px` }}
+						className={stylesTitle}>{isHovered ? props.titleAfterHover : props.titleBeforeHover}
+					</p> : ""}
 			</motion.div>
 
-			<motion.div
-				animate={coffeeAnimation.animate}
+			<motion.div animate={coffeeAnimation.animate}
 				className={styles.coffee}
-
 				transition={{
 					type: "keyframes",
 					duration: props.rotateCoffeeDuration,
 					repeat: Infinity,
 				}}
-
 			>
-				<video
-					autoPlay
-					muted
-					loop
-					width={widthMug * 1.14}
-					height={heightMug * 1.12}
-					aria-label="coffee"
+				<video autoPlay muted loop
+					width={Math.floor(widthMug * 1.14)}
+					height={Math.floor(heightMug * 1.12)}
+					aria-label="Video of coffee"
 				>
 					<source src={'./coffee.mp4'} type="video/mp4" />
 				</video>
 			</motion.div>
 		</motion.div>
-
 	);
+
 }
