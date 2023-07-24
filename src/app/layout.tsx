@@ -4,7 +4,7 @@ import { Fira_Code } from 'next/font/google'
 import { LayoutNavProvider } from './layoutNavProvider'
 import { Header } from './components/Header/Header'
 
-const FiraCode = Fira_Code({ subsets: ['latin'] })
+const firaCode = Fira_Code({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Jérôme Marichez - Web Developer React - Home',
@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={FiraCode.className}>
+      <body className={firaCode.className}>
         <Header />
         <LayoutNavProvider>
           {children}
