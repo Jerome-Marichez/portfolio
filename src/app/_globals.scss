@@ -1,3 +1,5 @@
+@use "./variables";
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -11,8 +13,8 @@ html {
 }
 
 body {
-  background-color: #232020;
-  color: #FFFFFF;
+  background-color: var(--bg-body-color);
+  color: var(--color-1);
 }
 
 .layout {
@@ -22,7 +24,7 @@ body {
     @extend .layout;
     justify-content: center;
     align-items: center;
-    gap: 70px;
+    gap: var(--gap-layout--home);
   }
 
   &--hover {

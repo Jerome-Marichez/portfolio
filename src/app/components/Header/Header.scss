@@ -1,5 +1,5 @@
 header {
-	padding-bottom: 200px;
+	padding-bottom: var(--header-padding-bottom);
 
 	>.group {
 		display: flex;

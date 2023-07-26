@@ -28,19 +28,19 @@
 	.hljs {
 		display: block;
 		overflow-x: auto;
-		color: #bababa;
+		color: var(--code-default);
 
 		&:hover {
-			color: #cacac9;
+			color: var(--code-default-hover);
 		}
 	}
 
 	.hljs-strong,
 	.hljs-emphasis {
-		color: #a8a8a2;
+		color: var(--code-default);
 
 		&:hover {
-			color: #cacac9;
+			color: var(--code-default-hover);
 		}
 	}
 
@@ -50,19 +50,19 @@
 	.hljs-number,
 	.hljs-regexp,
 	.hljs-literal {
-		color: #6896ba;
+		color: var(--code-literal);
 
 		&:hover {
-			color: #72aad4;
+			color: var(--code-literal-hover);
 		}
 	}
 
 	.hljs-code,
 	.hljs-selector-class {
-		color: #a6e22e;
+		color: var(--code-selector);
 
 		&:hover {
-			color: #b9f345;
+			color: var(--code-selector-hover);
 		}
 	}
 
@@ -76,26 +76,26 @@
 	.hljs-attribute,
 	.hljs-name,
 	.hljs-variable {
-		color: #cb7832;
+		color: var(--code-variable);
 
 		&:hover {
-			color: #e08d49;
+			color: var(--code-variable-hover);
 		}
 	}
 
 	.hljs-params {
-		color: #b9b9b9;
+		color: var(--code-params);
 
 		&:hover {
-			color: #cacac9;
+			color: var(--code-params-hover);
 		}
 	}
 
 	.hljs-string {
-		color: #6a8759;
+		color: var(--code-string);
 
 		&:hover {
-			color: #7ea06a;
+			color: var(--code-string-hover);
 		}
 	}
 
@@ -110,20 +110,20 @@
 	.hljs-template-tag,
 	.hljs-template-variable,
 	.hljs-addition {
-		color: #e0c46c;
+		color: var(--code-addition);
 
 		&:hover {
-			color: #f5da81;
+			color: var(--code-addition-hover);
 		}
 	}
 
 	.hljs-comment,
 	.hljs-deletion,
 	.hljs-meta {
-		color: #7f7f7f;
+		color: var(--code-meta);
 
 		&:hover {
-			color: #919090;
+			color: var(--code-meta-hover);
 		}
 	}
 }

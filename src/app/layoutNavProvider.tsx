@@ -1,5 +1,5 @@
 'use client'
-import "./globals.scss";
+import "./_globals.scss";
 import { Navbar } from './components'
 import useRoutes from "../hooks/useRoutes";
 
