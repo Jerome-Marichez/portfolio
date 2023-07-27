@@ -4,8 +4,13 @@
 	--gap-navbar: 100px;
 	--gap-menu: 40px;
 	--header-padding-bottom: 200px;
-	--font-size-a: 18px; 
 	
+	--font-size-very-small: 12px;
+	--font-size-small: 14px;
+	--font-size-normal: 16px;
+	--font-size-big: 20px;
+	--font-size-very-big: 52px;
+
 	/** By default dark theme **/
 	--bg-body-color: #232020;
 	--color-1: #f7f2f2;
@@ -17,6 +22,7 @@
 		--color-1: #525151;
 		--color-1-variant: #8a8a8a;
 	}
+
 	/******** End Global Var ********/
 
 	/******** Code Scheme ********/
@@ -48,5 +54,6 @@
 		--code-addition-hover: #ecf00b;
 		--code-meta-hover: #312f2f;
 	}
+
 	/******** End Code Scheme ********/
 }
