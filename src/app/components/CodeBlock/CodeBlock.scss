@@ -5,17 +5,17 @@
 
 	&--small {
 		@extend .codeblock;
-		font-size: 12px;
+		font-size: var(--font-size-very-small);
 	}
 
 	&--medium {
 		@extend .codeblock;
-		font-size: 14px;
+		font-size: var(--font-size-small);
 	}
 
 	&--big {
 		@extend .codeblock;
-		font-size: 16px;
+		font-size: var(--font-size-normal);
 	}
 
 	pre {
