@@ -6,7 +6,7 @@
 	--gap-menu: 40px;
 	--header-padding-bottom: 200px;
 	--profile-pic-size: 250px;
-	
+
 	--font-size-very-small: 12px;
 	--font-size-small: 14px;
 	--font-size-normal: 16px;
@@ -15,11 +15,14 @@
 
 	/** By default dark theme **/
 	--bg-body-color: #232020;
+	--gradient-rgba: 35, 32, 32;
 	--color-1: #f7f2f2;
 	--color-1-variant: #bebebe;
+	--color-2: #B454F1;
 
 	/** If color scheme to light **/
 	@media (prefers-color-scheme: "light") {
+		--gradient-rgba: 255, 255, 255;
 		--bg-body-color: #ffffff;
 		--color-1: #525151;
 		--color-1-variant: #8a8a8a;
