@@ -17,15 +17,6 @@ body {
   color: var(--color-1);
 }
 
-.home-flex {
-  display: flex;
-  flex-direction: column;
-  margin-top: 50px;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-}
-
 .layout {
   display: flex;
   align-items: center;
@@ -48,3 +39,4 @@ body {
 .flex {
   display: flex;
 }
+
