@@ -1,0 +1,29 @@
+.footer {
+	z-index: 3;
+	background-color: var(--bg-body-color);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	padding: 30px;
+	font-size: var(--font-size-big);
+
+
+	.group {
+		display: flex;
+		flex-direction: row;
+		gap: 40px;
+
+		a {
+			text-decoration: none;
+			color: var(--color-1-variant);
+
+			&:hover {
+				color: var(----color-1);
+			}
+		}
+	}
+}

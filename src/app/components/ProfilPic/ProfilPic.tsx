@@ -1,13 +1,13 @@
+'use client'
 import Image from "next/image";
 import profilPic from "./profilPic.jpg";
 import styles from "./ProfilPic.module.scss";
 import { motion } from "framer-motion";
 
-
 /**
  * @returns A component profile pic with a shape circle
  */
-export default function ProfilPic(): JSX.Element {
+export function ProfilPic(): JSX.Element {
 
 	return (
 		<motion.div
