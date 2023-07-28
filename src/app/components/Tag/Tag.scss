@@ -1,0 +1,32 @@
+.tag {
+  $tagcolor: (
+    react: #003d66,
+    typescript: #2485e2,
+    nextjs: #000066,
+    javascript: #ffff00,
+    mongodb: #1dab99,
+    html: #f48e3b,
+    scss: #b92b7e,
+    css: #c90076,
+    php: #223377,
+    mysql: #990000,
+  );
+
+  @mixin generateColors($tagcolor) {
+    @each $name, $color in $tagcolor {
+      &--#{$name} {
+        font-size: var(--font-size-very-small);
+        border-radius: 50px;
+        color: var(--color-1-variant);
+        padding: 5px;
+        transition: 0.15s all ease;
+        border: 2px solid $color;
+        &:hover {
+          background-color: $color;
+        }
+      }
+    }
+  }
+
+  @include generateColors($tagcolor);
+}
