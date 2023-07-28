@@ -7,7 +7,7 @@ import { Header } from './components/Header/Header'
 const firaCode = Fira_Code({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Jérôme Marichez - Web Developer React - Home',
+  title: 'Jérôme Marichez - Web Developer - Home',
   description: 'Web Developer',
 }
 

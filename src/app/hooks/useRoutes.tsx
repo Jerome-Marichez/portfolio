@@ -1,6 +1,6 @@
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { LinksData } from '@/app/sharedTypes';
+import { linksData } from '@/app/routes';
 
 /**
  * Custom hook to manage routes and determine if the current page is the home page.
@@ -10,17 +10,9 @@ import { LinksData } from '@/app/sharedTypes';
 export default function useRoutes() {
 
 	const pathname: string = usePathname();
-	const linksData: LinksData = [
-		{ text: 'about me', href: '/about' },
-		{ text: 'projects', href: '#', style: { paddingLeft: '25px' } },
-		{ text: 'skills', href: '#', style: { paddingLeft: '50px' } },
-		{ text: 'contact me', href: '#', style: { paddingLeft: '25px' } },
-		{ text: 'home', href: '/' },
-	];
 	const [links] = useState(linksData);
 	const [home, setHome] = useState<boolean>(false);
-
-
+	
 	useEffect(() => {
 		if (pathname === linksData[linksData.length - 1].href) {
 			setHome(true);

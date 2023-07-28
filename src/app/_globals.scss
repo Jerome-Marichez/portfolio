@@ -17,19 +17,31 @@ body {
   color: var(--color-1);
 }
 
+.home-flex {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
 .layout {
   display: flex;
+  align-items: center;
 
   &--home {
     @extend .layout;
     justify-content: center;
-    align-items: center;
-    gap: var(--gap-layout--home);
+
+    >div {
+      gap: var(--gap-layout--home);
+    }
   }
 
-  &--hover {
+  &--other {
     @extend .layout;
-    justify-content: space-between;
+    gap: var(--gap-layout--other);
   }
 }
 
