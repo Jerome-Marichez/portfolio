@@ -19,7 +19,6 @@ body {
 
 .layout {
   display: flex;
-  align-items: center;
 
   &--home {
     @extend .layout;
@@ -39,4 +38,3 @@ body {
 .flex {
   display: flex;
 }
-
