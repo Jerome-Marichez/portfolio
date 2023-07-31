@@ -4,7 +4,7 @@ import { MugCoffee } from '../MugCoffee/MugCoffee';
 import Link from 'next/link';
 import styles from "./Navbar.module.scss";
 import { motion } from 'framer-motion';
-import { LinksData } from '@/app/routes';
+import { LinksData } from '@/app/data/routes';
 
 
 interface NavbarProps {
