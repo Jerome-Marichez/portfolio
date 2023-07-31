@@ -31,7 +31,7 @@ interface NavbarProps {
  * @returns {JSX.Element} - A JSX Element representing the Navbar component.
  */
 export function Navbar(props: NavbarProps): JSX.Element {
-	
+
 	const { home, links } = props;
 	const [activePath, setActivePath] = useState<string>("");
 
@@ -61,9 +61,9 @@ export function Navbar(props: NavbarProps): JSX.Element {
 				/>
 			</Link>
 			{!home &&
-				<ul className={styles.menu} role="menu">
+				<ul className={styles.menu} role="tablist" aria-orientation="vertical">
 					{links.map((link, index) => (
-						<li key={link.text} className={styles.list}>
+						<li key={link.text} className={styles.list} role="tab">
 							<motion.div
 								initial={{ opacity: 0 }}
 								animate={{ opacity: 1 }}
