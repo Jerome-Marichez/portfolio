@@ -1,11 +1,10 @@
 header {
-	padding-bottom: var(--header-padding-bottom);
+  padding-bottom: var(--header-padding-bottom);
 
-	>.group {
-		display: flex;
-		position: absolute;
-		justify-content: space-between;
-		width: 100%;
-	}
-
+  > .group {
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    width: 100%;
+  }
 }

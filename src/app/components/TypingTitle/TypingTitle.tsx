@@ -17,17 +17,18 @@ interface TypingTtileProps {
 export function TypingTitle(props: TypingTtileProps): JSX.Element {
 
 	const [content, setContent] = useState<string>("");
-	const delayEachLetter = props.speed * 1000 / props.title.length;
-	const titleSplited = props.title.split("");
 
 	useEffect(() => {
+		const delayEachLetter = props.speed * 1000 / props.title.length;
+		const titleSplited = props.title.split("");
+
 		titleSplited.forEach((value, index) => {
 			setTimeout(() => {
 				setContent((prevContent) => prevContent + value);
 			}, index * delayEachLetter)
 		})
 
-	}, []);
+	}, [props.speed, props.title]);
 
 	return (
 		<h1 className={styles.typing}>
@@ -36,13 +37,13 @@ export function TypingTitle(props: TypingTtileProps): JSX.Element {
 					key={index}
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
-					whileHover={{ scale: 1.2, transition: { duration: 0.10}}}
+					whileHover={{ scale: 1.2, transition: { duration: 0.10 } }}
 					transition={{ duration: 0.5 }}
-					aria-label={props.title}
 				>
 					{value === ' ' ? '\u00A0' : value}
 				</motion.div>
 			))}
 		</h1>
 	);
+
 }

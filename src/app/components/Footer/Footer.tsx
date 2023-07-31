@@ -10,7 +10,7 @@ import { useEffect, useRef } from "react";
  */
 export function Footer(): JSX.Element {
 
-	const codeBlockText = `return (
+	const codeBlockText: string = `return (
 		<>
 			<CodeBlock text={codeBlockText} fontSize="medium" language="typescript" />
 			<footer className={styles.footer}>

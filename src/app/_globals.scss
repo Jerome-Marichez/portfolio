@@ -17,6 +17,20 @@ body {
   color: var(--color-1);
 }
 
+a {
+  text-decoration: none;
+  font-size: var(--font-size-big);
+  color: var(--color-1-variant);
+
+  &:hover {
+    color: var(----color-1);
+  }
+}
+
+.flex {
+  display: flex;
+}
+
 .layout {
   display: flex;
 
@@ -24,22 +38,28 @@ body {
     @extend .layout;
     justify-content: center;
 
-    >div {
+    .flex {
       gap: var(--gap-layout--home);
     }
   }
 
   &--other {
     @extend .layout;
+    justify-content: center;
 
-     >div { 
-      min-height: 450px
+    .flex {
+      justify-content: flex-end;
+      flex: 1;
+      align-items: center;
+      min-height: 450px;
+      max-height: 450px;
+      max-width: 600px;
+      &:last-child {
+        flex-direction: row-reverse;
+        margin-right: var(--margin-right-page);
+      }
     }
-    
+
     gap: var(--gap-layout--other);
   }
-}
-
-.flex {
-  display: flex;
 }

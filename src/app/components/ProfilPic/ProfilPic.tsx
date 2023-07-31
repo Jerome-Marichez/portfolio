@@ -20,6 +20,7 @@ export function ProfilPic(): JSX.Element {
 				className={styles.profil}
 				src={profilPic}
 				alt={"Picture of me"}
+				priority={true}
 			/>
 		</motion.div>
 	)
