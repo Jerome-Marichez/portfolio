@@ -1,13 +1,15 @@
 .button {
-	background-color: transparent;
-	border: 1px solid #43D9AD;
-	border-radius: 8px;
-	font-size: var(--font-size-normal);
-	color: var(--color-1);
-	opacity: 0.8;
-	cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #43d9ad;
+  border-radius: 8px;
+  font-size: var(--font-size-normal);
+  color: var(--color-1);
+  opacity: 0.8;
+  padding: 10px;
+  cursor: pointer;
 
-	&:hover {
-		opacity: 1.0;
-	}
+  &:hover {
+    border: 1px solid #309678;
+    opacity: 1;
+  }
 }
