@@ -8,3 +8,4 @@ export * from "./Footer/Footer";
 export * from "./ProfilPic/ProfilPic";
 export * from "./Card/Card";
 export * from "./Tag/Tag"; 
+export * from "./SkillItem/SkillItem";
