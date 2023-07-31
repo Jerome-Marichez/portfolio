@@ -20,6 +20,7 @@
   --color-1: #f7f2f2;
   --color-1-variant: #bebebe;
   --color-2: #b454f1;
+  --color-3: rgb(83, 83, 83);
 
   /** If color scheme to light **/
   @media (prefers-color-scheme: "light") {
@@ -27,6 +28,7 @@
     --bg-body-color: #ffffff;
     --color-1: #525151;
     --color-1-variant: #8a8a8a;
+    --color-3: rgb(231, 230, 230);
   }
 
   /******** End Global Var ********/
