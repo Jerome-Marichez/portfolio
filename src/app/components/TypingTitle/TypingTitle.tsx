@@ -45,4 +45,5 @@ export function TypingTitle(props: TypingTtileProps): JSX.Element {
 			))}
 		</h1>
 	);
+	
 }

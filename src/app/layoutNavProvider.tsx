@@ -28,5 +28,4 @@ export const LayoutNavProvider = ({ children }: { children: React.ReactNode }): 
 		</>
 	)
 
-
 };

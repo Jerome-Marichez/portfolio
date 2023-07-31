@@ -1,129 +1,128 @@
 .codeblock {
-	display: flex;
-	flex-direction: row;
-	position: relative;
+  display: flex;
+  flex-direction: row;
+  position: relative;
 
-	&--small {
-		@extend .codeblock;
-		font-size: var(--font-size-very-small);
-	}
+  &--small {
+    @extend .codeblock;
+    font-size: var(--font-size-very-small);
+  }
 
-	&--medium {
-		@extend .codeblock;
-		font-size: var(--font-size-small);
-	}
+  &--medium {
+    @extend .codeblock;
+    font-size: var(--font-size-small);
+  }
 
-	&--big {
-		@extend .codeblock;
-		font-size: var(--font-size-normal);
-	}
+  &--big {
+    @extend .codeblock;
+    font-size: var(--font-size-normal);
+  }
 
-	pre {
-		margin: 0;
-		padding: 0;
-		white-space: pre-line;
-	}
+  pre {
+    margin: 0;
+    padding: 0;
+    white-space: pre-line;
+  }
 
+  .hljs {
+    display: block;
+    overflow-x: auto;
+    color: var(--code-default);
 
-	.hljs {
-		display: block;
-		overflow-x: auto;
-		color: var(--code-default);
+    &:hover {
+      color: var(--code-default-hover);
+    }
+  }
 
-		&:hover {
-			color: var(--code-default-hover);
-		}
-	}
+  .hljs-strong,
+  .hljs-emphasis {
+    color: var(--code-default);
 
-	.hljs-strong,
-	.hljs-emphasis {
-		color: var(--code-default);
+    &:hover {
+      color: var(--code-default-hover);
+    }
+  }
 
-		&:hover {
-			color: var(--code-default-hover);
-		}
-	}
+  .hljs-bullet,
+  .hljs-quote,
+  .hljs-link,
+  .hljs-number,
+  .hljs-regexp,
+  .hljs-literal {
+    color: var(--code-literal);
 
-	.hljs-bullet,
-	.hljs-quote,
-	.hljs-link,
-	.hljs-number,
-	.hljs-regexp,
-	.hljs-literal {
-		color: var(--code-literal);
+    &:hover {
+      color: var(--code-literal-hover);
+    }
+  }
 
-		&:hover {
-			color: var(--code-literal-hover);
-		}
-	}
+  .hljs-code,
+  .hljs-selector-class {
+    color: var(--code-selector);
 
-	.hljs-code,
-	.hljs-selector-class {
-		color: var(--code-selector);
+    &:hover {
+      color: var(--code-selector-hover);
+    }
+  }
 
-		&:hover {
-			color: var(--code-selector-hover);
-		}
-	}
+  .hljs-emphasis {
+    font-style: italic;
+  }
 
-	.hljs-emphasis {
-		font-style: italic;
-	}
+  .hljs-keyword,
+  .hljs-selector-tag,
+  .hljs-section,
+  .hljs-attribute,
+  .hljs-name,
+  .hljs-variable {
+    color: var(--code-variable);
 
-	.hljs-keyword,
-	.hljs-selector-tag,
-	.hljs-section,
-	.hljs-attribute,
-	.hljs-name,
-	.hljs-variable {
-		color: var(--code-variable);
+    &:hover {
+      color: var(--code-variable-hover);
+    }
+  }
 
-		&:hover {
-			color: var(--code-variable-hover);
-		}
-	}
+  .hljs-params {
+    color: var(--code-params);
 
-	.hljs-params {
-		color: var(--code-params);
+    &:hover {
+      color: var(--code-params-hover);
+    }
+  }
 
-		&:hover {
-			color: var(--code-params-hover);
-		}
-	}
+  .hljs-string {
+    color: var(--code-string);
 
-	.hljs-string {
-		color: var(--code-string);
+    &:hover {
+      color: var(--code-string-hover);
+    }
+  }
 
-		&:hover {
-			color: var(--code-string-hover);
-		}
-	}
+  .hljs-subst,
+  .hljs-type,
+  .hljs-built_in,
+  .hljs-builtin-name,
+  .hljs-symbol,
+  .hljs-selector-id,
+  .hljs-selector-attr,
+  .hljs-selector-pseudo,
+  .hljs-template-tag,
+  .hljs-template-variable,
+  .hljs-addition {
+    color: var(--code-addition);
 
-	.hljs-subst,
-	.hljs-type,
-	.hljs-built_in,
-	.hljs-builtin-name,
-	.hljs-symbol,
-	.hljs-selector-id,
-	.hljs-selector-attr,
-	.hljs-selector-pseudo,
-	.hljs-template-tag,
-	.hljs-template-variable,
-	.hljs-addition {
-		color: var(--code-addition);
+    &:hover {
+      color: var(--code-addition-hover);
+    }
+  }
 
-		&:hover {
-			color: var(--code-addition-hover);
-		}
-	}
+  .hljs-comment,
+  .hljs-deletion,
+  .hljs-meta {
+    color: var(--code-meta);
 
-	.hljs-comment,
-	.hljs-deletion,
-	.hljs-meta {
-		color: var(--code-meta);
-
-		&:hover {
-			color: var(--code-meta-hover);
-		}
-	}
+    &:hover {
+      color: var(--code-meta-hover);
+    }
+  }
 }

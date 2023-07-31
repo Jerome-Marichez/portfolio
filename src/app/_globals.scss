@@ -17,6 +17,16 @@ body {
   color: var(--color-1);
 }
 
+a {
+  text-decoration: none;
+  font-size: var(--font-size-big);
+  color: var(--color-1-variant);
+
+  &:hover {
+    color: var(----color-1);
+  }
+}
+
 .flex {
   display: flex;
 }

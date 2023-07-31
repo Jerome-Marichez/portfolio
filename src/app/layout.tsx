@@ -17,6 +17,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+
     <html lang="en">
       <body className={firaCode.className}>
         <Header />
@@ -25,5 +26,6 @@ export default function RootLayout({
         </LayoutNavProvider>
       </body>
     </html>
+    
   )
 }

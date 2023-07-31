@@ -1,65 +1,65 @@
 :root {
-	/******** Global Var ********/
-	--gap-layout--home: 80px;
-	--gap-layout--other: 140px;
-	--gap-navbar: 100px;
-	--gap-menu: 40px;
-	--header-padding-bottom: 200px;
-	--profile-pic-size: 250px;
-	--margin-page: 30px; 
+  /******** Global Var ********/
+  --gap-layout--home: 80px;
+  --gap-layout--other: 140px;
+  --gap-navbar: 100px;
+  --gap-menu: 40px;
+  --header-padding-bottom: 200px;
+  --profile-pic-size: 250px;
+  --margin-page: 30px;
 
-	--font-size-very-small: 12px;
-	--font-size-small: 14px;
-	--font-size-normal: 16px;
-	--font-size-big: 20px;
-	--font-size-very-big: 52px;
+  --font-size-very-small: 12px;
+  --font-size-small: 14px;
+  --font-size-normal: 16px;
+  --font-size-big: 20px;
+  --font-size-very-big: 52px;
 
-	/** By default dark theme **/
-	--bg-body-color: #232020;
-	--gradient-rgba: 35, 32, 32;
-	--color-1: #f7f2f2;
-	--color-1-variant: #bebebe;
-	--color-2: #B454F1;
+  /** By default dark theme **/
+  --bg-body-color: #232020;
+  --gradient-rgba: 35, 32, 32;
+  --color-1: #f7f2f2;
+  --color-1-variant: #bebebe;
+  --color-2: #b454f1;
 
-	/** If color scheme to light **/
-	@media (prefers-color-scheme: "light") {
-		--gradient-rgba: 255, 255, 255;
-		--bg-body-color: #ffffff;
-		--color-1: #525151;
-		--color-1-variant: #8a8a8a;
-	}
+  /** If color scheme to light **/
+  @media (prefers-color-scheme: "light") {
+    --gradient-rgba: 255, 255, 255;
+    --bg-body-color: #ffffff;
+    --color-1: #525151;
+    --color-1-variant: #8a8a8a;
+  }
 
-	/******** End Global Var ********/
+  /******** End Global Var ********/
 
-	/******** Code Scheme ********/
-	--code-default: #a8a8a2;
-	--code-default-hover: #cacac9;
-	--code-literal: #6896ba;
-	--code-literal-hover: #72aad4;
-	--code-selector: #a6e22e;
-	--code-selector-hover: #b9f345;
-	--code-variable: #cb7832;
-	--code-variable-hover: #e08d49;
-	--code-params: #b9b9b9;
-	--code-params-hover: #cacac9;
-	--code-string: #6a8759;
-	--code-string-hover: #7ea06a;
-	--code-addition: #e0c46c;
-	--code-addition-hover: #f5da81;
-	--code-meta: #7f7f7f;
-	--code-meta-hover: #919090;
+  /******** Code Scheme ********/
+  --code-default: #a8a8a2;
+  --code-default-hover: #cacac9;
+  --code-literal: #6896ba;
+  --code-literal-hover: #72aad4;
+  --code-selector: #a6e22e;
+  --code-selector-hover: #b9f345;
+  --code-variable: #cb7832;
+  --code-variable-hover: #e08d49;
+  --code-params: #b9b9b9;
+  --code-params-hover: #cacac9;
+  --code-string: #6a8759;
+  --code-string-hover: #7ea06a;
+  --code-addition: #e0c46c;
+  --code-addition-hover: #f5da81;
+  --code-meta: #7f7f7f;
+  --code-meta-hover: #919090;
 
-	@media (prefers-color-scheme: "light") {
-		--code-default: #5e5e5e;
-		--code-default-hover: #000000;
-		--code-literal-hover: rgb(0, 0, 0);
-		--code-selector-hover: #189428;
-		--code-variable-hover: #f36d00;
-		--code-params-hover: #757373;
-		--code-string-hover: #189428;
-		--code-addition-hover: #ecf00b;
-		--code-meta-hover: #312f2f;
-	}
+  @media (prefers-color-scheme: "light") {
+    --code-default: #5e5e5e;
+    --code-default-hover: #000000;
+    --code-literal-hover: rgb(0, 0, 0);
+    --code-selector-hover: #189428;
+    --code-variable-hover: #f36d00;
+    --code-params-hover: #757373;
+    --code-string-hover: #189428;
+    --code-addition-hover: #ecf00b;
+    --code-meta-hover: #312f2f;
+  }
 
-	/******** End Code Scheme ********/
+  /******** End Code Scheme ********/
 }
