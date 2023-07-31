@@ -1,6 +1,6 @@
 import { Button } from "./components";
 import Link from "next/link";
-import { linksData } from "./routes";
+import { linksData } from "./data/routes";
 import { TypingTitle } from "./components";
 import styles from "./page.module.scss"; 
 /**

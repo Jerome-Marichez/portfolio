@@ -1,6 +1,6 @@
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { linksData } from '@/app/routes';
+import { linksData } from '@/app/data/routes';
 
 /**
  * Custom hook to manage routes and determine if the current page is the home page.
