@@ -12,14 +12,12 @@
 }
 
 .hover {
-  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: calc(inherit - 1px);
-  width: inherit;
-
-  border-radius: 7px;
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
   font-size: var(--font-size-small);
   background-color: var(--bg-body-color);
   color: var(--color-1);
