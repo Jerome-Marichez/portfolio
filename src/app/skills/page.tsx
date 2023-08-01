@@ -1,6 +1,6 @@
 
-import { SkillsClient } from './pageclient'
-import type { Metadata } from 'next'
+import { SkillsClient } from './pageclient';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
 	title: 'Jérôme Marichez - Skills',

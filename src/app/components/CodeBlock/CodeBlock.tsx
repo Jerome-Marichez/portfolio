@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { CSSProperties, useEffect } from "react";
 import { motion } from 'framer-motion';
 import './CodeBlock.scss';

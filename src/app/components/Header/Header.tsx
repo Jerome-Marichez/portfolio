@@ -1,16 +1,16 @@
 
-'use client'
+'use client';
 import "./Header.scss";
 import { CodeBlock } from '../CodeBlock/CodeBlock';
 import { codeSnipetsHeader, codeSnipetsHeader2 } from "../../data/code";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { usePathname } from 'next/navigation'
+import { usePathname } from 'next/navigation';
 
 
 export function Header(): JSX.Element {
 
-	const pathname: string = usePathname()
+	const pathname: string = usePathname();
 
 	/*Using useRef and ++ to regenerate <Header/> and play the animation each time the pathname changes. **/
 	const ref = useRef<number>(0);
@@ -20,9 +20,6 @@ export function Header(): JSX.Element {
 
 	let codeSnipetstoShow = codeSnipetsHeader2;
 	if (pathname.length < 2) { codeSnipetstoShow = codeSnipetsHeader; }
-
-
-
 
 	return (
 		<header>
@@ -39,6 +36,5 @@ export function Header(): JSX.Element {
 			</motion.div>
 		</header>
 	);
-
 
 }

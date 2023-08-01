@@ -1,31 +1,20 @@
-'use client'
+'use client';
 import styles from "./page.module.scss";
 import { motion } from 'framer-motion';
-import { SkillItem } from "../components";
-
+import { SkillItem, TypeItem } from "../components";
 
 /**
  * @returns A component exclusively used in page.tsx to support 'use client' directives 
  */
 export function SkillsClient(): JSX.Element {
 
+	const skills: Array<TypeItem> = ["react", "typescript", "nextjs", "javascript", "jest", "sass", "css", "html5", "mongodb", "mysql", "postgresql", "github", "php", "wordpress", "codeigniter"]
+
 	return (
 		<motion.div className={styles.skills} initial={{ translateX: 1000 }} animate={{ translateX: 0 }} transition={{ duration: 0.5 }}>
-			<SkillItem height={80} width={80} type="react" />
-			<SkillItem height={80} width={80} type="typescript" />
-			<SkillItem height={80} width={80} type="nextjs" />
-			<SkillItem height={80} width={80} type="javascript" />
-			<SkillItem height={80} width={80} type="jest" />
-			<SkillItem height={80} width={80} type="sass" />
-			<SkillItem height={80} width={80} type="css" />
-			<SkillItem height={80} width={80} type="html5" />
-			<SkillItem height={80} width={80} type="mongodb" />
-			<SkillItem height={80} width={80} type="mysql" />
-			<SkillItem height={80} width={80} type="postgresql" />
-			<SkillItem height={80} width={80} type="github" />
-			<SkillItem height={80} width={80} type="php" />
-			<SkillItem height={80} width={80} type="wordpress" />
-			<SkillItem height={80} width={80} type="codeigniter" />
+			{skills.map((skills, index) => (
+				<SkillItem key={index} height={80} width={80} type={skills} />
+			))}
 		</motion.div>
 	)
 
