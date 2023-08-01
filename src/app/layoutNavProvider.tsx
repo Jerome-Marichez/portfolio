@@ -6,7 +6,7 @@ import useRoutes from "./hooks/useRoutes";
 export const LayoutNavProvider = ({ children }: { children: React.ReactNode }): JSX.Element => {
 
 	const [home, links] = useRoutes();
-
+	
 	return (
 		<>
 			<Header />
