@@ -10,10 +10,10 @@
   padding: 30px;
   background-color: var(--bg-body-color);
   border-top: 1px solid var(--color-3);
+}
 
-  .group {
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
-  }
+.group {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
 }

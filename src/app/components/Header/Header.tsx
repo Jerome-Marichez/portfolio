@@ -1,7 +1,7 @@
 
 'use client';
-import "./Header.scss";
-import { CodeBlock } from '../CodeBlock/CodeBlock';
+import styles from "./Header.module.scss"
+import { CodeBlock } from "../CodeBlock/CodeBlock";
 import { codeSnipetsHeader, codeSnipetsHeader2 } from "../../data/code";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
@@ -22,8 +22,8 @@ export function Header(): JSX.Element {
 	if (pathname.length < 2) { codeSnipetstoShow = codeSnipetsHeader; }
 
 	return (
-		<header>
-			<motion.div key={ref.current} className="group" exit={{ opacity: 0 }} transition={{ duration: 1 }}>
+		<header className={styles.header}>
+			<motion.div key={ref.current} className={styles.group} exit={{ opacity: 0 }} transition={{ duration: 1 }}>
 				{codeSnipetstoShow.map((value, index): JSX.Element => (
 					<motion.div key={index}
 						initial={{ opacity: 0 }}
