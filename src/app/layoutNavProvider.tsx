@@ -10,7 +10,6 @@ export const LayoutNavProvider = ({ children }: { children: React.ReactNode }): 
 	return (
 		<>
 			<Header />
-
 			<div className={home ? "layout--home" : "layout--other"}>
 				<div className={"flex"} >
 					<Navbar links={links} home={home} />
