@@ -1,14 +1,16 @@
 'use client';
 import "./_globals.scss";
-import { Navbar, Footer, ProfilPic } from './components';
+import { Navbar, ProfilPic, Header, Footer } from './components';
 import useRoutes from "./hooks/useRoutes";
 
 export const LayoutNavProvider = ({ children }: { children: React.ReactNode }): JSX.Element => {
-	
+
 	const [home, links] = useRoutes();
 
 	return (
 		<>
+			<Header />
+
 			<div className={home ? "layout--home" : "layout--other"}>
 				<div className={"flex"} >
 					<Navbar links={links} home={home} />
@@ -25,7 +27,7 @@ export const LayoutNavProvider = ({ children }: { children: React.ReactNode }): 
 					{children}
 				</div>
 			}
-			<Footer></Footer>
+			<Footer />
 		</>
 	)
 

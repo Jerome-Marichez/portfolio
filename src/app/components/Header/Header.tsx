@@ -21,9 +21,6 @@ export function Header(): JSX.Element {
 	let codeSnipetstoShow = codeSnipetsHeader2;
 	if (pathname.length < 2) { codeSnipetstoShow = codeSnipetsHeader; }
 
-
-
-
 	return (
 		<header>
 			<motion.div key={ref.current} className="group" exit={{ opacity: 0 }} transition={{ duration: 1 }}>
@@ -39,6 +36,5 @@ export function Header(): JSX.Element {
 			</motion.div>
 		</header>
 	);
-
 
 }
