@@ -1,5 +1,5 @@
-import { AboutClient } from './pageclient'
-import type { Metadata } from 'next'
+import { AboutClient } from './pageclient';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Jérôme Marichez - About',

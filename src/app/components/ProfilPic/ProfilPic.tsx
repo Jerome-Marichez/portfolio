@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import Image from "next/image";
 import profilPic from "./profilPic.jpg";
 import styles from "./ProfilPic.module.scss";

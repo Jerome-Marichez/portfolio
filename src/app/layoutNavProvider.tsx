@@ -1,9 +1,10 @@
-'use client'
+'use client';
 import "./_globals.scss";
-import { Navbar, Footer, ProfilPic } from './components'
+import { Navbar, Footer, ProfilPic } from './components';
 import useRoutes from "./hooks/useRoutes";
 
 export const LayoutNavProvider = ({ children }: { children: React.ReactNode }): JSX.Element => {
+	
 	const [home, links] = useRoutes();
 
 	return (

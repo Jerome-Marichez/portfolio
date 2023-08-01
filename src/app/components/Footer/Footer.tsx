@@ -1,8 +1,8 @@
-'use client'
+'use client';
 import styles from "./Footer.module.scss";
 import { CodeBlock } from "../CodeBlock/CodeBlock";
 import { motion } from "framer-motion";
-import { usePathname } from 'next/navigation'
+import { usePathname } from 'next/navigation';
 import { useEffect, useRef } from "react";
 
 /**

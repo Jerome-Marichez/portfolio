@@ -12,6 +12,6 @@ export const linksData: LinksData = [
 	{ text: 'projects', href: '/projects', style: { paddingLeft: '25px' } },
 	{ text: 'skills', href: '/skills', style: { paddingLeft: '50px' } },
 	{ text: 'contact', href: '/contact', style: { paddingLeft: '25px' } },
-	{ text: 'home', href: '/' },
+	{ text: 'home', href: '/' }
 ];
 

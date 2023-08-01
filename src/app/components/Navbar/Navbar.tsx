@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { useState } from 'react';
 import { MugCoffee } from '../MugCoffee/MugCoffee';
 import Link from 'next/link';

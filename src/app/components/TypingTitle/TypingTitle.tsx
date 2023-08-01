@@ -1,5 +1,5 @@
 
-'use client'
+'use client';
 import styles from "./TypingTitle.module.scss";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";

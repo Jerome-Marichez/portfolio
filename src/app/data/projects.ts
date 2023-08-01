@@ -9,7 +9,7 @@ export interface ProjectData {
 	tags: TagsType;
 	url: string,
 }
-export type ProjectsData = Array<ProjectData>
+export type ProjectsData = Array<ProjectData>;
 
 
 export const projectsData: ProjectsData = [{

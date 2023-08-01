@@ -1,4 +1,3 @@
-
 import styles from "./Button.module.scss";
 
 interface ButtonProps {

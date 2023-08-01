@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import styles from "./MugCoffee.module.scss";
 import mugPic from "./mug.png";
 import Image from "next/image";
