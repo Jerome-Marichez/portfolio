@@ -2,12 +2,9 @@
 import styles from "./MugCoffee.module.scss";
 import mugPic from "./mug.png";
 import Image from "next/image";
-import { Shadows_Into_Light } from "next/font/google";
 import { motion } from 'framer-motion';
 import { useState } from "react";
-
-const shadowsIntoLight = Shadows_Into_Light({ subsets: ["latin"], weight: "400" })
-
+import { Title, Coffee } from "./subcomponent";
 
 interface MugCoffeeProps {
 	scale: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
@@ -43,30 +40,12 @@ export function MugCoffee(props: MugCoffeeProps): JSX.Element {
 		setIsHovered(false);
 	};
 
-	const stylesTitle: string = `${shadowsIntoLight.className} ${styles.title}`;
-
-	/** animations */
-	const mugAnimations = {
-		initial: { opacity: 0, scale: 0.5, rotate: 0 },
-		animate: { opacity: 1, scale: 1, rotate: `${Math.floor(props.rotationCupDegree).toString()}deg` },
-		hover: { opacity: 1, scale: 1.1, rotate: '150deg' },
-	};
-
-	const textAnimations = {
-		initial: { rotate: 35, opacity: 0 },
-		animate: { rotate: isHovered ? 200 : 35, opacity: isHovered ? 0.8 : 0.5 },
-	};
-
-	const coffeeAnimation = { animate: { rotate: ['0deg', '360deg'] } }
-	/** end animations */
-
-
 
 	return (
 		<motion.div
-			initial={mugAnimations.initial}
-			animate={mugAnimations.animate}
-			whileHover={mugAnimations.hover}
+			initial={{ opacity: 0, scale: 0.5, rotate: 0 }}
+			animate={{ opacity: 1, scale: 1, rotate: `${Math.floor(props.rotationCupDegree).toString()}deg` }}
+			whileHover={{ opacity: 1, scale: 1.1, rotate: '150deg' }}
 			transition={{ duration: props.mugAnimationDuration }}
 			className={styles.mugcoffee}
 			aria-label="mug coffee"
@@ -81,38 +60,23 @@ export function MugCoffee(props: MugCoffeeProps): JSX.Element {
 				priority={true}
 			/>
 
-			<motion.div
-				className={styles.wraptext}
-				initial={textAnimations.initial}
-				animate={textAnimations.animate}
-				transition={{
-					type: "keyframes",
-					duration: props.mugAnimationDuration * 3,
-				}}
-			>
-				{props.titleBeforeHover && props.titleAfterHover ?
-					<p style={{ fontSize: `${3.5 * props.scale}px` }}
-						className={stylesTitle}>{isHovered ? props.titleAfterHover : props.titleBeforeHover}
-					</p> : ""}
-			</motion.div>
 
-			<motion.div animate={coffeeAnimation.animate}
-				className={styles.coffee}
-				transition={{
-					type: "keyframes",
-					duration: props.rotateCoffeeDuration,
-					repeat: Infinity,
-				}}
-			>
-				<video autoPlay muted loop
-					width={Math.floor(widthMug * 1.14)}
-					height={Math.floor(heightMug * 1.12)}
-					aria-label="Video of coffee"
-				>
-					<source src={'./coffee.mp4'} type="video/mp4" />
-				</video>
-			</motion.div>
+			{props.titleBeforeHover && props.titleAfterHover &&
+				<Title
+					isHovered={isHovered}
+					durationAnimation={props.mugAnimationDuration * 3}
+					fontSize={3.5 * props.scale}
+					titleBeforeHover={props.titleBeforeHover}
+					titleAfterHover={props.titleAfterHover}
+				/>
+			}
+
+			<Coffee durationAnimation={props.rotateCoffeeDuration}
+				width={Math.floor(widthMug * 1.14)}
+				height={Math.floor(heightMug * 1.14)}
+			/>
 		</motion.div>
 	);
 
 }
+

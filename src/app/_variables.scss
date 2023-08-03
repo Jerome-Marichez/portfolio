@@ -24,11 +24,11 @@
 
   /** If color scheme to light **/
   @media (prefers-color-scheme: "light") {
-    --gradient-rgba: 255, 255, 255;
-    --bg-body-color: #ffffff;
-    --color-1: #525151;
-    --color-1-variant: #8a8a8a;
-    --color-3: rgb(231, 230, 230);
+    --bg-body-color: #eef2f7;
+    --gradient-rgba: 238, 242, 247;
+    --color-1: #030303;
+    --color-1-variant: #575656;
+    --color-3: rgb(255, 253, 253);
   }
 
   /******** End Global Var ********/
@@ -52,14 +52,15 @@
   --code-meta-hover: #919090;
 
   @media (prefers-color-scheme: "light") {
-    --code-default: #5e5e5e;
+    --code-default: #524f4f;
     --code-default-hover: #000000;
-    --code-literal-hover: rgb(0, 0, 0);
-    --code-selector-hover: #189428;
+    --code-literal-hover: #2c4db9;
+    --code-selector-hover: #38d10a;
     --code-variable-hover: #f36d00;
-    --code-params-hover: #757373;
-    --code-string-hover: #189428;
-    --code-addition-hover: #ecf00b;
+    --code-params: #524f4f;
+    --code-params-hover: #000000;
+    --code-string-hover: #299707;
+    --code-addition-hover: #eec302;
     --code-meta-hover: #312f2f;
   }
 
