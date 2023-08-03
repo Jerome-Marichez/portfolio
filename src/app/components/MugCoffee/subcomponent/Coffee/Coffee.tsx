@@ -46,24 +46,26 @@ export function Coffee(props: CoffeeProps): JSX.Element {
 				repeat: Infinity,
 			}}
 		>
-			{isSmallScreen ?
-				<Image
-					src={coffeePic}
-					width={props.width - 25}
-					height={props.height - 18}
-					alt="Picture of the coffee"
-					priority={true}
-				/>
 
-				:
-				<video autoPlay muted loop
-					width={props.width}
-					height={props.height}
-					aria-label="Video of coffee"
-				>
-					<source src={require('./coffee.mp4')} type="video/mp4" />
-				</video>
-			}
+			<Image
+				style={{ display: isSmallScreen ? "none" : "block" }}
+				src={coffeePic}
+				width={props.width - 25}
+				height={props.height - 18}
+				alt="Picture of the coffee"
+				priority={true}
+			/>
+
+
+			<video autoPlay muted loop
+				style={{ display: isSmallScreen ? "block" : "none" }}
+				width={props.width}
+				height={props.height}
+				aria-label="Video of coffee"
+			>
+				<source src={require('./coffee.mp4')} type="video/mp4" />
+			</video>
+
 		</motion.div>
 
 	)
