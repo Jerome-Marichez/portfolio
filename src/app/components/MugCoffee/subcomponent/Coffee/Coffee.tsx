@@ -1,7 +1,7 @@
 
 import { motion } from "framer-motion"
 import styles from "./Coffee.module.scss";
-import coffeePic from "./Coffee.jpg";
+import coffeePic from "./coffee.jpg";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
