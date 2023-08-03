@@ -65,9 +65,8 @@ export function Coffee(props: CoffeeProps): JSX.Element {
 			>
 				<source src={require('./coffee.mp4')} type="video/mp4" />
 			</video>
-
 		</motion.div>
-
 	)
+	
 }
 
