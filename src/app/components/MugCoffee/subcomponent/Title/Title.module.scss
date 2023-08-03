@@ -1,0 +1,14 @@
+.wraptext {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.title {
+  position: absolute;
+  display: inline-flex;
+  white-space: nowrap;
+  min-width: 100%;
+  color: #ffffff;
+}

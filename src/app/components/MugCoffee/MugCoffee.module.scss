@@ -7,41 +7,12 @@
   position: relative;
   transform: rotate(50deg);
   cursor: pointer;
-
-  img {
-    height: inherit;
-    width: inherit;
-  }
-}
-
-.mug,
-.coffee,
-.title {
-  position: absolute;
 }
 
 .mug {
+  height: inherit;
+  width: inherit;
+  position: absolute;
   left: 5.5%;
   z-index: 2;
-}
-
-.coffee {
-  opacity: 0.85;
-  clip-path: circle(37%);
-  border-radius: 50px;
-  z-index: 1;
-}
-
-.wraptext {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 3;
-}
-
-.title {
-  display: inline-flex;
-  white-space: nowrap;
-  min-width: 100%;
-  color: #ffffff;
 }
