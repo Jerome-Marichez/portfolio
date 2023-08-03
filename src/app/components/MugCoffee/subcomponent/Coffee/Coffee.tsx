@@ -48,7 +48,7 @@ export function Coffee(props: CoffeeProps): JSX.Element {
 		>
 
 			<Image
-				style={{ display: isSmallScreen ? "none" : "block" }}
+				style={{ display: isSmallScreen ? "block" : "none" }}
 				src={coffeePic}
 				width={props.width - 25}
 				height={props.height - 18}
@@ -58,7 +58,7 @@ export function Coffee(props: CoffeeProps): JSX.Element {
 
 
 			<video autoPlay muted loop
-				style={{ display: isSmallScreen ? "block" : "none" }}
+				style={{ display: isSmallScreen ? "none" : "block" }}
 				width={props.width}
 				height={props.height}
 				aria-label="Video of coffee"
