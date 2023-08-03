@@ -14,32 +14,32 @@ export type ProjectsData = Array<ProjectData>;
 
 export const projectsData: ProjectsData = [{
 	id: 1,
-	picture: './boule_infernal.jpg',
-	picture2: './boule_infernal2.jpg',
+	picture: '/projects/boule_infernal.jpg',
+	picture2: '/projects/boule_infernal2.jpg',
 	title: 'Boule Infernal',
 	tags: ['React', 'Typescript', 'Scss', 'Html'],
 	url: 'https://github.com/Jerome-Marichez/boule-infernal'
 },
 {
 	id: 2,
-	picture: './fisheye.jpg',
-	picture2: './fisheye2.jpg',
+	picture: '/projects/fisheye.jpg',
+	picture2: '/projects/fisheye2.jpg',
 	title: 'FishEye',
 	tags: ['Javascript', 'Scss', 'Html'],
 	url: 'https://github.com/Jerome-Marichez/Front-End-Fisheye'
 },
 {
 	id: 3,
-	picture: './verhoevenjoaillier.jpg',
-	picture2: './verhoevenjoaillier2.jpg',
+	picture: '/projects/verhoevenjoaillier.jpg',
+	picture2: '/projects/verhoevenjoaillier2.jpg',
 	title: 'Verhoeven Joaillier',
 	tags: ['Javascript', 'Php', 'MySQL', 'Scss', 'Html', 'jQuery'],
 	url: 'https://www.verhoeven-joaillier.com/'
 },
 {
 	id: 4,
-	picture: './trufflecapital.jpg',
-	picture2: './trufflecapital2.jpg',
+	picture: '/projects/trufflecapital.jpg',
+	picture2: '/projects/trufflecapital2.jpg',
 	title: 'Truffle Capital',
 	tags: ['Javascript', 'Php', 'MySQL', 'Css', 'Html'],
 	url: 'https://www.truffle.com/'
