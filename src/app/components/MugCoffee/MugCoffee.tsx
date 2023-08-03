@@ -109,7 +109,7 @@ export function MugCoffee(props: MugCoffeeProps): JSX.Element {
 					height={Math.floor(heightMug * 1.12)}
 					aria-label="Video of coffee"
 				>
-					<source src={'./coffee.mp4'} type="video/mp4" />
+					<source src={require('./coffee.mp4')} type="video/mp4" />
 				</video>
 			</motion.div>
 		</motion.div>
