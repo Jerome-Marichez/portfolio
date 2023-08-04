@@ -52,7 +52,7 @@ export function Navbar(props: NavbarProps): JSX.Element {
 		<nav className={home ? styles['navbar--center'] : styles['navbar--left']}>
 			<Link href={home ? links[0].href : links[links.length - 1].href}>
 				<MugCoffee
-					scale={8}
+					scale={5.3}
 					mugAnimationDuration={0.5}
 					rotateCoffeeDuration={11}
 					rotationCupDegree={activePath && !home ? findRotationCup(-60) : -35}

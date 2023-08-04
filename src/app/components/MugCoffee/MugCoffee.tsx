@@ -3,11 +3,11 @@ import styles from "./MugCoffee.module.scss";
 import mugPic from "./mug.png";
 import Image from "next/image";
 import { motion } from 'framer-motion';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Title, Coffee } from "./subcomponent";
 
 interface MugCoffeeProps {
-	scale: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+	scale: number;
 	mugAnimationDuration: number;
 	rotationCupDegree: number;
 	rotateCoffeeDuration: number;
@@ -28,8 +28,7 @@ interface MugCoffeeProps {
 
 export function MugCoffee(props: MugCoffeeProps): JSX.Element {
 
-	const heightMug: number = Math.floor(32.5 * props.scale);
-	const widthMug: number = Math.floor(36.25 * props.scale);
+	const [smallScreen, setSmallScreen] = useState<boolean>(false);
 	const [isHovered, setIsHovered] = useState(false);
 
 	const handleHover = () => {
@@ -39,6 +38,27 @@ export function MugCoffee(props: MugCoffeeProps): JSX.Element {
 	const handleHoverEnd = () => {
 		setIsHovered(false);
 	};
+
+
+	useEffect(() => {
+		const resize = () => {
+			if (window.innerWidth < 1200) {
+				setSmallScreen(true);
+			} else {
+				setSmallScreen(false);
+			}
+		}
+		console.log(window.innerWidth);
+
+		resize();
+		window.addEventListener("resize", resize, false);
+
+		return () => { window.removeEventListener("resize", resize, false); };
+	}, [])
+
+	const scale = smallScreen ? props.scale : props.scale * 1.5;
+	const heightMug: number = Math.floor(32.5 * scale);
+	const widthMug: number = Math.floor(36.25 * scale);
 
 
 	return (
@@ -65,7 +85,7 @@ export function MugCoffee(props: MugCoffeeProps): JSX.Element {
 				<Title
 					isHovered={isHovered}
 					durationAnimation={props.mugAnimationDuration * 3}
-					fontSize={3.5 * props.scale}
+					fontSize={3.5 * scale}
 					titleBeforeHover={props.titleBeforeHover}
 					titleAfterHover={props.titleAfterHover}
 				/>
@@ -73,10 +93,10 @@ export function MugCoffee(props: MugCoffeeProps): JSX.Element {
 
 			<Coffee durationAnimation={props.rotateCoffeeDuration}
 				width={Math.floor(widthMug * 1.14)}
+				video={smallScreen ? false : true}
 				height={Math.floor(heightMug * 1.14)}
 			/>
 		</motion.div>
-	);
-
+	)
 }
 

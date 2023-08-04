@@ -1,9 +1,12 @@
+@use "./_mixins.scss" as *;
+
 :root {
   /******** Global Var ********/
   --gap-layout--home: 80px;
   --gap-layout--other: 140px;
   --gap-navbar: 100px;
   --gap-menu: 40px;
+  --gap-footer: 40px;
   --header-padding-bottom: 200px;
   --profile-pic-size: 250px;
   --margin-page: 30px;
@@ -12,7 +15,27 @@
   --font-size-small: 14px;
   --font-size-normal: 16px;
   --font-size-big: 20px;
-  --font-size-very-big: 52px;
+  --font-size-very-big: 50px;
+
+  @include small-desktop {
+    --gap-layout--other: 50px;
+    --gap-menu: 20px;
+    --gap-navbar: 20px;
+    --gap-footer: 10px;
+    --header-padding-bottom: 80px;
+    --profile-pic-size: 150px;
+
+    --font-size-very-small: 10px;
+    --font-size-small: 12px;
+    --font-size-normal: 14px;
+    --font-size-big: 18px;
+    --font-size-very-big: 25px;
+  }
+
+  @include mobile {
+    --gap-layout--home: 0px;
+    --profile-pic-size: 120px;
+  }
 
   /** By default dark theme **/
   --bg-body-color: #232020;

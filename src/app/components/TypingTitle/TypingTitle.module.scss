@@ -1,5 +1,9 @@
 .typing {
+  z-index: 1;
   display: flex;
+  padding: 0 20px 0 20px;
+  flex-wrap: wrap;
+  justify-content: center;
   font-size: var(--font-size-very-big);
   color: var(--color-1);
   cursor: pointer;

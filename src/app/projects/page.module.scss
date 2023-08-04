@@ -1,19 +1,39 @@
+@use "../mixins" as *;
+
 .projects {
+  z-index: 1;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
+  @include small-desktop {
+    justify-content: center;
+  }
+  @include mobile {
+    padding-bottom: 100%;
+  }
   align-items: center;
   gap: 50px;
-  z-index: 1;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  @include mobile {
+    grid-template-columns: repeat(1, 1fr);
+  }
   grid-column-gap: 12px;
   grid-row-gap: 12px;
+  @include mobile {
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+  }
 
   .children {
     height: 220px;
     width: 220px;
+    @include small-desktop {
+      height: 180px;
+      width: 180px;
+    }
   }
 }

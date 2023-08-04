@@ -38,7 +38,7 @@ export function Footer(): JSX.Element {
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 0.7, transition: { duration: 3.5 } }}
 			>
-				<CodeBlock text={codeBlockText} fontSize="small" language="typescript" margin="2% 0 0px 15%" />
+				<CodeBlock text={codeBlockText} fontSize="small" language="typescript" margin="3% 0 0px 5%" />
 			</motion.div>
 			<footer className={styles.footer}>
 				<div className={styles.group}>
