@@ -8,7 +8,12 @@
 }
 
 html {
-  min-height: 100vh;
+  @supports (height: 100lvh) {
+    min-height: calc(100lvh);
+  }
+  @supports (height: 100svh) {
+    height: calc(100svh);
+  }
   max-width: 100vw;
   overflow-x: hidden;
 }
