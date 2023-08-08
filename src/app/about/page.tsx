@@ -2,10 +2,10 @@ import { AboutClient } from './pageclient';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Jérôme Marichez - About',
+  title: 'Jérôme Marichez - Web Developer - About',
   description: 'Web Developer creating dynamic interfaces and enhancing user experiences for exceptional web solutions.',
   openGraph: {
-    title: 'Jérôme Marichez - About',
+    title: 'Jérôme Marichez - Web Developer - About',
     description: 'Web Developer creating dynamic interfaces and enhancing user experiences for exceptional web solutions.',
     type: 'website',
     locale: 'en_US',

@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Jérôme Marichez - Web Developer - Home',
   description: 'Welcome to my world of web development! Crafting dynamic interfaces and innovative solutions for a captivating user experience',
   openGraph: {
-    title: 'Jérôme Marichez - Home',
+    title: 'Jérôme Marichez - Web Developer - Home',
     description: 'Welcome to my world of web development! Crafting dynamic interfaces and innovative solutions for a captivating user experience',
     type: 'website',
     locale: 'en_US',
