@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
 	title: 'Jérôme Marichez - Skills',
-	description: 'Web Developer',
+	description: 'Discover my skillset in web development, including React expertise, dynamic interface design, and efficient back-end management',
 }
 
 export default function Skills(): JSX.Element {

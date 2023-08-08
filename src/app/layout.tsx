@@ -6,7 +6,7 @@ const firaCode = Fira_Code({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Jérôme Marichez - Web Developer - Home',
-  description: 'Web Developer',
+  description: 'Welcome to my world of web development! Crafting dynamic interfaces and innovative solutions for a captivating user experience',
 }
 
 export default function RootLayout({
