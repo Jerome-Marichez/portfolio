@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 
 interface CoffeeProps {
 	durationAnimation: number;
+	video: boolean;
 	height: number;
 	width: number;
 }
@@ -15,27 +16,10 @@ interface CoffeeProps {
  * @param durationAnimation duration of animation in seconds.
  * @param width Width of the coffee.
  * @param height Height of the coffee.
+ * @param video boolean if the video should be displayed else image is displayed.
  * @returns A coffee video or picture whith a rotation animation.
  */
 export function Coffee(props: CoffeeProps): JSX.Element {
-
-	const [isSmallScreen, setSmallScreen] = useState<boolean>(false);
-
-	const resize = () => {
-		if (window.innerWidth < 1200) {
-			setSmallScreen(true);
-		} else {
-			setSmallScreen(false);
-		}
-	}
-	useEffect(() => {
-		resize();
-		window.addEventListener("resize", resize, false);
-
-		return () => { window.removeEventListener("resize", resize, false); };
-	}, [])
-
-
 
 	return (
 		<motion.div animate={{ rotate: ['0deg', '360deg'] }}
@@ -48,7 +32,7 @@ export function Coffee(props: CoffeeProps): JSX.Element {
 		>
 
 			<Image
-				style={{ display: isSmallScreen ? "block" : "none" }}
+				style={{ display: props.video ? "none" : "block" }}
 				src={coffeePic}
 				width={props.width - 25}
 				height={props.height - 18}
@@ -58,7 +42,7 @@ export function Coffee(props: CoffeeProps): JSX.Element {
 
 
 			<video autoPlay muted loop
-				style={{ display: isSmallScreen ? "none" : "block" }}
+				style={{ display: props.video ? "block" : "none" }}
 				width={props.width}
 				height={props.height}
 				aria-label="Video of coffee"

@@ -17,7 +17,6 @@ export function ProjectsClient(): JSX.Element {
 				{projectsData.map((project, index) => (
 					<Link href={project.url} key={index} target="_blank">
 						<div key={index} className={styles.children}>
-
 							<Card
 								key={index}
 								image={project.picture}

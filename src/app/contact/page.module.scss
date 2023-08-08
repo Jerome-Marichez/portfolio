@@ -1,6 +1,11 @@
+@use "../mixins" as *;
+
 .contact {
   display: flex;
   flex-direction: column;
+  @include small-desktop {
+    justify-content: center;
+  }
   gap: 25px;
   border-radius: 100px;
   background: linear-gradient(

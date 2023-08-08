@@ -1,4 +1,5 @@
 @use "./variables";
+@use "./mixins" as *;
 
 * {
   box-sizing: border-box;
@@ -7,7 +8,12 @@
 }
 
 html {
-  min-height: 100vh;
+  @supports (height: 100lvh) {
+    min-height: calc(100lvh);
+  }
+  @supports (height: 100svh) {
+    height: calc(100svh);
+  }
   max-width: 100vw;
   overflow-x: hidden;
 }
@@ -29,6 +35,8 @@ a {
 
 .flex {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .layout {
@@ -46,21 +54,33 @@ a {
   &--other {
     @extend .layout;
     justify-content: center;
+    gap: var(--gap-layout--other);
+
+    @include small-desktop {
+      flex-direction: column;
+      align-items: center;
+    }
 
     .flex {
       justify-content: flex-end;
       flex: 1;
-      align-items: center;
+
       min-height: 450px;
       max-height: 450px;
       max-width: 600px;
 
+      @include small-desktop {
+        justify-content: center;
+        min-height: 0px;
+      }
+
       &:last-child {
         margin-right: var(--margin-page);
+        @include small-desktop {
+          margin-left: var(--margin-page);
+        }
         flex-direction: row-reverse;
       }
     }
-
-    gap: var(--gap-layout--other);
   }
 }

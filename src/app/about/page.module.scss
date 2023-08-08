@@ -1,6 +1,11 @@
+@use "../mixins" as *;
+
 .about {
   display: flex;
   flex-direction: column;
+  @include small-desktop {
+    justify-content: center;
+  }
   border-radius: 100px;
   background: linear-gradient(
     20deg,

@@ -1,7 +1,12 @@
+@use "../mixins" as *;
+
 .skills {
   display: flex;
   flex-direction: row;
   align-items: center;
+  @include small-desktop {
+    justify-content: center;
+  }
   gap: 25px;
   z-index: 1;
   flex-wrap: wrap;
