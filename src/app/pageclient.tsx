@@ -1,29 +1,9 @@
 'use client';
 import { Button, TypingTitle } from "./components";
-import { Metadata } from "next";
 import Link from "next/link";
 import { linksData } from "./data/routes";
 import styles from "./page.module.scss";
 import { useEffect, useState } from "react";
-
-export const metadata: Metadata = {
-	title: 'Jérôme Marichez - Web Developer - Home',
-	description: 'Welcome to my world of web development! Crafting dynamic interfaces and innovative solutions for a captivating user experience',
-	openGraph: {
-		title: 'Jérôme Marichez - Home',
-		description: 'Welcome to my world of web development! Crafting dynamic interfaces and innovative solutions for a captivating user experience',
-		type: 'website',
-		locale: 'en_US',
-		url: 'https://jeromemarichez.fr',
-		images: [
-			{
-				url: 'https://jeromemarichez.fr/preview.jpg',
-				alt: 'Preview of website',
-			},
-		],
-	}
-}
-
 
 export default function HomeClient() {
 
