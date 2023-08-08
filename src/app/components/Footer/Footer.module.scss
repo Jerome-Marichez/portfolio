@@ -1,4 +1,4 @@
-@use "../../mixins" as *;
+@use "../../styles/mixins" as *;
 
 .footer {
   z-index: 3;
@@ -33,6 +33,7 @@
   @include small-desktop {
     width: 100%;
     justify-content: center;
+
     a {
       font-size: var(--font-size-very-small);
     }

@@ -1,12 +1,13 @@
-import type { Metadata } from 'next';
-import HomeClient from './pageclient';
+'use client';
+import { Metadata } from "next";
+import HomeClient from "./pageclient";
 
 export const metadata: Metadata = {
-  title: 'Jérôme Marichez - About',
-  description: 'Web Developer creating dynamic interfaces and enhancing user experiences for exceptional web solutions.',
+  title: 'Jérôme Marichez - Web Developer - Home',
+  description: 'Welcome to my world of web development! Crafting dynamic interfaces and innovative solutions for a captivating user experience',
   openGraph: {
-    title: 'Jérôme Marichez - About',
-    description: 'Web Developer creating dynamic interfaces and enhancing user experiences for exceptional web solutions.',
+    title: 'Jérôme Marichez - Home',
+    description: 'Welcome to my world of web development! Crafting dynamic interfaces and innovative solutions for a captivating user experience',
     type: 'website',
     locale: 'en_US',
     url: 'https://jeromemarichez.fr',
