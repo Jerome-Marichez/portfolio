@@ -1,5 +1,5 @@
-@use "./variables";
-@use "./mixins" as *;
+@use "./styles/variables";
+@use "./styles/mixins" as *;
 
 * {
   box-sizing: border-box;

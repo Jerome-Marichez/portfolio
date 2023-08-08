@@ -1,4 +1,4 @@
-import './_globals.scss';
+import './styles/_globals.scss';
 import type { Metadata } from 'next';
 import { Fira_Code } from 'next/font/google';
 import { LayoutNavProvider } from './layoutNavProvider';
