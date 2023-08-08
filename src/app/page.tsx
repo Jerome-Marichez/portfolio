@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import HomeClient from "./pageclient";
+import { HomeClient } from "./pageclient";
 
 export const metadata: Metadata = {
   title: 'Jérôme Marichez - Web Developer - Home',
@@ -20,5 +20,5 @@ export const metadata: Metadata = {
 }
 
 export default function Home() {
-  <HomeClient />
+  return (<HomeClient />);
 }

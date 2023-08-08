@@ -5,7 +5,7 @@ import { linksData } from "./data/routes";
 import styles from "./page.module.scss";
 import { useEffect, useState } from "react";
 
-export default function HomeClient() {
+export function HomeClient() {
 
 	const title: string = `< i'm marichez jérôme, web developer >`;
 	const [load, setLoad] = useState<boolean>(false);
