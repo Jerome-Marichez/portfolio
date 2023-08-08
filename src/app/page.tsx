@@ -1,29 +1,24 @@
-'use client';
-import { Button, TypingTitle } from "./components";
-import Link from "next/link";
-import { linksData } from "./data/routes";
-import styles from "./page.module.scss";
-import { useEffect, useState } from "react";
+import type { Metadata } from 'next';
+import HomeClient from './pageclient';
 
-/**
- * @returns The home page 
- */
+export const metadata: Metadata = {
+  title: 'Jérôme Marichez - About',
+  description: 'Web Developer creating dynamic interfaces and enhancing user experiences for exceptional web solutions.',
+  openGraph: {
+    title: 'Jérôme Marichez - About',
+    description: 'Web Developer creating dynamic interfaces and enhancing user experiences for exceptional web solutions.',
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://jeromemarichez.fr',
+    images: [
+      {
+        url: 'https://jeromemarichez.fr/preview.jpg',
+        alt: 'Preview of website',
+      },
+    ],
+  }
+}
+
 export default function Home() {
-
-  const title: string = `< i'm marichez jérôme, web developer >`;
-  const [load, setLoad] = useState<boolean>(false);
-
-  useEffect(() => {
-    setLoad(true);
-  }, [])
-
-  return (
-
-    <main className={styles.home}>
-      <h1 style={{ display: "none" }}>{title}</h1>
-      <TypingTitle aria-label={"heading"} title={title} speed={3.5} />
-      {load && <Link href={linksData[1].href}><Button height={52} width={220} text={"portfolio"} /></Link>}
-    </main>
-
-  )
+  <HomeClient />
 }
