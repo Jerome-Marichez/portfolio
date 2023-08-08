@@ -1,5 +1,4 @@
 'use client';
-import "./_globals.scss";
 import { Navbar, ProfilPic, Header, Footer } from './components';
 import useRoutes from "./hooks/useRoutes";
 
