@@ -19,7 +19,7 @@ export function SkillItem(props: SkillItemProps): JSX.Element {
 
 	return (
 		<div className={styles.skillitem} style={{ height: props.height, width: props.width }}>
-			<Image alt={props.type} src={`/skills/${props.type}.png`} height="64" width="64"  />
+			<Image alt={props.type} src={`/skills/${props.type}.png`} height="42" width="42"  />
 		</div>
 	);
 

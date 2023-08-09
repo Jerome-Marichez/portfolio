@@ -19,12 +19,10 @@
 
   @include small-desktop {
     --gap-layout--other: 50px;
-    --gap-menu: 20px;
-    --gap-navbar: 20px;
     --gap-footer: 10px;
+    --gap-menu: 20px;
     --header-padding-bottom: 80px;
     --profile-pic-size: 150px;
-
     --font-size-very-small: 10px;
     --font-size-small: 12px;
     --font-size-normal: 14px;
@@ -33,13 +31,16 @@
   }
 
   @include mobile {
+    --gap-navbar: 20px;
     --gap-layout--home: 0px;
     --profile-pic-size: 120px;
   }
 
   /** By default dark theme **/
   --bg-body-color: #232020;
-  --gradient-rgba: 35, 32, 32;
+  --gradient-rgba: 35,
+  32,
+  32;
   --color-1: #f7f2f2;
   --color-1-variant: #bebebe;
   --color-2: #b454f1;
