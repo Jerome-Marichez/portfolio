@@ -1,10 +1,4 @@
-
-interface CodeSnipetHeader {
-	text: string;
-	margin: string;
-	fontSize: "small" | "medium" | "big";
-}
-export type CodeSnipetsHeader = Array<CodeSnipetHeader>;
+import type { CodeSnipetHeader, CodeSnipetsHeader } from "../interfaces";
 
 export const codeSnipetsHeader: CodeSnipetsHeader = [
 	{

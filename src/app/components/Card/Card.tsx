@@ -2,7 +2,7 @@
 import styles from "./Card.module.scss";
 import { motion } from "framer-motion";
 import { Tag } from "../Tag/Tag";
-import { TagsType, TagType } from "@/app/data/projects";
+import type { TagsType, TagType } from "@/app/interfaces";
 
 interface CardProps {
 	image: string;

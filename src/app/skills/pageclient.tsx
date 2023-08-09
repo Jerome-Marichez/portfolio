@@ -1,7 +1,8 @@
 'use client';
 import styles from "./page.module.scss";
 import { motion } from 'framer-motion';
-import { SkillItem, TypeItem } from "../components";
+import type { TypeItem } from "../interfaces";
+import { SkillItem } from "../components";
 
 /**
  * @returns A component exclusively used in page.tsx to support 'use client' directives 

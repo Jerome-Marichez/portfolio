@@ -1,11 +1,4 @@
-export interface LinkData {
-	text: string;
-	href: string;
-	style?: React.CSSProperties;
-}
-
-export type LinksData = Array<LinkData>
-
+import type { LinksData } from "../interfaces";
 
 export const linksData: LinksData = [
 	{ text: 'about me', href: '/about' },

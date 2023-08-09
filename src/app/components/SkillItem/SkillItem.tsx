@@ -1,8 +1,7 @@
 import styles from './SkillItem.module.scss';
 import Image from 'next/image';
+import { TypeItem } from '@/app/interfaces';
 
-
-export type TypeItem = 'codeigniter' | 'css' | 'github' | 'html5' | 'javascript' | 'jest' | 'mongodb' | 'mysql' | 'nextjs' | 'php' | 'postgresql' | 'react' | 'sass' | 'typescript' | 'wordpress';
 
 interface SkillItemProps {
 	height: number;

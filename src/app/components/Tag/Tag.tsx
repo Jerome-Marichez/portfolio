@@ -1,5 +1,5 @@
 import "./Tag.scss";
-import { TagType } from "@/app/data/projects";
+import { TagType } from "@/app/interfaces";
 
 export interface TagProps {
 	title: string;

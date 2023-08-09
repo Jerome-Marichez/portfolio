@@ -1,16 +1,4 @@
-export type TagType = "React" | "NextJS" | "ViteJS" | "Typescript" | "Javascript" | "MongoDB" | "Html" | "Scss" | "Css" | "Php" | "MySQL" | "jQuery";
-export type TagsType = Array<TagType>;
-
-export interface ProjectData {
-	id: number;
-	picture: string;
-	picture2: string;
-	title: string;
-	tags: TagsType;
-	url: string,
-}
-export type ProjectsData = Array<ProjectData>;
-
+import type { ProjectsData } from "../interfaces"; 
 
 export const projectsData: ProjectsData = [{
 	id: 1,
