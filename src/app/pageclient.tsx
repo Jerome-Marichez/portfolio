@@ -19,7 +19,7 @@ export function HomeClient() {
 		<main className={styles.home}>
 			<h1 style={{ display: "none" }}>{title}</h1>
 			<TypingTitle aria-label={"heading"} title={title} speed={3.5} />
-			{load && <Link href={linksData[1].href}><Button height={52} width={220} text={"portfolio"} /></Link>}
+			{load && <Link href={linksData[0].href}><Button height={52} width={220} text={"portfolio"} /></Link>}
 		</main>
 
 	)

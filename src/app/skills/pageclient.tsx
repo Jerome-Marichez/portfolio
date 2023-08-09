@@ -14,7 +14,7 @@ export function SkillsClient(): JSX.Element {
 	return (
 		<motion.div className={styles.skills} initial={{ translateX: 1000 }} animate={{ translateX: 0 }} transition={{ duration: 0.5 }}>
 			{skills.map((skills, index) => (
-				<SkillItem key={index} height={80} width={80} type={skills} />
+				<SkillItem key={index} height={60} width={60} type={skills} />
 			))}
 		</motion.div>
 	)

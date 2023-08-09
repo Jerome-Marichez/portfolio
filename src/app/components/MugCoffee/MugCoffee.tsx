@@ -28,7 +28,9 @@ interface MugCoffeeProps {
 
 export function MugCoffee(props: MugCoffeeProps): JSX.Element {
 
-	const [smallScreen, setSmallScreen] = useState<boolean>(false);
+	const [bigScreen, setBigScreen] = useState<boolean>(false);
+	const [mobile, setMobile] = useState<boolean>(false);
+
 	const [isHovered, setIsHovered] = useState(false);
 
 	const handleHover = () => {
@@ -39,24 +41,23 @@ export function MugCoffee(props: MugCoffeeProps): JSX.Element {
 		setIsHovered(false);
 	};
 
-
 	useEffect(() => {
 		const resize = () => {
-			if (window.innerWidth < 1200) {
-				setSmallScreen(true);
+			if (window.innerWidth > 1200) {
+				setBigScreen(true);
 			} else {
-				setSmallScreen(false);
+				setBigScreen(false);
+			}
+			if (window.innerWidth < 600) {
+				setMobile(true);
 			}
 		}
-		console.log(window.innerWidth);
-
 		resize();
 		window.addEventListener("resize", resize, false);
-
 		return () => { window.removeEventListener("resize", resize, false); };
 	}, [])
 
-	const scale = smallScreen ? props.scale : props.scale * 1.5;
+	const scale = bigScreen ? props.scale * 1.5 : props.scale;
 	const heightMug: number = Math.floor(32.5 * scale);
 	const widthMug: number = Math.floor(36.25 * scale);
 
@@ -70,8 +71,8 @@ export function MugCoffee(props: MugCoffeeProps): JSX.Element {
 			className={styles.mugcoffee}
 			aria-label="mug coffee"
 			style={{ width: widthMug, height: heightMug }}
-			onMouseEnter={handleHover}
-			onMouseLeave={handleHoverEnd}
+			onHoverStart={handleHover}
+			onHoverEnd={handleHoverEnd}
 		>
 			<Image
 				src={mugPic}
@@ -88,12 +89,13 @@ export function MugCoffee(props: MugCoffeeProps): JSX.Element {
 					fontSize={3.5 * scale}
 					titleBeforeHover={props.titleBeforeHover}
 					titleAfterHover={props.titleAfterHover}
+					mobile={mobile}
 				/>
 			}
 
 			<Coffee durationAnimation={props.rotateCoffeeDuration}
 				width={Math.floor(widthMug * 1.14)}
-				video={smallScreen ? false : true}
+				video={bigScreen ? true : false}
 				height={Math.floor(heightMug * 1.14)}
 			/>
 		</motion.div>

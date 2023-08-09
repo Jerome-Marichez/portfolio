@@ -9,10 +9,12 @@ interface TitleProps {
 	durationAnimation: number;
 	titleBeforeHover: string;
 	titleAfterHover: string;
+	mobile: boolean;
 }
 
 /**
  * @param isHovered whether the title is to a state hovered or not.
+ * @param mobile whether the title is to be displayed on mobile or not.
  * @param durationAnimation The animation duration of the title in seconds.
  * @param fontSize The font size of the title.
  * @param titleBeforeHover The name of our title before hovering.
@@ -28,6 +30,14 @@ export function Title(props: TitleProps): JSX.Element {
 		hover: { rotate: 200, opacity: 0.8 }
 	};
 
+	const displayTitle = () => {
+		if (!props.mobile && props.isHovered) {
+			return props.titleAfterHover
+		} else {
+			return props.titleBeforeHover
+		}
+	}
+
 	return (
 		<motion.div
 			className={styles.wraptext}
@@ -41,7 +51,7 @@ export function Title(props: TitleProps): JSX.Element {
 		>
 
 			<p style={{ fontSize: `${props.fontSize}px` }}
-				className={stylesTitle}>{props.isHovered ? props.titleAfterHover : props.titleBeforeHover}
+				className={stylesTitle}>{displayTitle()}
 			</p>
 		</motion.div>
 	);
