@@ -1,14 +1,14 @@
 'use client';
-import { useState } from 'react';
 import { MugCoffee } from '../MugCoffee/MugCoffee';
 import Link from 'next/link';
 import styles from "./Navbar.module.scss";
 import { motion } from 'framer-motion';
-import type { LinksData } from '@/app/interfaces';
+import type { LinkData,LinksData } from '@/app/interfaces';
 
 
 interface NavbarProps {
 	links: LinksData;
+	pathname: string;
 	home: boolean;
 }
 
@@ -20,27 +20,23 @@ interface NavbarProps {
  * - text: The text to be displayed as the link's label.
  * - href: The link's destination URL.
  * - style: (optional) An object representing inline CSS styles for the link.
+ * @param pathname - A string representing the current pathname.
  * @example
  * // Usage example:
  * const linksData = [
  *   { text: 'about me', href: '/about' },
  *   { text: 'projects', href: '#', style: { paddingLeft: '25px' } },
  * ];
- * return <Navbar links={linksData} home={true} />;
+ * return <Navbar links={linksData} home={true} link={"/home"} />;
  *
  * @returns {JSX.Element} - A JSX Element representing the Navbar component.
  */
 export function Navbar(props: NavbarProps): JSX.Element {
 
-	const { home, links } = props;
-	const [activePath, setActivePath] = useState<string>("");
+	const { home, links, pathname } = props;
 
-	const handleLinkClick = (linkText: string) => {
-		setActivePath(linkText);
-	};
-
-	const findRotationCup = (topDegree: number) => {
-		const findIndexActive = links.findIndex((e) => e.text === activePath)
+	const findRotationCup = (topDegree: number, links: LinksData, pathname: string) => {
+		const findIndexActive = links.findIndex((link: LinkData) => link.href === pathname);
 		let rotationCupDegree = topDegree;
 		if (findIndexActive >= 0) {
 			rotationCupDegree += findIndexActive * 15;
@@ -55,9 +51,9 @@ export function Navbar(props: NavbarProps): JSX.Element {
 					scale={5.3}
 					mugAnimationDuration={0.5}
 					rotateCoffeeDuration={11}
-					rotationCupDegree={activePath && !home ? findRotationCup(-60) : -35}
+					rotationCupDegree={!home ? findRotationCup(-60, links, pathname) : -35}
 					titleAfterHover={home ? "Portfolio" : "Home"}
-					titleBeforeHover={activePath && !home ? activePath : "Hello World"}
+					titleBeforeHover={home ? "Hello World" : links.find((link: LinkData) => link.href === pathname)?.text}
 				/>
 			</Link>
 			{!home &&
@@ -71,7 +67,6 @@ export function Navbar(props: NavbarProps): JSX.Element {
 							>
 								<Link
 									href={link.href}
-									onClick={() => handleLinkClick(link.text)}
 									style={link.style}
 								>
 									{link.text}
