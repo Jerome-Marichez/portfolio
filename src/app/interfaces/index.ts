@@ -1,4 +1,4 @@
-export type TagType = "React" | "NextJS" | "ViteJS" | "Typescript" | "Javascript" | "MongoDB" | "Html" | "Scss" | "Css" | "Php" | "MySQL" | "jQuery";
+export type TagType = "React" | "NextJS" | "ViteJS" | "Typescript" | "Javascript" | "MongoDB" | "Html" | "Scss" | "Css" | "Php" | "MySQL" | "jQuery" | "Angular" | "Ionic";
 export type TagsType = Array<TagType>;
 export type TypeItem = 'codeigniter' | 'css' | 'github' | 'html5' | 'javascript' | 'jest' | 'mongodb' | 'mysql' | 'nextjs' | 'php' | 'postgresql' | 'react' | 'sass' | 'typescript' | 'wordpress';
 

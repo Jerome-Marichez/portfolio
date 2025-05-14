@@ -11,6 +11,7 @@ export function SkillsClient(): JSX.Element {
 	return (
 		<MotionDivGroup>
 			<h1>Compétences</h1>
+			<div className={styles.spacer} />
 
 			<h2>Langages</h2>
 			<div className={styles.bloc}>
