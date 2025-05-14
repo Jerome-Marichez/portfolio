@@ -74,7 +74,7 @@ export function SkillsClient(): JSX.Element {
 				<li>Anglais (B2 CEFR)</li>
 				<li>Google AdWords SEO</li>
 				<li>Prévention des Risques Psychosociaux</li>
-				<li>Certificat "Devenez Développeur Agile"</li>
+				<li>Certificat Devenez Développeur Agile</li>
 			</div>
 		</MotionDivGroup>
 	)
