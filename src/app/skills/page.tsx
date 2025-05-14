@@ -1,29 +1,24 @@
 
 import { SkillsClient } from './pageclient';
 import type { Metadata } from 'next';
-
 export const metadata: Metadata = {
-	title: 'Jérôme Marichez - Web Developer - Skills',
-	description: 'Discover my skillset in web development, including React expertise, dynamic interface design, and efficient back-end management.',
+	title: 'Jérôme Marichez - Ingénieur Logiciels Web - Compétences',
+	description: 'Découvrez mon expertise en solutions web full-stack, applications mobiles et implémentations techniques adaptées aux besoins des entreprises.',
 	openGraph: {
-		title: 'Jérôme Marichez - Web Developer - Skills',
-		description: 'Discover my skillset in web development, including React expertise, dynamic interface design, and efficient back-end management.',
+		title: 'Jérôme Marichez - Ingénieur Logiciels Web - Compétences',
+		description: 'Découvrez mon expertise en solutions web full-stack, applications mobiles et implémentations techniques adaptées aux besoins des entreprises.',
 		type: 'website',
-		locale: 'en_US',
+		locale: 'fr_FR',
 		url: 'https://jeromemarichez.fr',
 		images: [
 			{
 				url: 'https://jeromemarichez.fr/preview.jpg',
-				alt: 'Preview of website',
+				alt: 'Aperçu du site web',
 			},
 		],
 	}
 }
 
 export default function Skills(): JSX.Element {
-
-	return (
-		<SkillsClient />
-	)
-
+	return <SkillsClient />
 }
