@@ -16,17 +16,9 @@ export const LayoutNavProvider = ({ children }: { children: React.ReactNode }): 
 					<Navbar links={linksData} home={home} pathname={pathname} />
 					{home && <ProfilPic />}
 				</div>
-				{!home &&
-					<div className="flex">
-						{children}
-					</div>
-				}
+				{!home && <div className="flex">{children}</div>}
 			</div>
-			{home &&
-				<div className="flex">
-					{children}
-				</div>
-			}
+			{home && <div className="flex">{children}</div>}
 			<Footer />
 		</>
 	)

@@ -22,11 +22,18 @@ export function TypingTitle(props: TypingTtileProps): JSX.Element {
 		const delayEachLetter = props.speed * 1000 / props.title.length;
 		const titleSplited = props.title.split("");
 
+		const timeouts: NodeJS.Timeout[] = [];
+
 		titleSplited.forEach((value, index) => {
-			setTimeout(() => {
+			const timeout = setTimeout(() => {
 				setContent((prevContent) => prevContent + value);
-			}, index * delayEachLetter)
-		})
+			}, index * delayEachLetter);
+			timeouts.push(timeout);
+		});
+
+		return () => {
+			timeouts.forEach((timeout) => clearTimeout(timeout));
+		};
 
 	}, [props.speed, props.title]);
 

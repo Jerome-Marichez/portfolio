@@ -7,21 +7,21 @@
   --gap-navbar: 100px;
   --gap-menu: 40px;
   --gap-footer: 40px;
-  --header-padding-bottom: 200px;
+  --header-padding-bottom: 100px;
   --profile-pic-size: 250px;
   --margin-page: 30px;
 
   --font-size-very-small: 12px;
   --font-size-small: 14px;
   --font-size-normal: 16px;
-  --font-size-big: 20px;
+  --font-size-big: 20px;;
   --font-size-very-big: 50px;
 
   @include small-desktop {
     --gap-layout--other: 50px;
     --gap-footer: 10px;
     --gap-menu: 20px;
-    --header-padding-bottom: 80px;
+    --header-padding-bottom: 30px;
     --profile-pic-size: 150px;
     --font-size-very-small: 10px;
     --font-size-small: 12px;
@@ -43,7 +43,7 @@
   32;
   --color-1: #f7f2f2;
   --color-1-variant: #bebebe;
-  --color-2: #b454f1;
+  --color-2: #D48646;
   --color-3: rgb(83, 83, 83);
 
   /** If color scheme to light **/

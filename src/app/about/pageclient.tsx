@@ -1,19 +1,16 @@
 'use client';
-import styles from "./page.module.scss";
-import { motion } from 'framer-motion';
+import { MotionDivGroup } from "../components";
 
 export function AboutClient() {
 	return (
-		<motion.div className={styles.about} initial={{ translateX: 1000 }} animate={{ translateX: 0 }} transition={{ duration: 0.5 }}>
-			<h2>Developer</h2>
-			<h1>Web Developer</h1>
-			<div className={styles.text}>
-				<p>Web developer specialized in React, RNCP certified graduate with a Bachelor degree (equivalent to bac+4). </p>
-				<p>Proficient in various aspects of web development, including mastery of components, virtual rendering, routing, and state management.</p>
-				<p>Proficient in creating dynamic and high-performance interfaces, as well as handling their back-end functionalities.</p>
-				<p>Passionate about innovation and enhancing user experience.
-				</p>
+		<MotionDivGroup>
+			<h1>A propos</h1>
+			<h2>Ingénieur Logiciels Web</h2>
+			<div className={"text"}>
+				<p>Mon expertise englobe la conception et l’optimisation de systèmes web complets, qu’il s’agisse de solutions web ou mobiles.</p>
+				<p>Grâce à une compréhension approfondie des besoins spécifiques, je m’efforce de proposer des solutions parfaitement adaptées.</p>
+				<p>Avec un diplôme de niveau master, je dispose des compétences nécessaires pour relever des défis complexes et offrir des résultats de qualité.</p>
 			</div>
-		</motion.div>
+		</MotionDivGroup>
 	)
 }

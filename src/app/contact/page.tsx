@@ -2,27 +2,24 @@ import type { Metadata } from 'next';
 import ContactClient from './pageclient';
 
 export const metadata: Metadata = {
-	title: 'Jérôme Marichez - Web Developer - Contact',
-	description: 'Get in touch with me for exciting web solutions. Reach out at jeromemarichez@ik.me to collaborate on innovative projects.',
+	title: 'Jérôme Marichez - Développeur Web - Contact',
+	description: 'Contactez-moi pour des solutions web passionnantes. Écrivez à jeromemarichez@ik.me pour collaborer sur des projets innovants.',
 	openGraph: {
-		title: 'Jérôme Marichez - Web Developer - Contact',
-		description: 'Get in touch with me for exciting web solutions. Reach out at jeromemarichez@ik.me to collaborate on innovative projects.',
+		title: 'Jérôme Marichez - Développeur Web - Contact',
+		description: 'Contactez-moi pour des solutions web passionnantes. Écrivez à jeromemarichez@ik.me pour collaborer sur des projets innovants.',
 		type: 'website',
-		locale: 'en_US',
+		locale: 'fr_FR',
 		url: 'https://jeromemarichez.fr',
 		images: [
 			{
 				url: 'https://jeromemarichez.fr/preview.jpg',
-				alt: 'Preview of website',
+				alt: 'Aperçu du site web',
 			},
 		],
 	}
 }
 
 export default function Projects(): JSX.Element {
-
-	return (
-		<ContactClient />
-	)
-
+	return <ContactClient />
 }
+

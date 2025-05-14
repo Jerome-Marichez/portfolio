@@ -1,9 +1,7 @@
 'use client';
 import styles from "./page.module.scss";
-import { motion } from 'framer-motion';
-import { Card } from "../components";
+import { Button, Card, MotionDivGroup } from "../components";
 import { projectsData } from "../data/projects";
-import { Button } from "../components";
 import Link from "next/link";
 
 /**
@@ -12,7 +10,9 @@ import Link from "next/link";
 export function ProjectsClient(): JSX.Element {
 
 	return (
-		<motion.div className={styles.projects} initial={{ translateX: 1000 }} animate={{ translateX: 0 }} transition={{ duration: 0.5 }}>
+		<MotionDivGroup>
+			<h1>Mes Projets</h1>
+			<h2>Survolez et clic pour en savoir +</h2>
 			<div className={styles.grid}>
 				{projectsData.map((project, index) => (
 					<Link href={project.url} key={index} target="_blank">
@@ -28,10 +28,12 @@ export function ProjectsClient(): JSX.Element {
 					</Link>
 				))}
 			</div>
-			<Link href="https://github.com/Jerome-Marichez" target="_blank">
-				<Button text={"# See more projects #"} />
-			</Link>
-		</motion.div>
+			<div className={styles.github}>
+				<Link href="https://github.com/Jerome-Marichez" target="_blank">
+					<Button text={"# Voir mon github #"} />
+				</Link>
+			</div>
+		</MotionDivGroup>
 	)
 
 }

@@ -1,13 +1,13 @@
-@use "../styles/mixins" as *;
-
-.skills {
+.bloc {
+  padding: 20px;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  @include small-desktop {
-    justify-content: center;
-  }
   gap: 25px;
-  z-index: 1;
-  flex-wrap: wrap;
 }
+
+.bloccol {
+  @extend .bloc;
+  flex-direction: column;
+}
+
+.spacer { min-height: 20px;}
