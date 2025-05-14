@@ -1,5 +1,5 @@
 'use client';
-import { MugCoffee } from '../MugCoffee/MugCoffee';
+import { MugCoffee } from '../../MugCoffee/MugCoffee';
 import Link from 'next/link';
 import styles from "./Navbar.module.scss";
 import { motion } from 'framer-motion';

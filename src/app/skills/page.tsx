@@ -1,6 +1,7 @@
 
 import { SkillsClient } from './pageclient';
 import type { Metadata } from 'next';
+
 export const metadata: Metadata = {
 	title: 'Jérôme Marichez - Ingénieur Logiciels Web - Compétences',
 	description: 'Découvrez mon expertise en solutions web full-stack, applications mobiles et implémentations techniques adaptées aux besoins des entreprises.',

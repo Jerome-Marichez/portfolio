@@ -12,9 +12,5 @@ export interface TagProps {
  * @returns A tag component with the given title and type.
  */
 export function Tag(props: TagProps): JSX.Element {
-
-	return (
-		<div className={`tag--${props.type.toLowerCase()}`}>{props.title}</div>
-	)
-
+	return <div className={`tag--${props.type.toLowerCase()}`}>{props.title}</div>
 }

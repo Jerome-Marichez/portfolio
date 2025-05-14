@@ -1,8 +1,8 @@
 
 'use client';
 import styles from "./Header.module.scss"
-import { CodeBlock } from "../CodeBlock/CodeBlock";
-import { codeSnipetsHeader, codeSnipetsHeader2 } from "../../data/code";
+import { CodeBlock } from "../../CodeBlock/CodeBlock";
+import { codeSnipetsHeader, codeSnipetsHeader2 } from "../../../data/code";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { usePathname } from 'next/navigation';
