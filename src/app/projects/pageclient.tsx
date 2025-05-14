@@ -29,7 +29,7 @@ export function ProjectsClient(): JSX.Element {
 				))}
 			</div>
 			<Link href="https://github.com/Jerome-Marichez" target="_blank">
-				<Button text={"# See more projects #"} />
+				<Button text={"# Mon GitHub #"} />
 			</Link>
 		</motion.div>
 	)

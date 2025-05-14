@@ -8,18 +8,18 @@ export const codeSnipetsHeader: CodeSnipetsHeader = [
 
 		constructor() {
 			this.main =
-				"Hi, I'm Jérôme Marichez.
-				A web developer specialized in React.
-				Creating dynamic and high-performance interfaces. 
-				Passionate about innovation and enhancing the user experience.
+				"Bonjour, je suis Jérôme Marichez.
+				Ingénieur logiciels web, spécialiste en interfaces dynamiques et performantes.
+				Passionné par l'innovation et l'amélioration de l'expérience utilisateur.
+				Compréhension des besoins métier et mise en œuvre de solutions techniques.
 			";
 		}
 	}
 
 	class experience extends CurriculumVitae {
 
-	  	 public displayExperience(): void {
-			console.log("Experience 2023");
+		 public displayExperience(): void {
+			console.log("Expérience 2023");
 		}
 
 	}
@@ -29,7 +29,7 @@ export const codeSnipetsHeader: CodeSnipetsHeader = [
 	},
 	{
 		text: `
-		const isItHome = (): true | false => {
+		const estCeLaMaison = (): true | false => {
 	if (pathname.length < 2) return true;
 	return false;
 	
@@ -41,8 +41,8 @@ export const codeSnipetsHeader: CodeSnipetsHeader = [
 	{
 		text: `
 	export const metadata: Metadata = {
-	title: 'Jérôme Marichez - Web Developer React - Home',
-	description: 'Web Developer',
+	title: 'Jérôme Marichez - Ingénieur Logiciels Web - Accueil',
+	description: 'Ingénieur Logiciels Web',
 	}
 
 	export default function RootLayout({
@@ -51,7 +51,7 @@ export const codeSnipetsHeader: CodeSnipetsHeader = [
 	children: React.ReactNode
 	}) {
 	return (
-	<html lang="en">
+	<html lang="fr">
 	<body className={FiraCode.className}>
 		<Header />
 		<LayoutNavProvider>

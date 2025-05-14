@@ -3,27 +3,23 @@ import { ProjectsClient } from './pageclient';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-	title: 'Jérôme Marichez - Web Developer - Projects',
-	description: 'Explore my portfolio of cutting-edge web projects, showcasing my expertise in creating dynamic and high-performance projects.',
+	title: 'Jérôme Marichez - Développeur Web - Projets et Solutions Techniques',
+	description: 'Explorez mon portfolio de projets web et solutions techniques, mettant en avant mon expertise dans la conception, l’optimisation de systèmes web complets et la mise en œuvre de solutions dynamiques et performantes.',
 	openGraph: {
-		title: 'Jérôme Marichez - Web Developer - Projects',
-		description: 'Explore my portfolio of cutting-edge web projects, showcasing my expertise in creating dynamic and high-performance projects.',
+		title: 'Jérôme Marichez - Développeur Web - Projets et Solutions Techniques',
+		description: 'Explorez mon portfolio de projets web et solutions techniques, mettant en avant mon expertise dans la conception, l’optimisation de systèmes web complets et la mise en œuvre de solutions dynamiques et performantes.',
 		type: 'website',
-		locale: 'en_US',
+		locale: 'fr_FR',
 		url: 'https://jeromemarichez.fr',
 		images: [
 			{
 				url: 'https://jeromemarichez.fr/preview.jpg',
-				alt: 'Preview of website',
+				alt: 'Aperçu du site web',
 			},
 		],
 	}
 }
 
 export default function Projects(): JSX.Element {
-
-	return (
-		<ProjectsClient />
-	)
-
+	return <ProjectsClient />
 }

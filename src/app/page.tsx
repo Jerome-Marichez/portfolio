@@ -2,23 +2,23 @@ import { Metadata } from "next";
 import { HomeClient } from "./pageclient";
 
 export const metadata: Metadata = {
-  title: 'Jérôme Marichez - Web Developer - Home',
-  description: 'Welcome to my world of web development! Crafting dynamic interfaces and innovative solutions for a captivating user experience',
+  title: 'Jérôme Marichez - Ingénieur Logiciel Web - Accueil',
+  description: 'Bienvenue dans mon univers de développement web ! Création d’interfaces dynamiques et de solutions innovantes pour une expérience utilisateur captivante',
   openGraph: {
-    title: 'Jérôme Marichez - Web Developer - Home',
-    description: 'Welcome to my world of web development! Crafting dynamic interfaces and innovative solutions for a captivating user experience',
+    title: 'Jérôme Marichez - Ingénieur Logiciel Web - Accueil',
+    description: 'Bienvenue dans mon univers de développement web ! Création d’interfaces dynamiques et de solutions innovantes pour une expérience utilisateur captivante',
     type: 'website',
-    locale: 'en_US',
+    locale: 'fr_FR',
     url: 'https://jeromemarichez.fr',
     images: [
       {
         url: 'https://jeromemarichez.fr/preview.jpg',
-        alt: 'Preview of website',
+        alt: 'Aperçu du site web',
       },
     ],
   }
 }
 
 export default function Home() {
-  return (<HomeClient />);
+  return <HomeClient />;
 }

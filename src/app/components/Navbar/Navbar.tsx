@@ -3,7 +3,7 @@ import { MugCoffee } from '../MugCoffee/MugCoffee';
 import Link from 'next/link';
 import styles from "./Navbar.module.scss";
 import { motion } from 'framer-motion';
-import type { LinkData,LinksData } from '@/app/interfaces';
+import type { LinkData, LinksData } from '@/app/interfaces';
 
 
 interface NavbarProps {
@@ -52,7 +52,7 @@ export function Navbar(props: NavbarProps): JSX.Element {
 					mugAnimationDuration={0.5}
 					rotateCoffeeDuration={11}
 					rotationCupDegree={!home ? findRotationCup(-60, links, pathname) : -35}
-					titleAfterHover={home ? "Portfolio" : "Home"}
+					titleAfterHover={home ? "Portfolio" : "Accueil"}
 					titleBeforeHover={home ? "Hello World" : links.find((link: LinkData) => link.href === pathname)?.text}
 				/>
 			</Link>
