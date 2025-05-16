@@ -66,7 +66,7 @@ export function Navbar(props: NavbarProps): JSX.Element {
 								animate={{ opacity: 1 }}
 								transition={{ duration: 0.5 * index + 1 }}
 							>
-								<NavLink href={link.href} style={link.style}>
+								<NavLink href={link.href} marginRight={link.marginRight} marginLeft={link.marginLeft}>
 									{link.text}
 								</NavLink>
 							</motion.div>
