@@ -3,5 +3,5 @@
 const withVideos = require('next-videos');
 
 module.exports = withVideos({
-  output: 'export', // Enables static HTML export
+  //output: 'export', // Enables static HTML export
 });
