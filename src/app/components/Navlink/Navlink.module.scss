@@ -1,0 +1,32 @@
+.container {
+
+	position: relative;
+
+	.link:hover~.effect {
+		animation: splash 1s steps(15) 0.2s;
+	}
+
+	.effect {
+		position: absolute;
+		width: 190px;
+		height: 250px;
+		bottom: -100px;
+		background-color: red;
+		z-index: -1;
+		background: url("/splash-coffee4.png") no-repeat;
+		pointer-events: none;
+		filter: saturate(60%) brightness(45%) contrast(135%);
+		background-position: 100% -261px;
+	}
+
+	@keyframes splash {
+		from {
+			background-position: 0 -261px;
+		}
+
+		to {
+			background-position: -3000px -261px;
+		}
+	}
+
+}

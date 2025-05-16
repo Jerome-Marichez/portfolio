@@ -15,7 +15,8 @@ export type ProjectsData = Array<ProjectData>;
 export interface LinkData {
 	text: string;
 	href: string;
-	style?: React.CSSProperties;
+	marginLeft: number;
+	marginRight: string;
 }
 export type LinksData = Array<LinkData>;
 

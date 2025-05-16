@@ -4,11 +4,13 @@
 	display: flex;
 	flex-direction: column;
 	margin-top: 50px;
+	padding-bottom: 260px;
 
 	@include small-desktop {
 		justify-content: center;
 		max-width: 360px;
 		margin-top: 0px;
+		padding-bottom: 160px;
 	}
 
 	gap: 0px;
@@ -18,5 +20,5 @@
 		rgba(var(--gradient-rgba), 1) 53%,
 		rgba(var(--gradient-rgba), 0.3) 80%);
 	z-index: 1;
-	padding-bottom: 200px;
+	
 }

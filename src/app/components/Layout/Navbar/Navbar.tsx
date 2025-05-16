@@ -1,5 +1,6 @@
 'use client';
 import { MugCoffee } from '../../MugCoffee/MugCoffee';
+import NavLink from '../../Navlink';
 import Link from 'next/link';
 import styles from "./Navbar.module.scss";
 import { motion } from 'framer-motion';
@@ -65,12 +66,9 @@ export function Navbar(props: NavbarProps): JSX.Element {
 								animate={{ opacity: 1 }}
 								transition={{ duration: 0.5 * index + 1 }}
 							>
-								<Link
-									href={link.href}
-									style={link.style}
-								>
+								<NavLink href={link.href} marginRight={link.marginRight} marginLeft={link.marginLeft}>
 									{link.text}
-								</Link>
+								</NavLink>
 							</motion.div>
 						</li>
 					))}
