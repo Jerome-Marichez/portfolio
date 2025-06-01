@@ -1,5 +1,9 @@
 @use "../styles/mixins" as *;
 
+.textCenter {
+  text-align: center;
+}
+
 .grid {
   display: grid;
   margin-top: 40px;
@@ -7,6 +11,7 @@
 
   @include mobile {
     grid-template-columns: repeat(1, 1fr);
+    align-self: center;
   }
 
   grid-column-gap: 12px;
@@ -28,7 +33,7 @@
   }
 }
 
-.github { 
+.github {
   display: flex;
   margin-top: 40px;
   justify-content: center;

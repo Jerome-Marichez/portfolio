@@ -11,8 +11,8 @@ export function ProjectsClient(): JSX.Element {
 
 	return (
 		<MotionDivGroup>
-			<h1>Mes Projets</h1>
-			<h2>Survol et clic pour en savoir plus</h2>
+			<h1 className={styles.textCenter}>Projets</h1>
+			<h2 className={styles.textCenter}>Cliquez pour en savoir plus</h2>
 			<div className={styles.grid}>
 				{projectsData.map((project, index) => (
 					<Link href={project.url} key={index} target="_blank">
