@@ -32,9 +32,10 @@
   }
 
   @include mobile {
-    --gap-navbar: 20px;
+    --gap-navbar: 10px;
     --gap-layout--home: 0px;
     --profile-pic-size: 120px;
+    --header-padding-bottom: 0px;
   }
 
   /** By default dark theme **/

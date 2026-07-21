@@ -1,4 +1,4 @@
-export type TagType = "React" | "NextJS" | "ViteJS" | "Typescript" | "Javascript" | "MongoDB" | "Html" | "Scss" | "Css" | "Php" | "MySQL" | "jQuery" | "Angular" | "Ionic";
+export type TagType = "React" | "NextJS" | "ViteJS" | "Typescript" | "Javascript" | "MongoDB" | "Html" | "Scss" | "Css" | "Php" | "MySQL" | "jQuery" | "Angular" | "Ionic" | "NodeJS" | "Docker" | "GCP" | "Vercel" | "Postgres" | "WordPress" | "M3Soft" | "IA";
 export type TagsType = Array<TagType>;
 export type TypeItem = 'codeigniter' | 'css' | 'github' | 'html5' | 'javascript' | 'jest' | 'mongodb' | 'mysql' | 'nextjs' | 'php' | 'postgresql' | 'react' | 'sass' | 'typescript' | 'wordpress';
 
@@ -11,6 +11,22 @@ export interface ProjectData {
 	url: string;
 }
 export type ProjectsData = Array<ProjectData>;
+
+export interface ExperienceRole {
+	title: string;
+	achievements: string[];
+}
+
+export interface ExperienceData {
+	id: number;
+	period: string;
+	company: string;
+	location: string;
+	context: string;
+	roles: ExperienceRole[];
+	tags: TagsType;
+}
+export type ExperiencesData = Array<ExperienceData>;
 
 export interface LinkData {
 	text: string;

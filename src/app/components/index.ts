@@ -2,7 +2,7 @@ export * from "./Layout/Navbar/Navbar";
 export * from "./Layout/Header/Header";
 export * from "./Layout/Footer/Footer";
 export * from "./Layout/ProfilPic/ProfilPic";
-export * from "./MugCoffee/MugCoffee"; 
+export * from "./MugCoffee/MugCoffee";
 export * from "./CodeBlock/CodeBlock";
 export * from "./Button/Button";
 export * from "./TypingTitle/TypingTitle";
