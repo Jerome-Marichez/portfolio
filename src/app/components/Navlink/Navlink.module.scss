@@ -1,6 +1,17 @@
+@use "../../styles/mixins" as *;
+
 .container {
 
 	position: relative;
+
+	/* on mobile the staircase indent (inline margin-left) overflows the viewport */
+	@include mobile {
+		.link {
+			margin-left: 0 !important;
+			font-size: var(--font-size-small);
+			white-space: nowrap;
+		}
+	}
 
 	.link:hover~.effect {
 		animation: splash 1s steps(15) 0.2s;

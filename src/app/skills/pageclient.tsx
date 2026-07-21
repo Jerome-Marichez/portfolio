@@ -1,82 +1,63 @@
 'use client';
 import styles from "./page.module.scss";
 import { MotionDivGroup } from "../components";
+import { technicalSkills, functionalSkills, languages } from "../data/skills";
+import { certifications, formations } from "../data/certifications";
 
 /**
- * @returns A component exclusively used in page.tsx to support 'use client' directives 
+ * @returns A component exclusively used in page.tsx to support 'use client' directives
  */
 export function SkillsClient(): JSX.Element {
-
 
 	return (
 		<MotionDivGroup>
 			<h1>Compétences</h1>
-			<div className={styles.spacer} />
+			<h2>Techniques</h2>
 
-			<h2>Langages</h2>
-			<div className={styles.bloc}>
-				<li>TypeScript</li>
-				<li>JavaScript</li>
-				<li>PHP</li>
-			</div>
+			{technicalSkills.map((category) => (
+				<div key={category.title} className={styles.category}>
+					<h3 className={styles.categoryTitle}>{category.title}</h3>
+					<ul className={styles.pills}>
+						{category.items.map((item) => (
+							<li key={item} className={styles.pill}>{item}</li>
+						))}
+					</ul>
+				</div>
+			))}
 
-			<h2>Frameworks</h2>
-			<div className={styles.bloc}>
-				<li>React</li>
-				<li>Next.js</li>
-				<li>Node.js</li>
-			</div>
-			<div className={styles.bloc}>
-				<li>Angular</li>
-				<li>Ionic</li>
-			</div>
+			<h2 className={styles.section}>Fonctionnelles</h2>
+			<ul className={styles.list}>
+				{functionalSkills.map((skill) => (
+					<li key={skill}>{skill}</li>
+				))}
+			</ul>
 
-			<h2>Outils</h2>
-			<div className={styles.bloc}>
-				<li>Docker</li>
-				<li>GitHub</li>
-				<li>Git</li>
-			</div>
-			<div className={styles.bloc}>
-				<li>Vercel</li>
-				<li>Google Cloud (GCP)</li>
-			</div>
+			<h2 className={styles.section}>Langues</h2>
+			<ul className={styles.list}>
+				{languages.map((lang) => (
+					<li key={lang}>{lang}</li>
+				))}
+			</ul>
 
-			<h2>Bases de données</h2>
-			<div className={styles.bloc}>
-				<li>SQL</li>
-				<li>NoSQL</li>
-			</div>
-			<div className={styles.bloc}>
-				<li>Time Series</li>
-				<li>Vectorielles</li>
-			</div>
+			<h2 className={styles.section}>Certifications</h2>
+			<ul className={styles.credentials}>
+				{certifications.map((c) => (
+					<li key={c.title}>
+						<span className={styles.year}>{c.year}</span>
+						<span>{c.title}{c.place ? ` — ${c.place}` : ""}</span>
+					</li>
+				))}
+			</ul>
 
-
-			<h2>Autres</h2>
-			<div className={styles.bloccol}>
-				<li>Autonomie & prise d’initiative</li>
-				<li>Capacité d’analyse</li>
-				<li>Sens du détail & qualité</li>
-				<li>Vulgarisation</li>
-				<li>Design Patterns / POO</li>
-				<li>Data & IA (LLM / ML)</li>
-				<li>CI/CD</li>
-				<li>Cloud</li>
-				<li>Développement Web & Mobile</li>
-				<li>Tests Unitaires / Intégration / E2E</li>
-				<li>Cartographie</li>
-			</div>
-
-			<h2>Formations</h2>
-			<div className={styles.bloccol}>
-				<li>Master Ingénierie - Expert en IT et SI</li>
-				<li>Anglais (B2 CEFR)</li>
-				<li>Google AdWords SEO</li>
-				<li>Prévention des Risques Psychosociaux</li>
-				<li>Certificat Devenez Développeur Agile</li>
-			</div>
+			<h2 className={styles.section}>Formations</h2>
+			<ul className={styles.credentials}>
+				{formations.map((f) => (
+					<li key={f.title}>
+						<span className={styles.year}>{f.year}</span>
+						<span>{f.title}{f.place ? ` — ${f.place}` : ""}</span>
+					</li>
+				))}
+			</ul>
 		</MotionDivGroup>
 	)
-
 }

@@ -1,15 +1,84 @@
-.bloc {
-  padding: 20px;
+@use "../styles/mixins" as *;
+
+.section {
+  margin-top: 44px;
+}
+
+.category {
+  margin-top: 24px;
+}
+
+.categoryTitle {
+  font-size: var(--font-size-big);
+  font-weight: 400;
+  color: var(--color-1);
+  margin-bottom: 12px;
+}
+
+.pills {
+  list-style: none;
   display: flex;
-  flex-direction: row;
-  gap: 25px;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.bloccol {
-  @extend .bloc;
+.pill {
+  font-size: var(--font-size-small);
+  color: var(--color-1-variant);
+  border: 1px solid var(--color-3);
+  border-radius: 50px;
+  padding: 6px 12px;
+  transition: 0.15s all ease;
+
+  &:hover {
+    color: var(--color-1);
+    border-color: var(--color-2);
+    box-shadow: 0 0 10px rgba(212, 134, 70, 0.25);
+  }
+}
+
+.list {
+  list-style: none;
+  margin-top: 14px;
+  display: flex;
   flex-direction: column;
+  gap: 10px;
+
+  li {
+    position: relative;
+    padding-left: 22px;
+    font-size: var(--font-size-normal);
+    color: var(--color-1-variant);
+    line-height: 1.5;
+
+    &::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: var(--color-2);
+    }
+  }
 }
 
-.spacer {
-  min-height: 20px;
+.credentials {
+  list-style: none;
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  li {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    font-size: var(--font-size-normal);
+    color: var(--color-1-variant);
+  }
+}
+
+.year {
+  flex-shrink: 0;
+  color: var(--color-2);
+  font-size: var(--font-size-small);
+  min-width: 42px;
 }

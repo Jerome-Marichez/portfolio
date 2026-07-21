@@ -19,6 +19,14 @@
     angular: red,
     ionic: lightblue,
     jquery: #00ffff,
+    nodejs: #3c873a,
+    docker: #2496ed,
+    gcp: #4285f4,
+    vercel: #888888,
+    postgres: #336791,
+    wordpress: #21759b,
+    m3soft: #8a6d3b,
+    ia: #d48646,
   );
 
   @mixin generateColors($tagcolor) {
