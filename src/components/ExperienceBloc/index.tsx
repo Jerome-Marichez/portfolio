@@ -36,7 +36,9 @@ export function ExperienceBloc({ experience }: IExperienceBlocProps) {
     <article className={styles.experience}>
       <p className={styles.periode}>{experience.periode}</p>
 
-      <TitreSection niveau={2}>{experience.entreprise}</TitreSection>
+      <TitreSection niveau={2} compact>
+        {experience.entreprise}
+      </TitreSection>
 
       <p className={styles.secteur}>{experience.secteur}</p>
 

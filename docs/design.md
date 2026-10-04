@@ -218,6 +218,36 @@ L'action ne peut donc pas dépendre de la position de lecture. L'accueil n'a que
 Contact ne reçoit que le bouton du CV, le téléphone et l'email y étant déjà. La rangée
 passe à la ligne, cibles de 44 px au minimum.
 
+**Placement de la barre de tête.** Elle ne se pose pas mécaniquement au même endroit : elle
+trouve sa place dans le fil de lecture, avec deux bornes. Elle **précède le premier `h2` de
+contenu** (hors « Me joindre », contrainte de `barre-actions.spec.tsx`) et elle reste
+**visible dans les 30 % du haut de la page à l'ouverture**, à 1440 x 900 comme à 390 x 844.
+
+| Page | Place de la barre de tête |
+|------|---------------------------|
+| À propos | après les deux premiers paragraphes du profil (le positionnement) |
+| Parcours, Projets | sous le titre, avant la première expérience ou le premier projet |
+| Compétences | après le chapo |
+| Blog | après le chapo, avant la liste |
+| Article | sous l'en-tête (titre et date), avant le corps |
+
+Position mesurée au rendu réel (build statique, Chromium headless), en part de la hauteur
+de page : À propos 17 % (1440) et 15 % (390), Compétences 11 % et 6 %, Blog 10 % et 9 %,
+Parcours 6 % et 3 %, Projets 4 % et 3 %. Les cinq tiennent dans le premier écran.
+
+**Écarts.** La barre de tête porte `--e4` au dessus et au dessous (ils se confondent avec
+les marges des voisins, c'est le plus grand qui compte). La barre de fin est séparée du
+contenu de façon régulière : les vues ne laissent aucun espace sous leur dernier bloc, et
+le titre « Me joindre » porte seul `--e6` au dessus, soit 96 px sur chaque page.
+
+## Rythme d'une expérience
+
+Dans `ExperienceBloc`, la période se lit avec l'entreprise : le titre de l'entreprise passe
+par `TitreSection compact`, qui ramène ses marges à `--e1` au dessus (6 px, période collée)
+et `--e2` en dessous, au lieu des `--e6` et `--e3` des titres de section. Le modificateur est
+réservé à ce cas, `TitreSection` garde ses marges ailleurs. L'espace entre deux expériences
+reste porté par la liste de `ParcoursView` : `--e6` de part et d'autre du filet.
+
 ## Typographie
 
 | Police | Rôle |

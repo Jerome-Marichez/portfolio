@@ -10,6 +10,9 @@ import { formation } from '@/contenu/formation'
 import { profil } from '@/contenu/profil'
 import styles from './a-propos-view.module.css'
 
+/** La barre d'actions se pose après le positionnement (deux premiers paragraphes). */
+const PARAGRAPHES_AVANT_BARRE = 2
+
 /**
  * À propos, en lecture : le paragraphe de profil, la méthode qui distingue la
  * pratique, la formation puis les certifications. Page de lecture, donc rien
@@ -25,9 +28,15 @@ export function AProposView() {
           <Annotation>{accroches.heroAnnotation}</Annotation>
         </div>
 
+        {profil.paragraphes.slice(0, PARAGRAPHES_AVANT_BARRE).map((texte) => (
+          <p className={styles.paragraphe} key={texte}>
+            {texte}
+          </p>
+        ))}
+
         <BarreActions variante="tete" />
 
-        {profil.paragraphes.map((texte) => (
+        {profil.paragraphes.slice(PARAGRAPHES_AVANT_BARRE).map((texte) => (
           <p className={styles.paragraphe} key={texte}>
             {texte}
           </p>
