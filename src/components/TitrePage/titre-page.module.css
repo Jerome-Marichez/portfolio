@@ -1,0 +1,6 @@
+.titre {
+  margin: 0 0 var(--e4);
+  font-size: var(--t-section);
+  font-weight: 500;
+  color: var(--encre);
+}

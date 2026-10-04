@@ -1,14 +1,5 @@
 .ouverture {
-  display: flex;
-  flex-direction: column;
-  gap: var(--e3);
   padding-block: var(--e6) var(--e5);
-}
-
-.titre {
-  font-size: var(--t-section);
-  font-weight: 500;
-  color: var(--encre);
 }
 
 .chapo {

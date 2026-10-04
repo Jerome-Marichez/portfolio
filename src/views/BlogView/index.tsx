@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { TitrePage } from '@/components/TitrePage'
 import { articles } from '@/contenu/blog'
 import { descriptions } from '@/seo/descriptions'
 import { formatArticleDate } from '@/utils/format-date'
@@ -12,7 +13,7 @@ import styles from './blog-view.module.css'
 export function BlogView() {
   return (
     <section className={`cadre ${styles.bloc}`}>
-      <h1 className={styles.titre}>Blog</h1>
+      <TitrePage>Blog</TitrePage>
       <p className={styles.chapo}>{descriptions.blog}</p>
       <ul className={styles.liste}>
         {articles.map((article) => (

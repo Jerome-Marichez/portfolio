@@ -1,5 +1,6 @@
 import { Bouton } from '@/components/Bouton'
 import { MurDeStack } from '@/components/MurDeStack'
+import { TitrePage } from '@/components/TitrePage'
 import { TitreSection } from '@/components/TitreSection'
 import { accroches } from '@/contenu/accroches'
 import { competences } from '@/contenu/competences'
@@ -17,7 +18,7 @@ export function CompetencesView() {
   return (
     <>
       <section className={`cadre ${styles.ouverture}`}>
-        <h1 className={styles.titre}>Compétences</h1>
+        <TitrePage>Compétences</TitrePage>
         <p className={styles.chapo}>{accroches.competencesChapo}</p>
       </section>
 

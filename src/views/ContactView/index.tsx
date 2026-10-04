@@ -1,3 +1,4 @@
+import { TitrePage } from '@/components/TitrePage'
 import { contact } from '@/contenu/contact'
 import { versTel, versUrl } from '@/utils/lien'
 import styles from './contact-view.module.css'
@@ -13,7 +14,7 @@ import styles from './contact-view.module.css'
 export function ContactView() {
   return (
     <section className={`cadre ${styles.bloc}`}>
-      <h1 className={styles.titre}>Me joindre</h1>
+      <TitrePage>Me joindre</TitrePage>
 
       <div className={styles.principales}>
         <a className={styles.action} href={versTel(contact.telephone)}>
