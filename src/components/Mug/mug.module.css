@@ -40,6 +40,10 @@
   width: 114%;
   height: 114%;
   object-fit: cover;
+  /* L'image du cafe tient lieu de poster : la video, tant qu'elle n'a pas de
+     frame, est transparente et laisse voir ce fond. Sous un ancetre masque, un
+     fond CSS n'est pas telecharge, la ou un attribut `poster` l'est toujours. */
+  background: url("/tasse/cafe.jpg") center / cover no-repeat;
   clip-path: circle(37%);
   opacity: 0.85;
   z-index: 1;
@@ -100,7 +104,7 @@
 @media (max-width: 64rem) {
   .scene {
     /* Sous cette largeur la video n'est pas chargee (`preload="none"` plus la
-       regle ci-dessous) : c'est le poster qui reste affiche, et il suffit. */
+       regle ci-dessous) : c'est l'image de fond qui reste affichee, et il suffit. */
     max-width: 28ch;
   }
 }

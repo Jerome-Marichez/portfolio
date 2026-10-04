@@ -23,8 +23,10 @@ interface IMugProps {
  * - **La video est pilotee, pas seulement masquee.** `prefers-reduced-motion` et le
  *   bouton de mise en pause (WCAG 2.2.2) l'arretent reellement. Une regle CSS ne
  *   suspend pas une video : il faut appeler `pause()`, donc ce composant est client.
- * - **Le poster porte la premiere image**, donc la tasse est pleine avant que la
- *   video n'ait charge, et rien ne saute.
+ * - **L'image du cafe est un fond CSS, pas un `poster`**, donc la tasse est pleine
+ *   avant que la video n'ait charge, et rien ne saute. Un `poster` se telecharge
+ *   meme quand la tasse est masquee (sous 834px) ; un fond CSS sous un ancetre en
+ *   `display: none` n'est jamais demande, ce qui epargne 160 Kio au mobile.
  * - **La video ne charge pas sur un petit ecran** : `cafe.mp4` pese 1,6 Mo pour un
  *   detail de quelques centaines de pixels. Sous 64rem, l'image suffit et c'est elle
  *   qui reste affichee.
@@ -40,7 +42,7 @@ export function Mug({ description }: IMugProps) {
 
     const preference = window.matchMedia('(prefers-reduced-motion: reduce)')
     // `cafe.mp4` pese 1,6 Mo pour un detail de quelques centaines de pixels. Sous
-    // cette largeur, le poster suffit et la video n'est jamais demandee : c'est
+    // cette largeur, l'image de fond suffit et la video n'est jamais demandee : c'est
     // `preload="none"` qui l'empeche de se telecharger, et l'absence de `play()`
     // qui l'empeche d'etre reclamee ensuite.
     const grandEcran = window.matchMedia('(min-width: 64rem)')
@@ -54,7 +56,7 @@ export function Mug({ description }: IMugProps) {
       } else {
         // `play()` rend une promesse rejetee quand le navigateur refuse la lecture
         // automatique. Ce n'est pas une erreur a remonter : la tasse reste alors
-        // sur son poster, qui montre deja le cafe.
+        // sur son image de fond, qui montre deja le cafe.
         void element.play().catch(() => undefined)
       }
     }
@@ -190,7 +192,6 @@ export function Mug({ description }: IMugProps) {
       <video
         ref={video}
         className={styles.cafe}
-        poster="/tasse/cafe.jpg"
         muted
         loop
         playsInline
