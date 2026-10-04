@@ -47,7 +47,7 @@ export function MenuMobile() {
         data-ouvert={ouvert || undefined}
         aria-expanded={ouvert}
         aria-controls={idPanneau}
-        aria-label="Menu, Jérôme Marichez"
+        aria-label="JM, menu"
         onClick={() => setOuvertSur(ouvert ? undefined : chemin)}
       >
         <span className={styles.chevron}>&lt;</span>

@@ -15,9 +15,19 @@
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
-  /* Le bandeau collant mesure trois lignes : une ancre ne doit pas passer
+  /* Le bandeau collant mesure trois lignes et son filet : une ancre ne doit pas passer
      dessous quand on arrive par un lien profond. */
-  scroll-padding-top: calc(var(--ligne) * 3);
+  scroll-padding-top: calc(var(--ligne) * 3 + var(--largeur-filet));
+}
+
+/* Sous 52rem la barre ne fait plus que le logo-bouton : 2,75rem plus son filet.
+   Un `scroll-padding-top` superieur a cette hauteur fait croire a Next que la
+   cible est masquee, et il force un `scrollIntoView` : la page s'ouvrait alors
+   defilee vers le bas (audit 1.4.0, issue #56). */
+@media (max-width: 52rem) {
+  html {
+    scroll-padding-top: calc(2.75rem + var(--largeur-filet));
+  }
 }
 
 body {
@@ -128,6 +138,12 @@ body {
 }
 
 /* Rien n'est retire au clavier : seul le halo souris est neutralise. */
+/* `main` ne prend le focus que par programmation (lien d'evitement, `tabIndex=-1`) :
+   ce n'est pas un controle, un contour autour de toute la page serait du bruit. */
+main:focus {
+  outline: none;
+}
+
 :focus:not(:focus-visible) {
   outline: none;
 }

@@ -22,7 +22,7 @@
   /* ---- Encre : la lumiere qui tombe sur le papier ---- */
   --encre: #f7f2f2; /* 15.1:1  texte courant et titres */
   --encre-douce: #bebebe; /*  8.5:1  texte secondaire, chapos */
-  --encre-faible: #8d8d8d; /*  4.9:1  micro-libelles, legendes */
+  --encre-faible: #8d8d8d; /*  4.9:1  sur --fond seulement : 4.45:1 sur --fond-releve, donc jamais dans l'en-tete */
 
   /* ---- La lampe : une seule source, et elle possede des regions ---- */
   --cafe: #d48646; /*  5.5:1  teinte de marque, lisible en texte */

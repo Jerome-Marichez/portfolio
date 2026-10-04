@@ -45,7 +45,10 @@
    tres grand ecran au point de concurrencer le titre. */
 .metier {
   font-size: min(var(--t-chapo), calc(100cqi / (var(--caracteres, 44) * 0.62)));
-  white-space: nowrap;
+  /* Sans espacement de texte il tient sur une ligne par le calcul ci-dessus ;
+     avec l'espacement de WCAG 1.4.12 il peut passer a la ligne au lieu d'etre
+     coupe par `overflow-x: hidden` du corps. */
+  white-space: normal;
   color: var(--cafe);
   font-weight: 500;
   letter-spacing: -0.01em;

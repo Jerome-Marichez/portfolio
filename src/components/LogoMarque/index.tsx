@@ -26,7 +26,7 @@ export function LogoMarque({ marque }: ILogoMarqueProps) {
       href={marque.url}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={`Voir le site de ${marque.nom}`}
+      aria-label={marque.libelleLien ?? `Voir le site de ${marque.nom}`}
     >
       {/* biome-ignore lint/performance/noImgElement: next/image est inutilisable ici,
           voir le commentaire de fonction ci-dessus (export statique, images non optimisées). */}

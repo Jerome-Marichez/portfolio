@@ -11,6 +11,10 @@ import styles from './bouton-mouvement.module.css'
  * s'arrete. Il pose `data-mouvement` sur la racine, ou la feuille globale met
  * toutes les animations en pause.
  *
+ * Un seul encodage d'etat (WCAG 4.1.2) : le libelle reste fixe et `aria-pressed`
+ * porte l'etat. Changer aussi le libelle annoncerait l'etat deux fois, et
+ * « Reprendre le mouvement, active » se lit comme son contraire.
+ *
  * L'etat initial est lu depuis le document plutot que suppose, pour que le
  * rendu serveur et le client ne divergent pas.
  */
@@ -35,7 +39,7 @@ export function BoutonMouvement() {
 
   return (
     <button type="button" className={styles.bouton} onClick={basculer} aria-pressed={enPause}>
-      {enPause ? 'Reprendre le mouvement' : 'Mettre le mouvement en pause'}
+      Mettre le mouvement en pause
     </button>
   )
 }

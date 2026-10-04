@@ -81,8 +81,9 @@
   color: var(--encre);
 }
 
+/* Voir `en-tete.module.css` : `--encre-faible` manque 4,5:1 sur `--fond-releve`. */
 .fichier {
-  color: var(--encre-faible);
+  color: var(--encre-douce);
   font-size: var(--t-micro);
 }
 
