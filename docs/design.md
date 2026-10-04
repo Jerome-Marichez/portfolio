@@ -298,6 +298,6 @@ la page latéralement. Arbitrage de Jérôme MARICHEZ, 2026-10-04 (issue #191) :
 liens et des cibles d'au moins 44 px. L'état ouvert se lit sur le logo (chevrons en
 `--cafe-vif`, `/>` légèrement penché). Le panneau apparaît en 180 ms, `ease-out`, par
 `transform` et `opacity` seulement, et tout mouvement s'arrête sous `prefers-reduced-motion`
-et `data-mouvement="pause"`. Au dessus de `52rem`, rien ne change : le logo est un lien vers
+et `data-mouvement="pause"`. Au-dessus de `52rem`, rien ne change : le logo est un lien vers
 l'accueil et la barre d'onglets reste en place (avec `min-width: 0`, pour qu'aucune largeur
 intermédiaire ne déborde).
