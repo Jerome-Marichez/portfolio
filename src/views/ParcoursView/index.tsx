@@ -1,4 +1,6 @@
+import { BarreActions } from '@/components/BarreActions'
 import { ExperienceBloc } from '@/components/ExperienceBloc'
+import { TitrePage } from '@/components/TitrePage'
 import { experiences } from '@/contenu/experiences'
 import styles from './parcours-view.module.css'
 
@@ -10,16 +12,20 @@ import styles from './parcours-view.module.css'
  */
 export function ParcoursView() {
   return (
-    <section className="cadre">
-      <h1 className={styles.titre}>Parcours</h1>
+    <>
+      <section className={`cadre ${styles.bloc}`}>
+        <TitrePage>Parcours</TitrePage>
+        <BarreActions variante="tete" />
 
-      <ol className={styles.liste}>
-        {experiences.map((experience) => (
-          <li className={styles.item} key={experience.entreprise}>
-            <ExperienceBloc experience={experience} />
-          </li>
-        ))}
-      </ol>
-    </section>
+        <ol className={styles.liste}>
+          {experiences.map((experience) => (
+            <li className={styles.item} key={experience.entreprise}>
+              <ExperienceBloc experience={experience} />
+            </li>
+          ))}
+        </ol>
+      </section>
+      <BarreActions variante="fin" />
+    </>
   )
 }

@@ -1,0 +1,17 @@
+/* Rangee qui passe a la ligne : a 390px chaque bouton prend sa propre ligne
+   plutot que de deborder. Les cibles font 44px (voir Bouton). */
+.rangee {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e2);
+  margin-top: var(--e3);
+}
+
+/* La barre de fin est une section : meme rythme vertical que les autres. */
+.fin {
+  padding-block: 0 var(--e6);
+}
+
+.fin .rangee {
+  margin-top: var(--e3);
+}

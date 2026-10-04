@@ -25,6 +25,7 @@ export default {
     // son propre nom, ce qui suffit à vérifier qu'un composant applique la bonne.
     '\\.module\\.css$': 'identity-obj-proxy',
     '\\.css$': '<rootDir>/tests/fixtures/style-vide.js',
+    '\\.(png|jpe?g|webp|avif)$': '<rootDir>/tests/fixtures/image-vide.js',
     '^@/(.*)$': '<rootDir>/src/$1',
   },
   collectCoverageFrom: ['src/**/*.{ts,tsx}', '!src/**/*.d.ts'],

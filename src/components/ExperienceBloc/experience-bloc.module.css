@@ -40,6 +40,10 @@
   line-height: var(--lh-lecture);
 }
 
+.contexte + .contexte {
+  margin-top: var(--e4);
+}
+
 .realisations {
   display: flex;
   flex-direction: column;

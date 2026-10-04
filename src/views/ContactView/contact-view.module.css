@@ -1,15 +1,5 @@
-/* Le titre de page est un h1, pas un TitreSection : celui-ci rend un h2, et une
-   page sans titre de premier niveau est cassee pour un lecteur d'ecran comme pour
-   un moteur, meme si elle s'affiche correctement. */
-
-.titre {
-  font-size: var(--t-section);
-  font-weight: 500;
-  color: var(--encre);
-}
-
 .bloc {
-  padding-block: var(--e6) var(--e6);
+  padding-block: var(--e6);
 }
 
 /* Les deux actions principales : pas de boite, la taille et la couleur portent
@@ -17,7 +7,6 @@
 .principales {
   display: flex;
   flex-direction: column;
-  margin-top: var(--e4);
   border-top: var(--largeur-filet) solid var(--filet-fort);
 }
 
@@ -108,4 +97,8 @@
   .donnee {
     transition: none;
   }
+}
+
+.cv {
+  margin-top: var(--e4);
 }

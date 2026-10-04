@@ -1,8 +1,10 @@
-.titre {
-  margin-block: var(--e6) var(--e4);
-  font-size: var(--t-heros);
-  font-weight: 500;
-  color: var(--encre);
+.bloc {
+  padding-block: var(--e6);
+}
+
+/* L'annotation reste sous le titre, avant le profil. */
+.note {
+  margin-bottom: var(--e4);
 }
 
 .paragraphe {
@@ -10,4 +12,8 @@
   color: var(--encre-douce);
   font-size: var(--t-grand);
   line-height: var(--lh-lecture);
+}
+
+.paragraphe + .paragraphe {
+  margin-top: var(--e4);
 }

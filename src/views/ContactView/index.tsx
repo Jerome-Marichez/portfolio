@@ -1,3 +1,5 @@
+import { Bouton } from '@/components/Bouton'
+import { TitrePage } from '@/components/TitrePage'
 import { contact } from '@/contenu/contact'
 import { versTel, versUrl } from '@/utils/lien'
 import styles from './contact-view.module.css'
@@ -13,7 +15,7 @@ import styles from './contact-view.module.css'
 export function ContactView() {
   return (
     <section className={`cadre ${styles.bloc}`}>
-      <h1 className={styles.titre}>Me joindre</h1>
+      <TitrePage>Me joindre</TitrePage>
 
       <div className={styles.principales}>
         <a className={styles.action} href={versTel(contact.telephone)}>
@@ -24,6 +26,16 @@ export function ContactView() {
           <span className={styles.intitule}>Email</span>
           <span className={styles.donnee}>{contact.email}</span>
         </a>
+      </div>
+
+      <div className={styles.cv}>
+        <Bouton
+          href="/cv-jerome-marichez.pdf"
+          ton="primaire"
+          telechargement="cv-jerome-marichez.pdf"
+        >
+          Télécharger le CV (PDF)
+        </Bouton>
       </div>
 
       <dl className={styles.secondaires}>

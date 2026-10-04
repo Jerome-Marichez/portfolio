@@ -26,8 +26,10 @@ export const accroches = {
    * pourquoi les quatre axes tiennent ensemble, ce que les CV expliquent par le
    * contexte : des equipes sans QA, sans ops et sans equipe data.
    */
-  axesChapo:
-    "Ces quatre axes ne sont pas quatre métiers mis côte à côte. Ils tiennent ensemble parce que les équipes où j'ai travaillé n'avaient ni QA, ni ops, ni équipe data : ce qui manquait, je l'ai construit.",
+  axesChapo: [
+    'Ces quatre axes ne sont pas quatre métiers mis côte à côte.',
+    "Ils tiennent ensemble parce que les équipes où j'ai travaillé n'avaient ni QA, ni ops, ni équipe data : ce qui manquait, je l'ai construit.",
+  ],
 
   /** Invitation de fin d'accueil, vers la lecture detaillee. */
   suite: 'La suite en détail',

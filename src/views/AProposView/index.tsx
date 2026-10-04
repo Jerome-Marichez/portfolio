@@ -1,5 +1,8 @@
+import { Annotation } from '@/components/Annotation'
+import { BarreActions } from '@/components/BarreActions'
 import { CertificationListe } from '@/components/CertificationListe'
 import { FormationListe } from '@/components/FormationListe'
+import { TitrePage } from '@/components/TitrePage'
 import { TitreSection } from '@/components/TitreSection'
 import { accroches } from '@/contenu/accroches'
 import { certifications } from '@/contenu/certifications'
@@ -14,19 +17,36 @@ import styles from './a-propos-view.module.css'
  */
 export function AProposView() {
   return (
-    <section className="cadre">
-      <h1 className={styles.titre}>À propos</h1>
+    <>
+      <section className={`cadre ${styles.bloc}`}>
+        <TitrePage>À propos</TitrePage>
 
-      <p className={styles.paragraphe}>{profil.paragraphe}</p>
+        <div className={styles.note}>
+          <Annotation>{accroches.heroAnnotation}</Annotation>
+        </div>
 
-      <TitreSection>{accroches.methode}</TitreSection>
-      <p className={styles.paragraphe}>{profil.differenciationIaAugmentee}</p>
+        <BarreActions variante="tete" />
 
-      <TitreSection>{accroches.formation}</TitreSection>
-      <FormationListe formations={formation} />
+        {profil.paragraphes.map((texte) => (
+          <p className={styles.paragraphe} key={texte}>
+            {texte}
+          </p>
+        ))}
 
-      <TitreSection>{accroches.certifications}</TitreSection>
-      <CertificationListe certifications={certifications} />
-    </section>
+        <TitreSection>{accroches.methode}</TitreSection>
+        {profil.differenciationIaAugmentee.map((texte) => (
+          <p className={styles.paragraphe} key={texte}>
+            {texte}
+          </p>
+        ))}
+
+        <TitreSection>{accroches.formation}</TitreSection>
+        <FormationListe formations={formation} />
+
+        <TitreSection>{accroches.certifications}</TitreSection>
+        <CertificationListe certifications={certifications} />
+      </section>
+      <BarreActions variante="fin" />
+    </>
   )
 }

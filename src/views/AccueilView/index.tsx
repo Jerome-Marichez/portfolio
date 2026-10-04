@@ -1,5 +1,6 @@
 import { Annotation } from '@/components/Annotation'
 import { AxeListe } from '@/components/AxeListe'
+import { BarreActions } from '@/components/BarreActions'
 import { Bouton } from '@/components/Bouton'
 import { Mug } from '@/components/Mug'
 import { TitreMachine } from '@/components/TitreMachine'
@@ -34,6 +35,10 @@ export function AccueilView() {
             {profil.titre}
           </p>
 
+          <div className={styles.note}>
+            <Annotation>{accroches.heroAnnotation}</Annotation>
+          </div>
+
           <p className={styles.reperes}>
             <span>{profil.anneesExperience} ans d&apos;expérience</span>
             <span className={styles.separateur} aria-hidden="true">
@@ -42,20 +47,7 @@ export function AccueilView() {
             <span>{profil.localisation}</span>
           </p>
 
-          <div className={styles.actions}>
-            <Bouton
-              href="/cv-jerome-marichez.pdf"
-              ton="primaire"
-              telechargement="cv-jerome-marichez.pdf"
-            >
-              Télécharger le CV
-            </Bouton>
-            <Bouton href="/parcours/">Voir le parcours</Bouton>
-          </div>
-
-          <div className={styles.note}>
-            <Annotation>{accroches.heroAnnotation}</Annotation>
-          </div>
+          <BarreActions variante="tete" />
         </div>
 
         <div className={styles.tasse}>
@@ -65,12 +57,20 @@ export function AccueilView() {
 
       <section className={`cadre ${styles.bloc}`}>
         <TitreSection id="methode">{accroches.methode}</TitreSection>
-        <p className={styles.paragraphe}>{profil.differenciationIaAugmentee}</p>
+        {profil.differenciationIaAugmentee.map((texte) => (
+          <p className={styles.paragraphe} key={texte}>
+            {texte}
+          </p>
+        ))}
       </section>
 
       <section className={`cadre ${styles.bloc}`}>
         <TitreSection id="axes">{accroches.axes}</TitreSection>
-        <p className={styles.paragraphe}>{accroches.axesChapo}</p>
+        {accroches.axesChapo.map((texte) => (
+          <p className={styles.paragraphe} key={texte}>
+            {texte}
+          </p>
+        ))}
         <div className={styles.axes}>
           <AxeListe axes={axes} />
         </div>
@@ -82,6 +82,7 @@ export function AccueilView() {
           <Bouton href="/projets/" ton="primaire">
             Les projets en détail
           </Bouton>
+          <Bouton href="/parcours/">Voir le parcours</Bouton>
           <Bouton href="/competences/">Les compétences</Bouton>
           <Bouton href="/contact/">Me joindre</Bouton>
         </div>

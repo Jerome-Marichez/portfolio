@@ -197,6 +197,27 @@ Ces refus sont dans le contrat de direction, ils ne se rediscutent pas au cas pa
 - **Aucune barre de progression en pourcentage** sur les compétences : elle inventerait
   une précision que personne ne peut mesurer.
 
+## Le titre de page
+
+Les six pages intérieures (À propos, Parcours, Projets, Compétences, Blog, Contact)
+rendent leur `h1` par le composant `TitrePage` : `--t-section`, poids 500, `--encre`.
+Le titre ne porte aucune marge haute, c'est la section qui porte `padding-block:
+var(--e6)`. Un écart fixe de `--e4` le sépare de ce qui suit, et le contenu qui suit
+(chapo, liste, coordonnées) ne rajoute pas de marge haute. L'accueil garde son titre
+`TitreMachine`, qui est voulu.
+
+## La barre d'actions
+
+`BarreActions` rassemble les trois gestes d'un recruteur : télécharger le CV (primaire,
+seul de l'écran), écrire, appeler. Elle se pose sous `TitrePage` (variante `tete`) et en
+fin de page (variante `fin`, précédée d'un `TitreSection` « Me joindre »), sur À propos,
+Parcours, Projets, Compétences, Blog et chaque article. Raison : une grande part des
+visiteurs ne défile pas, et peu vont jusqu'au bas d'une page (ordre de grandeur retenu
+par Jérôme MARICHEZ le 2026-10-04 : la moitié ne défile pas, un sur cinq va au bout).
+L'action ne peut donc pas dépendre de la position de lecture. L'accueil n'a que la barre de tête (« La suite en détail » tient lieu de fin) et
+Contact ne reçoit que le bouton du CV, le téléphone et l'email y étant déjà. La rangée
+passe à la ligne, cibles de 44 px au minimum.
+
 ## Typographie
 
 | Police | Rôle |
@@ -247,6 +268,14 @@ des micro-libellés, pas le texte qu'ils annoncent.
 
 La mesure de lecture (`--colonne`, 72ch) n'a pas bougé : elle était déjà tenue partout où
 un paragraphe est concerné par ce chantier.
+
+**Le fondement est Baymard et WCAG.** Baymard
+(https://baymard.com/research-articles/line-length-readability) retient 50 à 75
+caractères par ligne. WCAG 1.4.8 en fixe 80 au plus et demande un interligne d'au moins
+1,5 ; WCAG 1.4.12 retient un espacement des paragraphes d'environ 2em. En Fira Code, 1ch vaut un caractère : `--colonne`
+(72ch) et `--lh-lecture` (1.7) sont conformes, et l'écart entre deux paragraphes consécutifs
+de lecture est de `--e4` (36px, 2em à 18px). `tests/unitaire/mesure-lecture.spec.ts` le
+vérifie.
 
 Aucun contenu n'est réécrit ici : c'est un travail de rythme et de rendu, jamais
 d'édition.
@@ -305,3 +334,16 @@ liens et des cibles d'au moins 44 px. L'état ouvert se lit sur le logo (chevron
 et `data-mouvement="pause"`. Au-dessus de `52rem`, rien ne change : le logo est un lien vers
 l'accueil et la barre d'onglets reste en place (avec `min-width: 0`, pour qu'aucune largeur
 intermédiaire ne déborde).
+
+**Divulgation progressive : « En savoir plus ».** Issue #44. Le lecteur jauge en trente
+secondes, puis lit le détail : les fiches projet montrent le titre, la méta et le
+**Résultat**, et replient Contexte, Enjeu et Mon rôle ; les expériences montrent le
+contexte et les trois premières réalisations, et replient les suivantes, l'encadrement et
+la stack (libellé « Voir les N autres réalisations », « Voir l'autre réalisation » quand il
+n'en reste qu'une, « En savoir plus » quand il n'y a que l'encadrement et la stack). Le
+statut indépendant de Truffle Capital reste visible, jamais replié. Le repli est un
+`<details>` natif (composant `EnSavoirPlus`) plutôt qu'un accordéon en JavaScript : le
+contenu reste dans le DOM, donc indexé, trouvable par Ctrl+F et imprimé, et il fonctionne
+sans JS. Le résumé se lit comme une action (couleur `--cafe`, cible de 44 px), son chevron
+SVG tourne en 150 ms `ease-out` par `transform`, et la rotation s'arrête sous
+`prefers-reduced-motion` et `data-mouvement="pause"`.

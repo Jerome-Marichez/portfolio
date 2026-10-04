@@ -8,12 +8,14 @@ export const acetelecom: IExperience = {
   secteur: 'Éditeur SaaS BtoB multicanal, SMS, voix et email',
   statut: 'salarie',
   posteIntitule: 'Lead tech sur Sms En Masse · Ingénieur fullstack sur Prézage et MailingVox',
-  contexte:
+  contexte: [
     'Éditeur lillois de campagnes multicanales vendues à des grands comptes de la distribution, de ' +
-    "l'assurance et de la banque. Équipe de trois, deux développeurs et un PO, sans QA, sans équipe " +
-    "data et sans ops. Lead tech sur Sms En Masse, la plateforme SaaS neuve dont j'ai porté " +
-    "l'architecture et la démarche qualité. Ingénieur fullstack sur l'application mobile grand public " +
-    'Prézage et sur MailingVox, la plateforme historique en production depuis 2008.',
+      "l'assurance et de la banque. Équipe de trois, deux développeurs et un PO, sans QA, sans équipe " +
+      'data et sans ops.',
+    "Lead tech sur Sms En Masse, la plateforme SaaS neuve dont j'ai porté l'architecture et la " +
+      "démarche qualité. Ingénieur fullstack sur l'application mobile grand public Prézage et sur " +
+      'MailingVox, la plateforme historique en production depuis 2008.',
+  ],
   realisations: [
     "Plateforme SaaS BtoB Sms En Masse conçue et livrée de bout en bout, en remplacement d'une " +
       'solution tierce exploitée en marque blanche. Architecture, modélisation des données, front et ' +
