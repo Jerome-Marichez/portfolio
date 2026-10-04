@@ -365,7 +365,8 @@ liens et des cibles d'au moins 44 px. L'état ouvert se lit sur le logo (chevron
 devient une croix quand le panneau est ouvert, par `transform` et `opacity` en
 `--duree-court`, `ease-out`. Le panneau apparaît en 180 ms, `ease-out`, par
 `transform` et `opacity` seulement, et tout mouvement s'arrête sous `prefers-reduced-motion`
-et `data-mouvement="pause"` (la croix s'affiche alors sans transition). Au-dessus de `52rem`, rien ne change : le logo est un lien vers
+et `data-mouvement="pause"` (la croix s'affiche alors sans transition).
+Au-dessus de `52rem`, rien ne change : le logo est un lien vers
 l'accueil et la barre d'onglets reste en place (avec `min-width: 0`, pour qu'aucune largeur
 intermédiaire ne déborde).
 
