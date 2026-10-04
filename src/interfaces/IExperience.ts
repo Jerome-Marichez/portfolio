@@ -11,7 +11,7 @@ export interface IExperience {
   secteur: string
   statut: StatutExperience
   posteIntitule: string
-  contexte: string
+  contexte: readonly string[]
   realisations: string[]
   stackTechnique: string[]
   encadrement: string | null

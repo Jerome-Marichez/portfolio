@@ -34,7 +34,11 @@ export function ExperienceBloc({ experience }: IExperienceBlocProps) {
 
       <p className={styles.poste}>{experience.posteIntitule}</p>
 
-      <p className={styles.contexte}>{experience.contexte}</p>
+      {experience.contexte.map((texte) => (
+        <p className={styles.contexte} key={texte}>
+          {texte}
+        </p>
+      ))}
 
       <ul className={styles.realisations}>
         {experience.realisations.map((realisation, index) => (

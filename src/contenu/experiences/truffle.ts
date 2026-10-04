@@ -8,10 +8,12 @@ export const truffle: IExperience = {
   secteur: 'Capital-risque, fintech, medtech et biotech',
   statut: 'independant',
   posteIntitule: 'Chef de projet digital & Développeur, en indépendant',
-  contexte:
+  contexte: [
     'Fonds de capital-risque parisien, vitrines lues par des investisseurs et par la presse ' +
-    "spécialisée. Mission menée en indépendant, de la vente à la livraison, avec l'existant d'une " +
-    "agence digitale parisienne d'environ 70 personnes à reprendre.",
+      'spécialisée.',
+    "Mission menée en indépendant, de la vente à la livraison, avec l'existant d'une agence " +
+      "digitale parisienne d'environ 70 personnes à reprendre.",
+  ],
   realisations: [
     'Proposition commerciale de reprise rédigée, défendue devant le comité de direction et ' +
       'remportée.',
