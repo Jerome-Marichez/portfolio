@@ -146,3 +146,13 @@ menée sur le site CV :
 **Le site ne doit nulle part laisser entendre qu'il est conforme RGAA.** Un audit RGAA
 est une démarche formelle, et ce dépôt n'en porte pas. Ce qu'il porte est un contrôle
 automatisé bloquant sur chaque PR, plus cette liste honnête de ce qu'il ne couvre pas.
+
+## Divulgation progressive
+
+Le composant `EnSavoirPlus` s'appuie sur `<details>` et `<summary>` natifs : l'état ouvert
+ou fermé, le clavier (Entrée et Espace) et l'annonce par les lecteurs d'écran viennent du
+navigateur, sans `aria-expanded` ni gestionnaire à maintenir. Le contenu replié reste dans
+le DOM : il est indexé, trouvable par Ctrl+F (le navigateur ouvre le repli), imprimé et
+lisible sans JavaScript. Le résumé offre une cible d'au moins 44 px et le focus visible
+global du site. Le chevron est un SVG `aria-hidden` : le libellé porte seul le sens. La
+rotation est coupée sous `prefers-reduced-motion` et `data-mouvement="pause"`.

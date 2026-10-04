@@ -1,0 +1,45 @@
+/* Divulgation progressive : un resume qui se lit comme une action discrete,
+   un chevron qui tourne a l'ouverture. Le marqueur natif est retire. */
+
+.resume {
+  display: inline-flex;
+  align-items: center;
+  gap: 1ch;
+  min-height: 44px;
+  color: var(--cafe);
+  font-size: var(--t-petit);
+  font-weight: 500;
+  cursor: pointer;
+  list-style: none;
+}
+
+.resume::-webkit-details-marker {
+  display: none;
+}
+
+.resume:hover {
+  color: var(--cafe-vif);
+}
+
+.chevron {
+  flex: none;
+  transition: transform 150ms ease-out;
+}
+
+.divulgation[open] .chevron {
+  transform: rotate(180deg);
+}
+
+.contenu {
+  margin-top: var(--e3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chevron {
+    transition: none;
+  }
+}
+
+:root[data-mouvement="pause"] .chevron {
+  transition: none;
+}

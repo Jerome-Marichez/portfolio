@@ -314,3 +314,16 @@ liens et des cibles d'au moins 44 px. L'état ouvert se lit sur le logo (chevron
 et `data-mouvement="pause"`. Au-dessus de `52rem`, rien ne change : le logo est un lien vers
 l'accueil et la barre d'onglets reste en place (avec `min-width: 0`, pour qu'aucune largeur
 intermédiaire ne déborde).
+
+**Divulgation progressive : « En savoir plus ».** Issue #44. Le lecteur jauge en trente
+secondes, puis lit le détail : les fiches projet montrent le titre, la méta et le
+**Résultat**, et replient Contexte, Enjeu et Mon rôle ; les expériences montrent le
+contexte et les trois premières réalisations, et replient les suivantes, l'encadrement et
+la stack (libellé « Voir les N autres réalisations », « Voir l'autre réalisation » quand il
+n'en reste qu'une, « En savoir plus » quand il n'y a que l'encadrement et la stack). Le
+statut indépendant de Truffle Capital reste visible, jamais replié. Le repli est un
+`<details>` natif (composant `EnSavoirPlus`) plutôt qu'un accordéon en JavaScript : le
+contenu reste dans le DOM, donc indexé, trouvable par Ctrl+F et imprimé, et il fonctionne
+sans JS. Le résumé se lit comme une action (couleur `--cafe`, cible de 44 px), son chevron
+SVG tourne en 150 ms `ease-out` par `transform`, et la rotation s'arrête sous
+`prefers-reduced-motion` et `data-mouvement="pause"`.
