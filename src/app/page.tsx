@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { DonneesStructurees } from '@/components/DonneesStructurees'
 import { descriptions } from '@/seo/descriptions'
 import { AccueilView } from '@/views/AccueilView'
 
@@ -10,5 +11,10 @@ export const metadata: Metadata = {
 }
 
 export default function PageAccueil() {
-  return <AccueilView />
+  return (
+    <>
+      <DonneesStructurees />
+      <AccueilView />
+    </>
+  )
 }
