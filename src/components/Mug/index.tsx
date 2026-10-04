@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { useEffect, useRef } from 'react'
+import { angleVersCurseur, ORIENTATION_ANSE } from '@/utils/angle-anse'
 import styles from './mug.module.css'
 import mugPic from './mug.png'
 
@@ -32,6 +33,7 @@ interface IMugProps {
 export function Mug({ description }: IMugProps) {
   const video = useRef<HTMLVideoElement>(null)
   const scene = useRef<HTMLDivElement>(null)
+  const rotor = useRef<HTMLDivElement>(null)
   const decoratif = description === undefined
 
   useEffect(() => {
@@ -81,9 +83,9 @@ export function Mug({ description }: IMugProps) {
   /**
    * La tasse s'oriente vers le curseur.
    *
-   * Elle **ne se deplace pas** : seule sa rotation change, et elle vaut l'angle
-   * entre son centre et la souris. C'est la seule interaction de la tasse, il n'y
-   * a aucun etat de survol : deux reponses concurrentes au meme geste se
+   * Elle **ne se deplace pas** : seule sa rotation change, et c'est son **anse**
+   * qui vise la souris (le calcul vit dans `utils/angle-anse.ts`).
+   * C'est la seule interaction de la tasse, il n'y a aucun etat de survol : deux reponses concurrentes au meme geste se
    * gêneraient.
    *
    * Trois choix qui font la difference entre un effet agreable et un effet qui
@@ -102,8 +104,9 @@ export function Mug({ description }: IMugProps) {
    *   court, ce qui rend le passage invisible.
    */
   useEffect(() => {
-    const element = scene.current
-    if (element === null) return
+    const element = rotor.current
+    const cadreFixe = scene.current
+    if (element === null || cadreFixe === null) return
 
     const preference = window.matchMedia('(prefers-reduced-motion: reduce)')
     // Sur un ecran tactile il n'y a pas de curseur a suivre : l'effet n'aurait
@@ -113,9 +116,10 @@ export function Mug({ description }: IMugProps) {
 
     /** Position de repos, celle du portfolio d'origine. */
     const ANGLE_REPOS = 50
-    /** L'anse est dessinee en bas de l'image : ce quart de tour l'envoie vers le
-     *  curseur plutot que de l'en eloigner. */
-    const ORIENTATION_ANSE = 90
+
+    /** Centre du bol dans la scene (444 / 898 et 380 / 772), en part de la largeur et
+     *  de la hauteur. Meme valeur que `transform-origin` dans `mug.module.css`. */
+    const CENTRE_BOL = { x: 0.495, y: 0.492 }
 
     let demande = 0
     // L'angle accumule, jamais ramene dans [-180, 180] : c'est lui qui permet le
@@ -138,19 +142,21 @@ export function Mug({ description }: IMugProps) {
       if (demande !== 0) return
       demande = requestAnimationFrame(() => {
         demande = 0
-        const cadre = element.getBoundingClientRect()
-        const centreX = cadre.left + cadre.width / 2
-        const centreY = cadre.top + cadre.height / 2
-
-        const vise =
-          (Math.atan2(evenement.clientY - centreY, evenement.clientX - centreX) * 180) / Math.PI +
-          ORIENTATION_ANSE
-
-        // Chemin le plus court entre l'angle courant et l'angle vise, ramene dans
-        // [-180, 180]. Sans cela, franchir le dos de la tasse lui ferait faire un
-        // tour complet a l'envers.
-        const ecart = ((((vise - angleAccumule + 180) % 360) + 360) % 360) - 180
-        angleAccumule += ecart
+        // On mesure la scene, qui ne pivote pas : le cadre de l'element tourne
+        // serait une boite englobante deformee.
+        const cadre = cadreFixe.getBoundingClientRect()
+        // Le centre de rotation est le bol (voir `transform-origin` du CSS), pas le
+        // centre du cadre : on vise depuis le meme point autour duquel on tourne.
+        const centre = {
+          x: cadre.left + cadre.width * CENTRE_BOL.x,
+          y: cadre.top + cadre.height * CENTRE_BOL.y,
+        }
+        angleAccumule = angleVersCurseur({
+          centre,
+          curseur: { x: evenement.clientX, y: evenement.clientY },
+          angleCourant: angleAccumule,
+          orientationAnse: ORIENTATION_ANSE,
+        })
 
         element.style.setProperty('--angle', `${angleAccumule.toFixed(1)}deg`)
       })
@@ -214,14 +220,18 @@ export function Mug({ description }: IMugProps) {
   if (decoratif) {
     return (
       <div ref={scene} className={styles.scene} aria-hidden="true">
-        {contenu}
+        <div ref={rotor} className={styles.rotor}>
+          {contenu}
+        </div>
       </div>
     )
   }
 
   return (
     <div ref={scene} className={styles.scene} role="img" aria-label={description}>
-      {contenu}
+      <div ref={rotor} className={styles.rotor}>
+        {contenu}
+      </div>
     </div>
   )
 }

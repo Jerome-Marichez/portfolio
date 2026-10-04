@@ -14,14 +14,27 @@
   /* Les proportions de mug.png (898 x 772) : la scene reserve sa place avant que
      l'image ait charge, donc rien ne saute au chargement. */
   aspect-ratio: 898 / 772;
-  /* Une seule lampe sur le site, donc une seule direction d'ombre. */
+  /* Une seule lampe sur le site, donc une seule direction d'ombre. Le filtre est
+     porte par la scene, qui ne pivote pas : l'ombre reste fixe quand la tasse
+     tourne dans `.rotor`. */
   filter: drop-shadow(-24px 14px 12px rgba(0, 0, 0, 0.62));
-  /* La tasse ne se deplace pas : elle **s'oriente**. `--angle` est ecrit par le
-     composant a chaque mouvement du curseur, et vaut l'angle entre le centre de
-     la tasse et la souris. 50deg est la position de repos, celle du portfolio
-     d'origine. */
-  --angle: 50deg;
+}
 
+/* L'element qui pivote. La tasse ne se deplace pas : elle **s'oriente**. `--angle`
+   est ecrit par le composant a chaque mouvement du curseur, et vaut la rotation
+   qui fait viser la souris par l'ANSE. 50deg est la position de repos, celle du
+   portfolio d'origine. */
+.rotor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  --angle: 50deg;
+  /* Le centre du bol dans l'image : (395 + 5,5 % de decalage, 380) sur 898 x 772,
+     soit 444 / 898 et 380 / 772. On tourne autour du bol, pas du cadre. */
+  transform-origin: 49.5% 49.2%;
   transform: rotate(var(--angle)) scale(var(--echelle, 1));
   /* La transition est ce qui fait que la tasse SUIT le curseur au lieu d'y etre
      collee : elle arrive toujours un peu apres, et ce retard lui donne du poids. */
@@ -76,7 +89,7 @@
 /* ---- Accessibilite ------------------------------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
-  .scene {
+  .rotor {
     /* La tasse reste a sa position de repos et cesse de suivre le curseur : le
        composant coupe l'ecouteur, et la transition disparait ici. */
     transition: none;
