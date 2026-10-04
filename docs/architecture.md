@@ -161,7 +161,7 @@ gouttières s'expriment en `ch`, le rythme vertical sur une ligne de base de 24p
 
 ## Le mouvement
 
-Un seul mouvement permanent, la vapeur du mug. Deux interrupteurs l'arrêtent :
+Un seul mouvement permanent, le café qui tourne dans la tasse. Deux interrupteurs l'arrêtent :
 `prefers-reduced-motion`, et un bouton de mise en pause explicite exigé par WCAG 2.2.2,
 qui pose `data-mouvement="pause"` sur la racine.
 

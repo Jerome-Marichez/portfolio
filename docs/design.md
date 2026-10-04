@@ -114,8 +114,12 @@ résultat était moins bon, et sur cet élément-là c'est le résultat qui tran
 est assumé et compensé : la vidéo ne charge pas sous 64rem, et la tasse entière disparaît
 sous 834px.
 
-**Son interaction unique : elle s'oriente vers le curseur.** Elle ne se déplace pas,
-seule sa rotation change, et elle vaut l'angle entre son centre et la souris. Le
+**Son interaction unique : son anse vise le curseur.** Elle ne se déplace pas, seule sa
+rotation change. L'anse a été mesurée sur `mug.png` à +33 degrés du centre du bol, la
+rotation vaut donc l'angle du curseur moins 33 (calcul pur dans `src/utils/angle-anse.ts`).
+La tasse pivote autour du **centre du bol** (`transform-origin: 49.5% 49.2%`), pas autour
+du centre du cadre. L'**ombre reste fixe** : le filtre est porté par la scène, qui ne
+tourne pas, et seul son enfant pivote, car il n'y a qu'une lampe sur le site. Le
 mouvement est amorti par la transition CSS, donc la tasse arrive toujours un peu après le
 curseur : ce retard lui donne du poids, là où une poursuite exacte donnerait un objet
 collé au pointeur.
@@ -264,7 +268,7 @@ Référence complète : `.claude/skills/web-animation-design`. Règles appliqué
 | Situation | Courbe | Durée |
 |-----------|--------|-------|
 | entrée ou sortie d'écran | sortie exponentielle (`--sortie`) | sous 300ms |
-| mouvement à vitesse constante (la vapeur) | `linear` | 5 à 7s |
+| mouvement à vitesse constante (le café qui tourne) | `linear` | 22s |
 | survol, changement de couleur | `ease` | 140ms |
 
 - **Seuls `transform` et `opacity` sont animés.** Ils évitent les étapes de mise en page
@@ -276,7 +280,7 @@ Référence complète : `.claude/skills/web-animation-design`. Règles appliqué
 - **Chaque élément animé porte son propre bloc `prefers-reduced-motion`**, en plus du
   filet global de `globals.css`.
 
-Le **seul mouvement permanent** est la vapeur du mug. Un bouton de mise en pause
+Le **seul mouvement permanent** est le café qui tourne dans la tasse. Un bouton de mise en pause
 explicite (WCAG 2.2.2) vit dans le pied de page et pose `data-mouvement="pause"` sur la
 racine.
 
