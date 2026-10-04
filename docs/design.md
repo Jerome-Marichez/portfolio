@@ -368,9 +368,13 @@ la page latéralement. Arbitrage de Jérôme MARICHEZ, 2026-10-04 (issue #191) :
 `< JM />` devient lui-même le bouton de menu (nom accessible « Menu, Jérôme Marichez »,
 `aria-expanded`, `aria-controls`). Il ouvre un panneau opaque sous l'en-tête, avec les sept
 liens et des cibles d'au moins 44 px. L'état ouvert se lit sur le logo (chevrons en
-`--cafe-vif`, `/>` légèrement penché). Le panneau apparaît en 180 ms, `ease-out`, par
+`--cafe-vif`, `/>` légèrement penché). Issue #41 : un hamburger SVG (trois traits en
+`currentColor`, composant `IconeMenu`) à droite du `JM` dit que le logo ouvre un menu ; il
+devient une croix quand le panneau est ouvert, par `transform` et `opacity` en
+`--duree-court`, `ease-out`. Le panneau apparaît en 180 ms, `ease-out`, par
 `transform` et `opacity` seulement, et tout mouvement s'arrête sous `prefers-reduced-motion`
-et `data-mouvement="pause"`. Au-dessus de `52rem`, rien ne change : le logo est un lien vers
+et `data-mouvement="pause"` (la croix s'affiche alors sans transition).
+Au-dessus de `52rem`, rien ne change : le logo est un lien vers
 l'accueil et la barre d'onglets reste en place (avec `min-width: 0`, pour qu'aucune largeur
 intermédiaire ne déborde).
 

@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useId, useRef, useState } from 'react'
+import { IconeMenu } from '@/components/IconeMenu'
 import { navigation } from '@/contenu/navigation'
 import styles from './menu-mobile.module.css'
 
@@ -52,6 +53,7 @@ export function MenuMobile() {
         <span className={styles.chevron}>&lt;</span>
         <span className={styles.initiales}>JM</span>
         <span className={`${styles.chevron} ${styles.fermant}`}>/&gt;</span>
+        <IconeMenu ouvert={ouvert} />
       </button>
 
       <nav id={idPanneau} className={styles.panneau} aria-label="Menu mobile" hidden={!ouvert}>

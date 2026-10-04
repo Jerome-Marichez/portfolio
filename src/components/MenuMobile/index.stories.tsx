@@ -30,10 +30,10 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-/** Menu fermé : seul le logo-bouton est visible. */
+/** Menu fermé : le logo-bouton et son hamburger (trois traits) sont visibles. */
 export const Ferme: Story = {}
 
-/** Menu ouvert par un clic sur le logo. */
+/** Menu ouvert par un clic sur le logo : le hamburger devient une croix. */
 export const Ouvert: Story = {
   play: async ({ canvasElement }) => {
     canvasElement.querySelector('button')?.click()

@@ -31,7 +31,9 @@ d'accessibilité.
   `button` (`aria-expanded`, `aria-controls`). Pas de piège de focus : Échap ferme le
   panneau et rend le focus au logo, un clic sur un lien ou un changement de route le
   ferme aussi. Fermé, le panneau est `hidden` : ni visible ni focusable. Cibles tactiles
-  d'au moins 44 px.
+  d'au moins 44 px. Le hamburger placé à côté du `JM` est un `svg` `aria-hidden="true"` :
+  le nom (« Menu, Jérôme Marichez ») et l'état (`aria-expanded`) restent portés par le
+  bouton, l'icône n'est qu'un indice visuel, jamais le seul porteur d'information.
 - **Images** : `alt` pertinent, ou `alt=""` si décorative. Le mug est un `svg`
   décoratif par défaut (`role="presentation"` et `aria-hidden`), et il ne devient une
   image nommée que si on lui passe une description.
