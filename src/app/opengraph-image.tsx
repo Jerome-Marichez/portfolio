@@ -7,7 +7,7 @@ import { profil } from '@/contenu/profil'
  * Fond du site (#232020), meme intitule que l'ecran, lieu en pied.
  */
 export const dynamic = 'force-static'
-export const alt = `${profil.nom}, ${profil.titre}, ${contact.localisation}`
+export const alt = `${profil.nom}, ingénieur Full Stack, IA, QA, Data-Driven, à ${contact.localisation}`
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 

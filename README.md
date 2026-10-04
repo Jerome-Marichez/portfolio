@@ -238,8 +238,8 @@ Deux branches permanentes, `main` en production et `dev` en intégration. Aucun 
 direct sur l'une ou l'autre : toute fonctionnalité passe par une branche
 `feature/<nom>` et une PR. Détail dans [`docs/git-workflow.md`](./docs/git-workflow.md).
 
-## Referencement local
+## Référencement local
 
-Donnees structurees JSON-LD sur l'accueil (`ProfilePage` et `Person`, Lille), plan du
+Données structurées JSON-LD sur l'accueil (`ProfilePage` et `Person`, Lille), plan du
 site couvrant les articles du blog, titre et description d'accueil mentionnant Lille,
-image Open Graph generee au build. Detail dans [`docs/architecture.md`](./docs/architecture.md).
+image Open Graph générée au build. Détail dans [`docs/architecture.md`](./docs/architecture.md).
