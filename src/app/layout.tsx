@@ -4,13 +4,14 @@ import { LienEvitement } from '@/components/LienEvitement'
 import { PiedDePage } from '@/components/PiedDePage'
 import { profil } from '@/contenu/profil'
 import { descriptions } from '@/seo/descriptions'
+import { titreAccueilSeo } from '@/seo/titres'
 import './globals.css'
 import { policeCode, policeMain } from './polices'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jeromemarichez.fr'),
   title: {
-    default: `${profil.nom}, ${profil.titre}`,
+    default: titreAccueilSeo,
     template: `%s · ${profil.nom}`,
   },
   description: descriptions.accueil,
@@ -20,9 +21,10 @@ export const metadata: Metadata = {
     locale: 'fr_FR',
     siteName: profil.nom,
     url: 'https://jeromemarichez.fr',
-    title: `${profil.nom}, ${profil.titre}`,
+    title: titreAccueilSeo,
     description: descriptions.accueil,
   },
+  twitter: { card: 'summary_large_image' },
   alternates: { canonical: '/' },
   robots: { index: true, follow: true },
 }
