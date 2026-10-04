@@ -1,0 +1,142 @@
+/* Logo-bouton et panneau de navigation sous 52rem. Au-dessus, tout est masque :
+   c'est la barre d'onglets de l'en-tete qui prend le relais. */
+
+.marque {
+  display: none;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 0.35ch;
+  min-height: 2.75rem;
+  padding: 0 var(--gouttiere) 0 0;
+  border: 0;
+  border-right: var(--largeur-filet) solid var(--filet);
+  background: none;
+  color: var(--encre);
+  font: inherit;
+  font-size: var(--t-base);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  cursor: pointer;
+}
+
+.chevron {
+  color: var(--cafe);
+  transition: color var(--duree-court) ease;
+}
+
+.fermant {
+  display: inline-block;
+  transition:
+    color var(--duree-court) ease,
+    transform var(--duree-court) ease-out;
+}
+
+/* Signal d'etat ouvert, porte par le logo lui-meme. */
+.marque[data-ouvert] .chevron {
+  color: var(--cafe-vif);
+}
+
+.marque[data-ouvert] .fermant {
+  transform: rotate(-8deg);
+}
+
+.panneau {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: none;
+  background-color: var(--fond-releve);
+  border-bottom: var(--largeur-filet) solid var(--filet);
+}
+
+.liste {
+  max-width: calc(var(--colonne-large) + var(--marge-page) * 2);
+  margin-inline: auto;
+  padding: 0 var(--marge-page);
+}
+
+.lien {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gouttiere);
+  min-height: 2.75rem;
+  padding-block: 0.5rem;
+  border-left: 2px solid transparent;
+  padding-left: 1.2ch;
+  color: var(--encre-douce);
+  font-size: var(--t-base);
+  text-decoration: none;
+}
+
+.lien:hover {
+  background-color: var(--fond);
+  color: var(--encre);
+}
+
+.lien[data-actif] {
+  border-left-color: var(--cafe);
+  background-color: var(--fond);
+  color: var(--encre);
+}
+
+.fichier {
+  color: var(--encre-faible);
+  font-size: var(--t-micro);
+}
+
+.lien[data-actif] .fichier {
+  color: var(--cafe);
+}
+
+@keyframes apparition {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 52rem) {
+  .marque {
+    display: flex;
+  }
+
+  .panneau:not([hidden]) {
+    display: block;
+    animation: apparition 180ms ease-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chevron,
+  .fermant {
+    transition: none;
+  }
+
+  .marque[data-ouvert] .fermant {
+    transform: none;
+  }
+
+  .panneau:not([hidden]) {
+    animation: none;
+  }
+}
+
+:root[data-mouvement="pause"] .chevron,
+:root[data-mouvement="pause"] .fermant {
+  transition: none;
+}
+
+:root[data-mouvement="pause"] .marque[data-ouvert] .fermant {
+  transform: none;
+}
+
+:root[data-mouvement="pause"] .panneau:not([hidden]) {
+  animation: none;
+}

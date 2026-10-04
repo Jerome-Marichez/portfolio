@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { MenuMobile } from '@/components/MenuMobile'
 import { navigation } from '@/contenu/navigation'
 import styles from './en-tete.module.css'
 
@@ -13,9 +14,10 @@ import styles from './en-tete.module.css'
  * un nom de fichier, et l'onglet actif est marque comme dans un editeur, par un
  * filet en haut et un fond releve.
  *
- * Sur mobile la barre defile lateralement, exactement comme une vraie barre
- * d'onglets. C'est ce qui evite un menu hamburger : il n'y a rien a replier,
- * la metaphore gere elle-meme le debordement.
+ * Sous 52rem la barre ne tient plus (sept onglets, environ 680 px) : le logo
+ * `< JM />` devient un bouton qui ouvre un panneau de liens (`MenuMobile`). Au
+ * dessus, le logo reste un lien vers l'accueil et la barre est inchangee.
+ * Arbitrage de Jerome MARICHEZ, 2026-10-04, issue #191.
  */
 export function EnTete() {
   const chemin = usePathname()
@@ -28,8 +30,9 @@ export function EnTete() {
           <span className={styles.initiales}>JM</span>
           <span className={styles.chevron}>/&gt;</span>
         </Link>
+        <MenuMobile />
 
-        <nav aria-label="Navigation principale">
+        <nav className={styles.navigation} aria-label="Navigation principale">
           <ul className={styles.onglets}>
             {navigation.map((entree) => {
               const actif = chemin === entree.href
