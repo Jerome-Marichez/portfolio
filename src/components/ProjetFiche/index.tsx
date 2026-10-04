@@ -1,3 +1,4 @@
+import { EnSavoirPlus } from '@/components/EnSavoirPlus'
 import { LogoMarque } from '@/components/LogoMarque'
 import { marques } from '@/contenu/marques'
 import type { IProjet } from '@/interfaces/IProjet'
@@ -8,7 +9,7 @@ interface IProjetFicheProps {
 }
 
 /**
- * Un projet, en liste de definitions Contexte / Enjeu / Mon role / Resultat.
+ * Un projet, en liste de definitions Resultat, puis Contexte / Enjeu / Mon role replies sous « En savoir plus ».
  *
  * Le titre du projet porte le plus de poids, l'entreprise et le sous-titre
  * suivent en plus petit : sur une dizaine de fiches, c'est cette hierarchie qui
@@ -42,22 +43,26 @@ export function ProjetFiche({ projet }: IProjetFicheProps) {
       </header>
       <dl className={styles.details}>
         <div className={styles.ligne}>
-          <dt className={styles.intitule}>Contexte</dt>
-          <dd className={styles.valeur}>{projet.contexte}</dd>
-        </div>
-        <div className={styles.ligne}>
-          <dt className={styles.intitule}>Enjeu</dt>
-          <dd className={styles.valeur}>{projet.enjeu}</dd>
-        </div>
-        <div className={styles.ligne}>
-          <dt className={styles.intitule}>Mon rôle</dt>
-          <dd className={styles.valeur}>{projet.monRole}</dd>
-        </div>
-        <div className={styles.ligne}>
           <dt className={styles.intitule}>Résultat</dt>
           <dd className={styles.valeur}>{projet.resultat}</dd>
         </div>
       </dl>
+      <EnSavoirPlus libelle="En savoir plus">
+        <dl className={styles.details}>
+          <div className={styles.ligne}>
+            <dt className={styles.intitule}>Contexte</dt>
+            <dd className={styles.valeur}>{projet.contexte}</dd>
+          </div>
+          <div className={styles.ligne}>
+            <dt className={styles.intitule}>Enjeu</dt>
+            <dd className={styles.valeur}>{projet.enjeu}</dd>
+          </div>
+          <div className={styles.ligne}>
+            <dt className={styles.intitule}>Mon rôle</dt>
+            <dd className={styles.valeur}>{projet.monRole}</dd>
+          </div>
+        </dl>
+      </EnSavoirPlus>
     </article>
   )
 }
