@@ -211,9 +211,10 @@ var(--e6)`. Un écart fixe de `--e4` le sépare de ce qui suit, et le contenu qu
 `BarreActions` rassemble les trois gestes d'un recruteur : télécharger le CV (primaire,
 seul de l'écran), écrire, appeler. Elle se pose sous `TitrePage` (variante `tete`) et en
 fin de page (variante `fin`, précédée d'un `TitreSection` « Me joindre »), sur À propos,
-Parcours, Projets, Compétences, Blog et chaque article. Raison : 50 % des visiteurs ne
-défilent pas et 20 % vont au bout, donc l'action ne peut pas dépendre de la position de
-lecture. L'accueil n'a que la barre de tête (« La suite en détail » tient lieu de fin) et
+Parcours, Projets, Compétences, Blog et chaque article. Raison : une grande part des
+visiteurs ne défile pas, et peu vont jusqu'au bas d'une page (ordre de grandeur retenu
+par Jérôme MARICHEZ le 2026-10-04 : la moitié ne défile pas, un sur cinq va au bout).
+L'action ne peut donc pas dépendre de la position de lecture. L'accueil n'a que la barre de tête (« La suite en détail » tient lieu de fin) et
 Contact ne reçoit que le bouton du CV, le téléphone et l'email y étant déjà. La rangée
 passe à la ligne, cibles de 44 px au minimum.
 
