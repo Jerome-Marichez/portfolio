@@ -6,7 +6,7 @@ import { profil } from '@/contenu/profil'
 import { descriptions } from '@/seo/descriptions'
 import { titreAccueilSeo } from '@/seo/titres'
 import './globals.css'
-import { policeCode, policeMain } from './polices'
+import { policeCode } from './polices'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jeromemarichez.fr'),
@@ -38,7 +38,7 @@ export const viewport: Viewport = {
 
 export default function GabaritRacine({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={`${policeCode.variable} ${policeMain.variable}`}>
+    <html lang="fr" className={`${policeCode.variable}`}>
       <body>
         <LienEvitement />
         <EnTete />

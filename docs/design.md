@@ -254,21 +254,25 @@ reste porté par la liste de `ParcoursView` : `--e6` de part et d'autre du filet
 | Police | Rôle |
 |--------|------|
 | **Fira Code** | tout le site. La police EST la grille |
-| **Shadows Into Light** | l'annotation manuscrite, et rien d'autre |
+| **Shadows Into Light** | le composant `Annotation`, **hors site** : Storybook seulement |
 
-Les deux sont auto-hébergées par `next/font` (`src/app/polices.ts`), donc aucune requête
+Fira Code est auto-hébergée par `next/font` (`src/app/polices.ts`), donc aucune requête
 vers un tiers et aucun décalage de mise en page au chargement.
 
-**L'annotation reste rare par construction** : dès qu'elle sert deux fois sur un écran,
-elle a cessé d'être une annotation pour devenir une police de corps. Une par page au plus.
+**L'annotation manuscrite n'est plus affichée sur le site** (issue #59). Elle vivait sur
+l'accueil, au-dessus de la tasse ; le premier écran est désormais composé de deux colonnes :
+identité, intitulé, repères et actions à gauche, tasse à droite, centrée verticalement sur
+la colonne de gauche. Le hero est une grille à trois zones (`identite`, `suite`, `tasse`,
+cette dernière couvrant les deux lignes) ; sous 64rem elles s'empilent dans cet ordre, et à
+834 px et moins la tasse disparaît.
 
-**Elle n'apparaît que sur l'accueil.** Au-dessus de 834 px, elle se place au-dessus de la
-tasse, dans la colonne de droite, et sa flèche dessinée vise le nom, en haut de la colonne
-de gauche. Le hero est une grille à quatre zones (`identite`, `note`, `suite`, `tasse`) ;
-sous 64rem, elles s'empilent dans cet ordre, et à 834 px et moins la tasse disparaît
-alors que la note reste sous l'intitulé. Dans le DOM, la note précède les actions (lecture
-clavier et vocale). La page À propos ne la rend plus : la phrase y vit déjà dans le
-troisième paragraphe du profil, la répéter en marge serait un doublon.
+Comme aucune page ne rend `Annotation`, **Shadows Into Light n'est plus chargée par le
+site** : `layout.tsx` n'applique que `policeCode`, donc aucun fichier de police ni
+préchargement supplémentaire. Le composant, sa story et `accroches.heroAnnotation` restent
+dans le dépôt ; la police vit dans `src/components/Annotation/police.ts`, importée par
+`.storybook/preview.tsx` seulement, pour que la story s'affiche en manuscrit. Si
+l'annotation revient sur une page, elle reste **rare par construction** (une par page au
+plus) et `layout.tsx` doit réappliquer `policeMain.variable`.
 
 Les **ligatures de Fira Code sont désactivées** hors du code : elles déforment des mots
 courants. Elles sont rendues au code réel et au titre, qui en est.

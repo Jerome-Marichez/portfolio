@@ -29,11 +29,11 @@ une vitrine de six écrans, et deux niveaux de chemin de plus n'y trancheraient 
 ```
 src/
   app/            routage Next.js, et RIEN d'autre
-    layout.tsx    gabarit racine : polices, en-tete, pied de page
+    layout.tsx    gabarit racine : police, en-tete, pied de page
     page.tsx      /
     jetons.css    les jetons de design, source unique
     globals.css   remise a zero, surfaces du navigateur, mouvement
-    polices.ts    Fira Code et Shadows Into Light, auto-hebergees
+    polices.ts    Fira Code, auto-hebergee (la manuscrite vit dans components/Annotation/police.ts)
     sitemap.ts    derive de src/contenu/navigation.ts et des articles du blog
     opengraph-image.tsx   image de partage generee au build, statique en export
     robots.ts

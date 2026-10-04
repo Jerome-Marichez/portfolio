@@ -155,7 +155,7 @@ LinkedIn contient un « é » illégal dans une URL brute.
   ajoutée au menu entre automatiquement dans le plan du site. Une liste tenue à la main
   en deux endroits finirait par mentir.
 - **`accroches.ts`** porte les phrases courtes qui tiennent un écran à elles seules
-  (titres de section, chapôs, l'annotation manuscrite de l'accueil). Toutes sont tirées
+  (titres de section, chapôs, et l'accroche d'annotation, non rendue sur le site depuis l'issue #59). Toutes sont tirées
   des CV, pas écrites par dessus : une accroche inventée serait la première chose qu'un
   recruteur pourrait mettre en défaut en entretien.
 
