@@ -9,7 +9,7 @@
 
 export const descriptions = {
   accueil:
-    "Ingénieur Full Stack, IA, QA et Data-Driven à Lille. Dix ans en petite équipe : je conçois, je livre, je recette puis j'exploite.",
+    "Ingénieur et développeur Full Stack à Lille. IA, QA, Data-Driven : dix ans en petite équipe, je conçois, je livre, je recette puis j'exploite.",
   aPropos:
     "Mon parcours en dix ans : ingénieur logiciel et chef de projet, la qualité définie là où il n'y en avait pas, le test avant le code.",
   parcours:
