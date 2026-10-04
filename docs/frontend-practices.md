@@ -52,21 +52,23 @@ Mesure locale sur l'export, profil mobile du harnais `make budgets`, médiane de
 Référence : performance 92, FCP 913 ms, LCP 3 313 ms.
 
 - **Gardé : la tasse n'est plus `priority`.** Son PNG de 124 Kio était préchargé en haute
-  priorité alors que l'élément LCP est un paragraphe : il disputait la bande passante au
-  contenu. LCP 3 313 ms vers 3 157 ms (environ 150 à 300 ms selon la série), score 93.
+  priorité alors que la tasse est masquée sous 834 px (`display: none`) : sur mobile, ce
+  chargement ne servait à rien. L'élément LCP est un paragraphe. LCP 3 313 ms vers
+  3 157 ms, soit environ 150 ms, du même ordre que la variance entre passes (jusqu'à
+  150 ms) : le gain va dans le bon sens, son amplitude est modeste. Score 93 à 94 contre 92.
 - **Gardé : Fira Code sans la graisse 300**, qu'aucune règle CSS n'utilise (seules 400,
-  500 et 600 servent). Neutre sur la mesure, un fichier de moins possible.
+  500 et 600 servent). Aucun effet mesuré sur le LCP.
 - **Écarté : `experimental.inlineCss`.** Compatible avec l'export statique, il ramène le
-  FCP de 910 à 780 ms mais ne bouge pas le LCP (3 157 ms) : option expérimentale, HTML
-  plus lourd à chaque page, gain non retenu.
-- **Écarté : `display: 'optional'` sur Fira Code.** LCP inchangé (3 456 ms contre 3 307 ms
-  en bruit de mesure) : le basculement de police n'est pas la cause. Aucun compromis
-  visuel n'est donc pris.
+  FCP d'environ 910 à 780 ms mais ne bouge pas le LCP (3 157 ms) : option expérimentale,
+  HTML plus lourd à chaque page, gain non retenu.
+- **Écarté : `display: 'optional'` sur Fira Code.** LCP non amélioré (3 456 ms contre
+  3 307 ms, écart dans la variance) : le basculement de police n'est pas la cause. Aucun
+  compromis visuel n'est donc pris.
 - **Écarté : cible navigateur.** Next 16 cible déjà Chrome 111, Edge 111, Firefox 111 et
   Safari 16.4 par défaut. Le chunk de polyfills signalé est le script `noModule` de Next,
   jamais exécuté par un navigateur moderne.
-- En conditions réelles sans bridage, le LCP est de 138 ms : l'écart de PageSpeed vient de
-  la simulation du réseau, pas d'un blocage du rendu.
+- En conditions réelles sans bridage, le LCP est de 138 ms : l'écart de PageSpeed s'explique
+  par la simulation du réseau, pas par un blocage du rendu.
 
 ## Structure et nommage
 
