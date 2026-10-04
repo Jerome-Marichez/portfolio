@@ -1,3 +1,4 @@
+import { BarreActions } from '@/components/BarreActions'
 import { Bouton } from '@/components/Bouton'
 import { MurDeStack } from '@/components/MurDeStack'
 import { TitrePage } from '@/components/TitrePage'
@@ -19,6 +20,7 @@ export function CompetencesView() {
     <>
       <section className={`cadre ${styles.ouverture}`}>
         <TitrePage>Compétences</TitrePage>
+        <BarreActions variante="tete" />
         <p className={styles.chapo}>{accroches.competencesChapo}</p>
       </section>
 
@@ -37,6 +39,8 @@ export function CompetencesView() {
           <Bouton href="/parcours/">Le parcours</Bouton>
         </div>
       </section>
+
+      <BarreActions variante="fin" />
     </>
   )
 }

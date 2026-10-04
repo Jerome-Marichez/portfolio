@@ -1,4 +1,5 @@
 import { Annotation } from '@/components/Annotation'
+import { BarreActions } from '@/components/BarreActions'
 import { CertificationListe } from '@/components/CertificationListe'
 import { FormationListe } from '@/components/FormationListe'
 import { TitrePage } from '@/components/TitrePage'
@@ -16,31 +17,36 @@ import styles from './a-propos-view.module.css'
  */
 export function AProposView() {
   return (
-    <section className={`cadre ${styles.bloc}`}>
-      <TitrePage>À propos</TitrePage>
+    <>
+      <section className={`cadre ${styles.bloc}`}>
+        <TitrePage>À propos</TitrePage>
 
-      <div className={styles.note}>
-        <Annotation>{accroches.heroAnnotation}</Annotation>
-      </div>
+        <div className={styles.note}>
+          <Annotation>{accroches.heroAnnotation}</Annotation>
+        </div>
 
-      {profil.paragraphes.map((texte) => (
-        <p className={styles.paragraphe} key={texte}>
-          {texte}
-        </p>
-      ))}
+        <BarreActions variante="tete" />
 
-      <TitreSection>{accroches.methode}</TitreSection>
-      {profil.differenciationIaAugmentee.map((texte) => (
-        <p className={styles.paragraphe} key={texte}>
-          {texte}
-        </p>
-      ))}
+        {profil.paragraphes.map((texte) => (
+          <p className={styles.paragraphe} key={texte}>
+            {texte}
+          </p>
+        ))}
 
-      <TitreSection>{accroches.formation}</TitreSection>
-      <FormationListe formations={formation} />
+        <TitreSection>{accroches.methode}</TitreSection>
+        {profil.differenciationIaAugmentee.map((texte) => (
+          <p className={styles.paragraphe} key={texte}>
+            {texte}
+          </p>
+        ))}
 
-      <TitreSection>{accroches.certifications}</TitreSection>
-      <CertificationListe certifications={certifications} />
-    </section>
+        <TitreSection>{accroches.formation}</TitreSection>
+        <FormationListe formations={formation} />
+
+        <TitreSection>{accroches.certifications}</TitreSection>
+        <CertificationListe certifications={certifications} />
+      </section>
+      <BarreActions variante="fin" />
+    </>
   )
 }
