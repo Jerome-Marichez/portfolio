@@ -20,7 +20,7 @@ const SUJETS = [
   'ISTQB Foundation',
 ] as const
 
-/** « 07 71 65 15 88 » devient « +33771651588 », le format que lit un moteur. */
+/** Un numéro national à dix chiffres devient « +33 » suivi de neuf chiffres, le format que lit un moteur. */
 function versFormatInternational(telephone: string): string {
   return `+33${telephone.replace(/\s/g, '').replace(/^0/, '')}`
 }

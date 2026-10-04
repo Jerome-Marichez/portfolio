@@ -179,15 +179,15 @@ les survols sont réservés aux pointeurs fins pour éviter les faux survols au 
   externe, et ce site n'en a aucune : ni formulaire, ni query, ni webhook, ni variable
   d'environnement. Le jour où il en a une, elle passe par un schéma de `src/schemas/`.
 
-### Referencement local et donnees structurees
+### Référencement local et données structurées
 
-L'accueil porte un JSON-LD `ProfilePage` dont l'entite principale est un `Person`
-(Lille, Hauts-de-France, email, telephone international, LinkedIn et GitHub). Il est
+L'accueil porte un JSON-LD `ProfilePage` dont l'entité principale est un `Person`
+(Lille, Hauts-de-France, email, téléphone international, LinkedIn et GitHub). Il est
 construit par `src/seo/donnees-structurees.ts`, qui lit `src/contenu/profil.ts` et
 `src/contenu/contact.ts` sans rien recopier, puis rendu par le composant serveur
-`DonneesStructurees` dans `app/page.tsx`. Le `<` est echappe dans la serialisation.
+`DonneesStructurees` dans `app/page.tsx`. Le `<` est échappé dans la sérialisation.
 
-Le titre de l'accueil dans les resultats de recherche vient de `src/seo/titres.ts` et
-ajoute le lieu ; `profil.titre` reste l'intitule LinkedIn affiche a l'ecran. Le plan du
-site inclut chaque article du blog, date par sa date de publication. L'image Open Graph
+Le titre de l'accueil dans les résultats de recherche vient de `src/seo/titres.ts` et
+ajoute le lieu ; `profil.titre` reste l'intitulé LinkedIn affiché à l'écran. Le plan du
+site inclut chaque article du blog, daté par sa date de publication. L'image Open Graph
 est produite au build par `app/opengraph-image.tsx`.
