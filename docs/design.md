@@ -290,9 +290,18 @@ racine.
 |---------|---------------|
 | `64rem` | le mug passe sous le propos ; le mur de stack passe de trois à deux colonnes |
 | `834px` | la tasse disparaît entièrement. Valeur en pixels et non en rem, contrairement au reste : c'est une largeur d'appareil réelle, l'iPad en portrait, et l'arrondir au `52rem` voisin la laissait affichée exactement là où on la voulait masquée |
-| `52rem` | les noms de fichier disparaissent des onglets ; les listes de définitions passent en une colonne |
+| `52rem` | la barre d'onglets cède la place au menu du logo ; les listes de définitions passent en une colonne |
 | `44rem` | le mur de stack passe en une colonne |
 | `40rem` | les marges et les respirations se resserrent ; le mug rétrécit |
 
-**Pas de menu hamburger.** Sur mobile la barre d'onglets défile latéralement, comme une
-vraie barre d'éditeur : la métaphore règle elle-même le débordement.
+**Menu mobile porté par le logo.** Sous `52rem`, les sept onglets font environ 680 px et
+la barre ne tient plus dans un écran de téléphone : elle débordait et faisait défiler toute
+la page latéralement. Arbitrage de Jérôme MARICHEZ, 2026-10-04 (issue #191) : le logo
+`< JM />` devient lui-même le bouton de menu (nom accessible « Menu, Jérôme Marichez »,
+`aria-expanded`, `aria-controls`). Il ouvre un panneau opaque sous l'en-tête, avec les sept
+liens et des cibles d'au moins 44 px. L'état ouvert se lit sur le logo (chevrons en
+`--cafe-vif`, `/>` légèrement penché). Le panneau apparaît en 180 ms, `ease-out`, par
+`transform` et `opacity` seulement, et tout mouvement s'arrête sous `prefers-reduced-motion`
+et `data-mouvement="pause"`. Au-dessus de `52rem`, rien ne change : le logo est un lien vers
+l'accueil et la barre d'onglets reste en place (avec `min-width: 0`, pour qu'aucune largeur
+intermédiaire ne déborde).

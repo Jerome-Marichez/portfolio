@@ -27,6 +27,11 @@ d'accessibilité.
   qu'une teinte d'accent, donc aucune information n'est encodée par une couleur parmi
   plusieurs. L'onglet ouvert de l'en-tête le montre bien : il porte à la fois un filet,
   un changement de fond et `aria-current="page"`, et pas seulement la couleur café.
+- **Le menu mobile est une navigation, pas une modale.** Sous `52rem`, le logo est un
+  `button` (`aria-expanded`, `aria-controls`). Pas de piège de focus : Échap ferme le
+  panneau et rend le focus au logo, un clic sur un lien ou un changement de route le
+  ferme aussi. Fermé, le panneau est `hidden` : ni visible ni focusable. Cibles tactiles
+  d'au moins 44 px.
 - **Images** : `alt` pertinent, ou `alt=""` si décorative. Le mug est un `svg`
   décoratif par défaut (`role="presentation"` et `aria-hidden`), et il ne devient une
   image nommée que si on lui passe une description.
