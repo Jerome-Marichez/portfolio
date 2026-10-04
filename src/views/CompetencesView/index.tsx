@@ -33,9 +33,9 @@ export function CompetencesView() {
           servi à trancher.
         </p>
         <div className={styles.actions}>
-          <Bouton href="/projets/" ton="primaire">
-            Les projets en détail
-          </Bouton>
+          {/* Secondaire : la barre de fin, juste dessous, porte le seul primaire
+              de l'ecran (le CV). */}
+          <Bouton href="/projets/">Les projets en détail</Bouton>
           <Bouton href="/parcours/">Le parcours</Bouton>
         </div>
       </section>
