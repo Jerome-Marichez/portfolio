@@ -32,8 +32,10 @@ une preuve sans son contexte ne compile pas.
 L'identité et le profil d'ouverture. Le profil (`paragraphes`) et la méthode
 (`differenciationIaAugmentee`) sont des `readonly string[]` : un texte long se découpe
 aux points existants, sans réécriture, et se rend en un `<p>` par entrée. Même règle
-pour `contexte` dans `IExperience` et pour `accroches.axesChapo`. `anneesExperience` vaut **10**, et c'est une
-correction assumée : les six CV écrivent « neuf ans », Jérôme MARICHEZ a corrigé.
+pour `contexte` dans `IExperience` et pour `accroches.axesChapo`.
+
+`anneesExperience` vaut **10**, et c'est une correction assumée : les six CV écrivent
+« neuf ans », Jérôme MARICHEZ a corrigé.
 
 ### `IAxe` et `NomAxe`
 
