@@ -1,4 +1,3 @@
-import { Annotation } from '@/components/Annotation'
 import { AxeListe } from '@/components/AxeListe'
 import { BarreActions } from '@/components/BarreActions'
 import { Bouton } from '@/components/Bouton'
@@ -34,13 +33,6 @@ export function AccueilView() {
           >
             {profil.titre}
           </p>
-        </div>
-
-        {/* Avant les actions dans le DOM, pour la lecture au clavier et a la
-            voix. A l'ecran elle se place au dessus de la tasse et sa fleche
-            vise le nom, voir la grille de `.hero`. */}
-        <div className={styles.note}>
-          <Annotation>{accroches.heroAnnotation}</Annotation>
         </div>
 
         <div className={styles.suite}>

@@ -1,15 +1,18 @@
 /* Le premier ecran : l'identite a gauche sur la colonne de caracteres, la tasse a
-   droite avec l'annotation au dessus, dont la fleche vise le nom. Quatre zones,
-   dans l'ordre DOM identite, note, suite, tasse. Aucune carte, aucun encadre : les sections se separent par le vide et
-   par un filet, comme les panneaux d'un editeur. */
+   droite, centree verticalement sur la colonne de gauche. Trois zones, dans l'ordre
+   DOM identite, suite, tasse. Aucune carte, aucun encadre : les sections se
+   separent par le vide et par un filet, comme les panneaux d'un editeur. */
 
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   grid-template-areas:
-    "identite note"
+    "identite tasse"
     "suite tasse";
   align-items: start;
+  /* Les deux lignes restent jointives et centrees dans le premier ecran : la
+     tasse, qui les couvre, se trouve ainsi au milieu de la colonne de gauche. */
+  align-content: center;
   gap: var(--e5) var(--e6);
   /* L'en-tete occupe trois lignes : on retire sa hauteur pour que le premier
      ecran tienne reellement dans la fenetre, sans la depasser d'un cheveu. */
@@ -32,7 +35,6 @@
 
 .suite {
   grid-area: suite;
-  align-self: center;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -74,13 +76,6 @@
   margin-top: var(--e2);
 }
 
-/* Colonne de droite, au dessus de la tasse. Alignee en haut, sa fleche part vers
-   le haut a gauche, donc vers le titre. */
-.note {
-  grid-area: note;
-  margin: 0;
-}
-
 .tasse {
   grid-area: tasse;
   align-self: center;
@@ -113,12 +108,11 @@
 
 @media (max-width: 64rem) {
   .hero {
-    /* Une colonne : identite, note, suite, puis la tasse. Le nom et le metier
+    /* Une colonne : identite, suite, puis la tasse. Le nom et le metier
        restent la premiere chose lue, ce qui est l'ordre voulu. */
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas:
       "identite"
-      "note"
       "suite"
       "tasse";
     min-height: 0;

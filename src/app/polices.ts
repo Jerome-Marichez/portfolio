@@ -1,4 +1,4 @@
-import { Fira_Code, Shadows_Into_Light } from 'next/font/google'
+import { Fira_Code } from 'next/font/google'
 
 /**
  * Deux voix, et deux seulement.
@@ -7,21 +7,13 @@ import { Fira_Code, Shadows_Into_Light } from 'next/font/google'
  * plaque sur un sujet technique : la mise en page entiere s'aligne sur sa
  * cellule de caractere, donc la police est la grille.
  *
- * Shadows Into Light ne porte que l'annotation manuscrite, la voix humaine
- * dans la marge. Elle reste rare par construction : des qu'elle sert deux fois
- * sur un ecran, elle a cesse d'etre une annotation.
+ * La police manuscrite de l'annotation n'est plus chargee par le site : voir
+ * `src/components/Annotation/police.ts`.
  */
 
 export const policeCode = Fira_Code({
   subsets: ['latin'],
   weight: ['400', '500', '600'],
   variable: '--police-code',
-  display: 'swap',
-})
-
-export const policeMain = Shadows_Into_Light({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--police-main',
   display: 'swap',
 })
