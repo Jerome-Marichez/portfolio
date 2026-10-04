@@ -269,6 +269,14 @@ des micro-libellés, pas le texte qu'ils annoncent.
 La mesure de lecture (`--colonne`, 72ch) n'a pas bougé : elle était déjà tenue partout où
 un paragraphe est concerné par ce chantier.
 
+**Le fondement est Baymard et WCAG.** Baymard
+(https://baymard.com/research-articles/line-length-readability) retient 50 à 75
+caractères par ligne. WCAG 1.4.8 en fixe 80 au plus et demande un interligne d'au moins
+1,5 ; WCAG 1.4.12 retient un espacement des paragraphes d'environ 2em. En Fira Code, 1ch vaut un caractère : `--colonne`
+(72ch) et `--lh-lecture` (1.7) sont conformes, et l'écart entre deux paragraphes consécutifs
+de lecture est de `--e4` (36px, 2em à 18px). `tests/unitaire/mesure-lecture.spec.ts` le
+vérifie.
+
 Aucun contenu n'est réécrit ici : c'est un travail de rythme et de rendu, jamais
 d'édition.
 
