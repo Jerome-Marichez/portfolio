@@ -30,7 +30,6 @@ export function EnTete() {
           <span className={styles.initiales}>JM</span>
           <span className={styles.chevron}>/&gt;</span>
         </Link>
-        <MenuMobile />
 
         <nav className={styles.navigation} aria-label="Navigation principale">
           <ul className={styles.onglets}>
@@ -55,6 +54,11 @@ export function EnTete() {
             })}
           </ul>
         </nav>
+
+        {/* Apres la barre d'onglets dans le DOM : le panneau mobile, masque en
+            desktop, ne doit pas preceder les liens visibles. Visuellement rien ne
+            change, un seul des deux est affiche a chaque point de rupture. */}
+        <MenuMobile />
       </div>
     </header>
   )
