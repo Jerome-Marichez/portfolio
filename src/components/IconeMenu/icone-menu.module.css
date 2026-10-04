@@ -1,0 +1,45 @@
+/* Hamburger du menu mobile. Le bouton parent est deja visible sous 52rem seulement. */
+
+.icone {
+  display: block;
+  flex-shrink: 0;
+  margin-left: 0.6ch;
+  color: var(--encre-douce);
+  transition: color var(--duree-court) ease-out;
+}
+
+.trait {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition:
+    transform var(--duree-court) ease-out,
+    opacity var(--duree-court) ease-out;
+}
+
+.icone[data-etat="croix"] {
+  color: var(--cafe-vif);
+}
+
+.icone[data-etat="croix"] .haut {
+  transform: translateY(5px) rotate(45deg);
+}
+
+.icone[data-etat="croix"] .bas {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+.icone[data-etat="croix"] .milieu {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .icone,
+  .trait {
+    transition: none;
+  }
+}
+
+:root[data-mouvement="pause"] .icone,
+:root[data-mouvement="pause"] .trait {
+  transition: none;
+}
