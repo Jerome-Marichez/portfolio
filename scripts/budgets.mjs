@@ -30,7 +30,7 @@
 import puppeteer from 'puppeteer'
 import { analyserPage } from './budgets/mesure-axe.mjs'
 import { mesurerPage } from './budgets/mesure-lighthouse.mjs'
-import { PAGES } from './budgets/pages.mjs'
+import { PAGES, PAGES_AXE_SEUL, VIEWPORTS_AXE } from './budgets/pages.mjs'
 import {
   afficherAxe,
   afficherEchecsLighthouse,
@@ -82,10 +82,12 @@ async function mesurerPerformance({ url }) {
 
 async function mesurerAccessibilite({ navigateur, url }) {
   const resultats = []
-  for (const page of PAGES) {
+  for (const page of [...PAGES, ...PAGES_AXE_SEUL]) {
     const cible = `${url}${page.chemin}`
-    console.log(`axe-core — ${page.id}…`)
-    resultats.push(await analyserPage({ navigateur, url: cible }))
+    for (const viewport of VIEWPORTS_AXE) {
+      console.log(`axe-core : ${page.id} (${viewport.largeur} x ${viewport.hauteur})…`)
+      resultats.push(await analyserPage({ navigateur, url: cible, viewport }))
+    }
   }
   afficherAxe(resultats)
   return resultats.every((resultat) => resultat.bloquantes.length === 0)

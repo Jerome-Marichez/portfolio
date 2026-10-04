@@ -26,31 +26,44 @@ interface ITitreMachineProps {
  * fait le calcul. Changer le titre ne recasse plus la mise en page.
  */
 export function TitreMachine({ texte, duree = 1.6 }: ITitreMachineProps) {
-  const caracteres = [...texte]
-  const pas = duree / caracteres.length
+  const total = [...texte].length
+  const pas = duree / total
+  // Un retour a la ligne n'est permis qu'entre les mots (espacement WCAG 1.4.12) :
+  // on regroupe les caracteres par mot, l'indice global reste celui du retard.
+  let rang = 0
+  const mots = texte.split(' ').map((mot, position, tous) => {
+    const cellules = [...mot].concat(position < tous.length - 1 ? [' '] : [])
+    const debut = rang
+    rang += cellules.length
+    return { debut, cellules }
+  })
 
   return (
-    <h1
-      className={styles.titre}
-      style={{ '--caracteres': caracteres.length } as React.CSSProperties}
-    >
+    <h1 className={styles.titre} style={{ '--caracteres': total } as React.CSSProperties}>
       <span className="hors-ecran">{texte}</span>
 
       <span aria-hidden="true" className={styles.frappe}>
-        {caracteres.map((caractere, index) => (
-          <span
-            // Le titre est une chaine figee qui ne se reordonne jamais, et le
-            // meme caractere y revient plusieurs fois : la position fait donc
-            // partie de l'identite de la cellule.
-            // biome-ignore lint/suspicious/noArrayIndexKey: chaine figee jamais reordonnee, la position est l'identite.
-            key={`${caractere}-${index}`}
-            className={styles.cellule}
-            style={{ animationDelay: `${(index * pas).toFixed(3)}s` }}
-          >
-            {caractere === ' ' ? '\u00A0' : caractere}
+        {mots.map(({ debut, cellules }, position) => (
+          // Le titre est une chaine figee jamais reordonnee : le rang du premier
+          // caractere identifie le mot.
+          <span key={debut} className={styles.mot}>
+            {cellules.map((caractere, decalage) => (
+              <span
+                // biome-ignore lint/suspicious/noArrayIndexKey: chaine figee jamais reordonnee, la position est l'identite.
+                key={`${caractere}-${decalage}`}
+                className={styles.cellule}
+                style={{ animationDelay: `${((debut + decalage) * pas).toFixed(3)}s` }}
+              >
+                {caractere === ' ' ? '\u00A0' : caractere}
+              </span>
+            ))}
+            {/* Le curseur suit le dernier mot dans le même bloc insécable : seul, il
+                passerait à la ligne et resterait orphelin. */}
+            {position === mots.length - 1 && (
+              <span className={styles.curseur} style={{ animationDelay: `${duree.toFixed(3)}s` }} />
+            )}
           </span>
         ))}
-        <span className={styles.curseur} style={{ animationDelay: `${duree.toFixed(3)}s` }} />
       </span>
     </h1>
   )

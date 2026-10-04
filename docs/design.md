@@ -365,7 +365,7 @@ racine.
 **Menu mobile porté par le logo.** Sous `52rem`, les sept onglets font environ 680 px et
 la barre ne tient plus dans un écran de téléphone : elle débordait et faisait défiler toute
 la page latéralement. Arbitrage de Jérôme MARICHEZ, 2026-10-04 (issue #191) : le logo
-`< JM />` devient lui-même le bouton de menu (nom accessible « Menu, Jérôme Marichez »,
+`< JM />` devient lui-même le bouton de menu (nom accessible « JM, menu », qui commence par le texte visible ; le lien d'accueil au dessus de `52rem` s'appelle « JM, Jérôme Marichez, accueil »,
 `aria-expanded`, `aria-controls`). Il ouvre un panneau opaque sous l'en-tête, avec les sept
 liens et des cibles d'au moins 44 px. L'état ouvert se lit sur le logo (chevrons en
 `--cafe-vif`, `/>` légèrement penché). Issue #41 : un hamburger SVG (trois traits en
