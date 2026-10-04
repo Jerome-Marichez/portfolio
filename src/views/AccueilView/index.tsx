@@ -34,6 +34,10 @@ export function AccueilView() {
             {profil.titre}
           </p>
 
+          <div className={styles.note}>
+            <Annotation>{accroches.heroAnnotation}</Annotation>
+          </div>
+
           <p className={styles.reperes}>
             <span>{profil.anneesExperience} ans d&apos;expérience</span>
             <span className={styles.separateur} aria-hidden="true">
@@ -52,10 +56,6 @@ export function AccueilView() {
             </Bouton>
             <Bouton href="/parcours/">Voir le parcours</Bouton>
           </div>
-
-          <div className={styles.note}>
-            <Annotation>{accroches.heroAnnotation}</Annotation>
-          </div>
         </div>
 
         <div className={styles.tasse}>
@@ -65,12 +65,20 @@ export function AccueilView() {
 
       <section className={`cadre ${styles.bloc}`}>
         <TitreSection id="methode">{accroches.methode}</TitreSection>
-        <p className={styles.paragraphe}>{profil.differenciationIaAugmentee}</p>
+        {profil.differenciationIaAugmentee.map((texte) => (
+          <p className={styles.paragraphe} key={texte}>
+            {texte}
+          </p>
+        ))}
       </section>
 
       <section className={`cadre ${styles.bloc}`}>
         <TitreSection id="axes">{accroches.axes}</TitreSection>
-        <p className={styles.paragraphe}>{accroches.axesChapo}</p>
+        {accroches.axesChapo.map((texte) => (
+          <p className={styles.paragraphe} key={texte}>
+            {texte}
+          </p>
+        ))}
         <div className={styles.axes}>
           <AxeListe axes={axes} />
         </div>

@@ -4,6 +4,6 @@ export interface IProfil {
   titre: string
   localisation: string
   anneesExperience: number
-  paragraphe: string
-  differenciationIaAugmentee: string
+  paragraphes: readonly string[]
+  differenciationIaAugmentee: readonly string[]
 }

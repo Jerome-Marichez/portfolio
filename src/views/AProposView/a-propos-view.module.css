@@ -5,9 +5,18 @@
   color: var(--encre);
 }
 
+/* L'annotation reste sous le titre, avant le profil. */
+.note {
+  margin-bottom: var(--e4);
+}
+
 .paragraphe {
   max-width: var(--colonne);
   color: var(--encre-douce);
   font-size: var(--t-grand);
   line-height: var(--lh-lecture);
+}
+
+.paragraphe + .paragraphe {
+  margin-top: var(--e3);
 }
