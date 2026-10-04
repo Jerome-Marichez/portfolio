@@ -9,7 +9,7 @@
  * - A propos : aucune annotation (aside), la phrase vit dans le profil sans doublon
  *   (issue #49, decision de Jerome MARICHEZ) ; un <p> par entree
  *   de `profil.paragraphes` (5) ; texte d'origine intact ; methode en 2 paragraphes.
- * - Accueil : l'annotation precede dans le DOM le lien « Telecharger le CV » ;
+ * - Accueil : aucune annotation (aside), retiree a la demande de Jerome MARICHEZ ;
  *   `axesChapo` et `differenciationIaAugmentee` rendent 2 paragraphes chacun.
  * - ExperienceBloc : un <p> par entree de `contexte` (2), texte d'origine intact.
  * Pas de mock : les vraies donnees de `src/contenu`. Niveau : unitaire.
@@ -117,12 +117,10 @@ describe('AccueilView', () => {
       }) as unknown as MediaQueryList
   })
 
-  it("place l'annotation avant le lien « Telecharger le CV »", () => {
+  it('ne rend aucune annotation, et garde le lien « Telecharger le CV »', () => {
     const { container } = render(<AccueilView />)
-    const aside = container.querySelector('aside') as Element
-    const lien = screen.getByRole('link', { name: 'Télécharger le CV (PDF)' })
-    expect(aside.textContent).toBe(accroches.heroAnnotation)
-    expect(aside.compareDocumentPosition(lien) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+    expect(container.querySelectorAll('aside')).toHaveLength(0)
+    expect(screen.getByRole('link', { name: 'Télécharger le CV (PDF)' })).toBeTruthy()
   })
 
   it('rend la methode et le chapo des axes en 2 paragraphes chacun', () => {

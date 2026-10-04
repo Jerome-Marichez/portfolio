@@ -56,7 +56,8 @@ désynchroniser de celui du site.
 dépôt** : la mise en page s'aligne sur une **grille de caractères**, en unités `ch`.
 Sans Fira Code, la cellule de caractère change, donc toutes les largeurs sont fausses et
 un composant paraît mal aligné sans l'être. L'enveloppe applique les deux familles par
-`policeCode.variable` et `policeMain.variable`, comme le fait la mise en page racine.
+`policeCode.variable` et `policeMain.variable`. Le site n'applique plus que la première
+(la manuscrite ne sert qu'à la story d'`Annotation`).
 
 **L'enveloppe ne peint aucun fond.** Celui de la page vient de `globals.css`, posé sur le
 `<body>`, d'où il se propage au canevas. Le repeindre dans l'enveloppe masquerait une

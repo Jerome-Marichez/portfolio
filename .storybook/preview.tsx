@@ -11,7 +11,8 @@
 //   3. le fond sombre, pose par `globals.css` sur le `<body>`.
 
 import type { Decorator, Preview } from '@storybook/nextjs-vite'
-import { policeCode, policeMain } from '../src/app/polices'
+import { policeCode } from '../src/app/polices'
+import { policeMain } from '../src/components/Annotation/police'
 
 // `globals.css` importe lui-meme `jetons.css` : une seule feuille a charger, et
 // l'ordre ne peut donc pas se desynchroniser de celui du site.

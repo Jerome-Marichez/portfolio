@@ -156,8 +156,8 @@ d'origine (`github.com/Jerome-Marichez/portfolio`), puis modernisée.
 
 - Fond café torréfié, et **une seule source de lumière**, le café au lait, qui possède
   des régions entières plutôt que de saupoudrer des accents.
-- **Fira Code sur tout le site**, et Shadows Into Light réservée à l'annotation
-  manuscrite, la voix humaine dans la marge.
+- **Fira Code sur tout le site**. Shadows Into Light ne sert plus qu'à la story
+  d'`Annotation`, hors site (issue #59).
 - **Tout s'aligne sur une grille de caractères** en unités `ch`, jamais sur une grille
   de pixels arbitraire : c'est ce qui fait du monospace un système et non un costume.
 - **Aucune carte.** Les séparations sont des filets d'un pixel et des changements de
