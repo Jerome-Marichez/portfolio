@@ -201,13 +201,7 @@ export function Mug({ description }: IMugProps) {
         <source src="/tasse/cafe.mp4" type="video/mp4" />
       </video>
 
-      <Image
-        className={styles.mug}
-        src={mugPic}
-        alt=""
-        sizes="(max-width: 40rem) 60vw, 34ch"
-        priority
-      />
+      <Image className={styles.mug} src={mugPic} alt="" sizes="(max-width: 40rem) 60vw, 34ch" />
     </>
   )
 
