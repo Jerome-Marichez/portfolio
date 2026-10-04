@@ -20,8 +20,8 @@ export function CompetencesView() {
     <>
       <section className={`cadre ${styles.ouverture}`}>
         <TitrePage>Compétences</TitrePage>
-        <BarreActions variante="tete" />
         <p className={styles.chapo}>{accroches.competencesChapo}</p>
+        <BarreActions variante="tete" />
       </section>
 
       <MurDeStack competences={competences} />

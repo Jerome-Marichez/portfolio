@@ -3,7 +3,7 @@
    experience-bloc.module.css. */
 
 .bloc {
-  padding-block: var(--e6) var(--e7);
+  padding-block: var(--e6) 0;
 }
 
 .liste {
