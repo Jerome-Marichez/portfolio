@@ -124,7 +124,7 @@ describe('AccueilView', () => {
   it("place l'annotation avant le lien « Telecharger le CV »", () => {
     const { container } = render(<AccueilView />)
     const aside = container.querySelector('aside') as Element
-    const lien = screen.getByRole('link', { name: 'Télécharger le CV' })
+    const lien = screen.getByRole('link', { name: 'Télécharger le CV (PDF)' })
     expect(aside.textContent).toBe(accroches.heroAnnotation)
     expect(aside.compareDocumentPosition(lien) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
   })
