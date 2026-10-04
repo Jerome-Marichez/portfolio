@@ -30,8 +30,8 @@ annoté, dense là où la densité est une preuve.
 au lait `#D48646`, qui possède des régions entières plutôt que de saupoudrer des accents.
 Crème `#f7f2f2` pour l'encre, `#bebebe` pour le second plan. La coloration syntaxique
 existante (`#a6e22e` sélecteur, `#cb7832` variable, `#6a8759` chaîne, `#e0c46c` addition)
-sert de palette secondaire, et elle ne sert **qu'à du code réel**. Fira Code sur tout,
-Shadows Into Light réservé à l'annotation manuscrite, la voix humaine dans la marge.
+sert de palette secondaire, et elle ne sert **qu'à du code réel**. Fira Code sur tout.
+Shadows Into Light ne sert plus qu'à la story d'`Annotation`, hors site (issue #59).
 Tout s'aligne sur une **grille de caractères** en unités `ch`, jamais sur une grille de
 pixels arbitraire : c'est ce qui fait du monospace un système et non un costume. Aucune
 carte, aucun encadré à coins arrondis flottant. Les séparations sont des filets d'un
