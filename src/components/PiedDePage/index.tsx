@@ -65,8 +65,8 @@ export function PiedDePage() {
           <h2 className={styles.intitule}>Confort de lecture</h2>
           <BoutonMouvement />
           <p className={styles.note}>
-            La vapeur du mug est la seule animation continue du site. Elle s&apos;arrête aussi toute
-            seule si votre système demande moins de mouvement.
+            Le café qui tourne dans la tasse est la seule animation continue du site. Elle
+            s&apos;arrête aussi toute seule si votre système demande moins de mouvement.
           </p>
         </section>
       </div>

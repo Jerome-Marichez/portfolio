@@ -237,3 +237,9 @@ Détail dans [`docs/testing.md`](./docs/testing.md).
 Deux branches permanentes, `main` en production et `dev` en intégration. Aucun commit
 direct sur l'une ou l'autre : toute fonctionnalité passe par une branche
 `feature/<nom>` et une PR. Détail dans [`docs/git-workflow.md`](./docs/git-workflow.md).
+
+## Référencement local
+
+Données structurées JSON-LD sur l'accueil (`ProfilePage` et `Person`, Lille), plan du
+site couvrant les articles du blog, titre et description d'accueil mentionnant Lille,
+image Open Graph générée au build. Détail dans [`docs/architecture.md`](./docs/architecture.md).

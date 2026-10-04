@@ -34,7 +34,8 @@ src/
     jetons.css    les jetons de design, source unique
     globals.css   remise a zero, surfaces du navigateur, mouvement
     polices.ts    Fira Code et Shadows Into Light, auto-hebergees
-    sitemap.ts    derive de src/contenu/navigation.ts
+    sitemap.ts    derive de src/contenu/navigation.ts et des articles du blog
+    opengraph-image.tsx   image de partage generee au build, statique en export
     robots.ts
     <route>/page.tsx
     blog/[slug]/page.tsx   route dynamique, figee par generateStaticParams
@@ -42,7 +43,7 @@ src/
   components/     un dossier PascalCase par composant, styles colocalises
   contenu/        le contenu du site, en TypeScript type
   interfaces/     une interface par entite, prefixee I
-  seo/            les textes de referencement
+  seo/            les textes de referencement et le JSON-LD (donnees-structurees.ts)
   utils/          helpers purs, sans etat ni metier
 ```
 
@@ -161,7 +162,7 @@ gouttières s'expriment en `ch`, le rythme vertical sur une ligne de base de 24p
 
 ## Le mouvement
 
-Un seul mouvement permanent, la vapeur du mug. Deux interrupteurs l'arrêtent :
+Un seul mouvement permanent, le café qui tourne dans la tasse. Deux interrupteurs l'arrêtent :
 `prefers-reduced-motion`, et un bouton de mise en pause explicite exigé par WCAG 2.2.2,
 qui pose `data-mouvement="pause"` sur la racine.
 
@@ -177,3 +178,16 @@ les survols sont réservés aux pointeurs fins pour éviter les faux survols au 
 - **Pas de schéma Zod pour l'instant.** La règle du projet impose Zod sur toute entrée
   externe, et ce site n'en a aucune : ni formulaire, ni query, ni webhook, ni variable
   d'environnement. Le jour où il en a une, elle passe par un schéma de `src/schemas/`.
+
+### Référencement local et données structurées
+
+L'accueil porte un JSON-LD `ProfilePage` dont l'entité principale est un `Person`
+(Lille, Hauts-de-France, email, téléphone international, LinkedIn et GitHub). Il est
+construit par `src/seo/donnees-structurees.ts`, qui lit `src/contenu/profil.ts` et
+`src/contenu/contact.ts` sans rien recopier, puis rendu par le composant serveur
+`DonneesStructurees` dans `app/page.tsx`. Le `<` est échappé dans la sérialisation.
+
+Le titre de l'accueil dans les résultats de recherche vient de `src/seo/titres.ts` et
+ajoute le lieu ; `profil.titre` reste l'intitulé LinkedIn affiché à l'écran. Le plan du
+site inclut chaque article du blog, daté par sa date de publication. L'image Open Graph
+est produite au build par `app/opengraph-image.tsx`.

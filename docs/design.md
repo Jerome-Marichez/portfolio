@@ -114,8 +114,12 @@ résultat était moins bon, et sur cet élément-là c'est le résultat qui tran
 est assumé et compensé : la vidéo ne charge pas sous 64rem, et la tasse entière disparaît
 sous 834px.
 
-**Son interaction unique : elle s'oriente vers le curseur.** Elle ne se déplace pas,
-seule sa rotation change, et elle vaut l'angle entre son centre et la souris. Le
+**Son interaction unique : son anse vise le curseur.** Elle ne se déplace pas, seule sa
+rotation change. L'anse a été mesurée sur `mug.png` à +33 degrés du centre du bol, la
+rotation vaut donc l'angle du curseur moins 33 (calcul pur dans `src/utils/angle-anse.ts`).
+La tasse pivote autour du **centre du bol** (`transform-origin: 49.5% 49.2%`), pas autour
+du centre du cadre. L'**ombre reste fixe** : le filtre est porté par la scène, qui ne
+tourne pas, et seul son enfant pivote, car il n'y a qu'une lampe sur le site. Le
 mouvement est amorti par la transition CSS, donc la tasse arrive toujours un peu après le
 curseur : ce retard lui donne du poids, là où une poursuite exacte donnerait un objet
 collé au pointeur.
@@ -264,7 +268,7 @@ Référence complète : `.claude/skills/web-animation-design`. Règles appliqué
 | Situation | Courbe | Durée |
 |-----------|--------|-------|
 | entrée ou sortie d'écran | sortie exponentielle (`--sortie`) | sous 300ms |
-| mouvement à vitesse constante (la vapeur) | `linear` | 5 à 7s |
+| mouvement à vitesse constante (le café qui tourne) | `linear` | 22s |
 | survol, changement de couleur | `ease` | 140ms |
 
 - **Seuls `transform` et `opacity` sont animés.** Ils évitent les étapes de mise en page
@@ -276,7 +280,7 @@ Référence complète : `.claude/skills/web-animation-design`. Règles appliqué
 - **Chaque élément animé porte son propre bloc `prefers-reduced-motion`**, en plus du
   filet global de `globals.css`.
 
-Le **seul mouvement permanent** est la vapeur du mug. Un bouton de mise en pause
+Le **seul mouvement permanent** est le café qui tourne dans la tasse. Un bouton de mise en pause
 explicite (WCAG 2.2.2) vit dans le pied de page et pose `data-mouvement="pause"` sur la
 racine.
 
@@ -286,9 +290,18 @@ racine.
 |---------|---------------|
 | `64rem` | le mug passe sous le propos ; le mur de stack passe de trois à deux colonnes |
 | `834px` | la tasse disparaît entièrement. Valeur en pixels et non en rem, contrairement au reste : c'est une largeur d'appareil réelle, l'iPad en portrait, et l'arrondir au `52rem` voisin la laissait affichée exactement là où on la voulait masquée |
-| `52rem` | les noms de fichier disparaissent des onglets ; les listes de définitions passent en une colonne |
+| `52rem` | la barre d'onglets cède la place au menu du logo ; les listes de définitions passent en une colonne |
 | `44rem` | le mur de stack passe en une colonne |
 | `40rem` | les marges et les respirations se resserrent ; le mug rétrécit |
 
-**Pas de menu hamburger.** Sur mobile la barre d'onglets défile latéralement, comme une
-vraie barre d'éditeur : la métaphore règle elle-même le débordement.
+**Menu mobile porté par le logo.** Sous `52rem`, les sept onglets font environ 680 px et
+la barre ne tient plus dans un écran de téléphone : elle débordait et faisait défiler toute
+la page latéralement. Arbitrage de Jérôme MARICHEZ, 2026-10-04 (issue #191) : le logo
+`< JM />` devient lui-même le bouton de menu (nom accessible « Menu, Jérôme Marichez »,
+`aria-expanded`, `aria-controls`). Il ouvre un panneau opaque sous l'en-tête, avec les sept
+liens et des cibles d'au moins 44 px. L'état ouvert se lit sur le logo (chevrons en
+`--cafe-vif`, `/>` légèrement penché). Le panneau apparaît en 180 ms, `ease-out`, par
+`transform` et `opacity` seulement, et tout mouvement s'arrête sous `prefers-reduced-motion`
+et `data-mouvement="pause"`. Au-dessus de `52rem`, rien ne change : le logo est un lien vers
+l'accueil et la barre d'onglets reste en place (avec `min-width: 0`, pour qu'aucune largeur
+intermédiaire ne déborde).
