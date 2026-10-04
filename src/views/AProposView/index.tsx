@@ -1,4 +1,3 @@
-import { Annotation } from '@/components/Annotation'
 import { BarreActions } from '@/components/BarreActions'
 import { CertificationListe } from '@/components/CertificationListe'
 import { FormationListe } from '@/components/FormationListe'
@@ -23,10 +22,6 @@ export function AProposView() {
     <>
       <section className={`cadre ${styles.bloc}`}>
         <TitrePage>À propos</TitrePage>
-
-        <div className={styles.note}>
-          <Annotation>{accroches.heroAnnotation}</Annotation>
-        </div>
 
         {profil.paragraphes.slice(0, PARAGRAPHES_AVANT_BARRE).map((texte) => (
           <p className={styles.paragraphe} key={texte}>

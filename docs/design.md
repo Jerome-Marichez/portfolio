@@ -262,6 +262,14 @@ vers un tiers et aucun décalage de mise en page au chargement.
 **L'annotation reste rare par construction** : dès qu'elle sert deux fois sur un écran,
 elle a cessé d'être une annotation pour devenir une police de corps. Une par page au plus.
 
+**Elle n'apparaît que sur l'accueil.** Au-dessus de 834 px, elle se place au-dessus de la
+tasse, dans la colonne de droite, et sa flèche dessinée vise le nom, en haut de la colonne
+de gauche. Le hero est une grille à quatre zones (`identite`, `note`, `suite`, `tasse`) ;
+sous 64rem, elles s'empilent dans cet ordre, et à 834 px et moins la tasse disparaît
+alors que la note reste sous l'intitulé. Dans le DOM, la note précède les actions (lecture
+clavier et vocale). La page À propos ne la rend plus : la phrase y vit déjà dans le
+troisième paragraphe du profil, la répéter en marge serait un doublon.
+
 Les **ligatures de Fira Code sont désactivées** hors du code : elles déforment des mots
 courants. Elles sont rendues au code réel et au titre, qui en est.
 

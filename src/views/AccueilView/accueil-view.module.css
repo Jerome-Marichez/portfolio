@@ -1,11 +1,15 @@
-/* Le premier ecran : le propos a gauche sur la colonne de caracteres, la tasse a
-   droite. Aucune carte, aucun encadre : les sections se separent par le vide et
+/* Le premier ecran : l'identite a gauche sur la colonne de caracteres, la tasse a
+   droite avec l'annotation au dessus, dont la fleche vise le nom. Quatre zones,
+   dans l'ordre DOM identite, note, suite, tasse. Aucune carte, aucun encadre : les sections se separent par le vide et
    par un filet, comme les panneaux d'un editeur. */
 
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
+  grid-template-areas:
+    "identite note"
+    "suite tasse";
+  align-items: start;
   gap: var(--e5) var(--e6);
   /* L'en-tete occupe trois lignes : on retire sa hauteur pour que le premier
      ecran tienne reellement dans la fenetre, sans la depasser d'un cheveu. */
@@ -17,8 +21,18 @@
    taille (voir `TitreMachine`). Sans cette declaration, les `cqi` du titre se
    rapporteraient au viewport, donc a une largeur plus grande que la colonne
    reelle, et le titre se casserait a nouveau sur deux lignes. */
-.propos {
+.identite {
+  grid-area: identite;
   container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--e3);
+}
+
+.suite {
+  grid-area: suite;
+  align-self: center;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -57,13 +71,16 @@
   margin-top: var(--e2);
 }
 
-/* L'annotation suit l'intitule : le `gap` de `.propos` fait deja l'ecart, on ne
-   le double pas. */
+/* Colonne de droite, au dessus de la tasse. Alignee en haut, sa fleche part vers
+   le haut a gauche, donc vers le titre. */
 .note {
+  grid-area: note;
   margin: 0;
 }
 
 .tasse {
+  grid-area: tasse;
+  align-self: center;
   display: flex;
   justify-content: center;
 }
@@ -93,10 +110,14 @@
 
 @media (max-width: 64rem) {
   .hero {
-    /* La tasse passe sous le propos : le nom et le metier restent la premiere
-       chose lue, ce qui est l'ordre voulu. */
+    /* Une colonne : identite, note, suite, puis la tasse. Le nom et le metier
+       restent la premiere chose lue, ce qui est l'ordre voulu. */
     grid-template-columns: minmax(0, 1fr);
-    align-items: start;
+    grid-template-areas:
+      "identite"
+      "note"
+      "suite"
+      "tasse";
     min-height: 0;
     padding-block: var(--e5) var(--e6);
   }

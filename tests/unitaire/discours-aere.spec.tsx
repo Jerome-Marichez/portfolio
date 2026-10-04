@@ -6,7 +6,8 @@
  * mot pour mot, et aucune coupe ne tombe ailleurs qu'a un point existant.
  *
  * Cas couverts :
- * - A propos : une seule annotation (aside), situee apres le h1 ; un <p> par entree
+ * - A propos : aucune annotation (aside), la phrase vit dans le profil sans doublon
+ *   (issue #49, decision de Jerome MARICHEZ) ; un <p> par entree
  *   de `profil.paragraphes` (5) ; texte d'origine intact ; methode en 2 paragraphes.
  * - Accueil : l'annotation precede dans le DOM le lien « Telecharger le CV » ;
  *   `axesChapo` et `differenciationIaAugmentee` rendent 2 paragraphes chacun.
@@ -83,14 +84,9 @@ describe('profil et accroches, decoupes sans reecriture', () => {
 })
 
 describe('AProposView', () => {
-  it('rend une seule annotation, apres le titre h1', () => {
+  it('ne rend aucune annotation : la phrase reste dans le profil, sans doublon', () => {
     const { container } = render(<AProposView />)
-    const asides = container.querySelectorAll('aside')
-    expect(asides).toHaveLength(1)
-    const aside = asides[0] as Element
-    expect(aside.textContent).toBe(accroches.heroAnnotation)
-    const h1 = screen.getByRole('heading', { level: 1 })
-    expect(h1.compareDocumentPosition(aside) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+    expect(container.querySelectorAll('aside')).toHaveLength(0)
   })
 
   it("rend un <p> par entree du profil, texte d'origine intact", () => {
