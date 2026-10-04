@@ -22,7 +22,7 @@ export function AccueilView() {
   return (
     <>
       <section className={`cadre ${styles.hero}`}>
-        <div className={styles.propos}>
+        <div className={styles.identite}>
           <TitreMachine texte="< Jérôme Marichez />" />
 
           {/* Meme calcul que le titre : l'intitule est en chasse fixe, donc sa
@@ -34,11 +34,16 @@ export function AccueilView() {
           >
             {profil.titre}
           </p>
+        </div>
 
-          <div className={styles.note}>
-            <Annotation>{accroches.heroAnnotation}</Annotation>
-          </div>
+        {/* Avant les actions dans le DOM, pour la lecture au clavier et a la
+            voix. A l'ecran elle se place au dessus de la tasse et sa fleche
+            vise le nom, voir la grille de `.hero`. */}
+        <div className={styles.note}>
+          <Annotation>{accroches.heroAnnotation}</Annotation>
+        </div>
 
+        <div className={styles.suite}>
           <p className={styles.reperes}>
             <span>{profil.anneesExperience} ans d&apos;expérience</span>
             <span className={styles.separateur} aria-hidden="true">
