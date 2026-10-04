@@ -6,10 +6,11 @@ export const verhoeven: IExperience = {
   secteur: 'Joaillerie de luxe, vente physique et en ligne',
   statut: 'salarie',
   posteIntitule: 'Développeur fullstack & Chef de projet digital · E-commerce de luxe',
-  contexte:
+  contexte: [
     'Maison de joaillerie vendant en boutique et en ligne des pièces souvent uniques, où un stock ' +
-    'faux se paie en survente. Site marchand développé sur mesure. Poste unique sur le périmètre ' +
-    'digital, en lien direct avec la direction et la boutique.',
+      'faux se paie en survente. Site marchand développé sur mesure.',
+    'Poste unique sur le périmètre digital, en lien direct avec la direction et la boutique.',
+  ],
   realisations: [
     'ERP propriétaire M3 Soft synchronisé avec le site marchand. Flux commande, stock et ' +
       'facturation modélisés en BPMN, développés puis recettés avec la boutique. Survente supprimée ' +

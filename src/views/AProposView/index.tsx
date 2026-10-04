@@ -1,3 +1,4 @@
+import { Annotation } from '@/components/Annotation'
 import { CertificationListe } from '@/components/CertificationListe'
 import { FormationListe } from '@/components/FormationListe'
 import { TitreSection } from '@/components/TitreSection'
@@ -17,10 +18,22 @@ export function AProposView() {
     <section className="cadre">
       <h1 className={styles.titre}>À propos</h1>
 
-      <p className={styles.paragraphe}>{profil.paragraphe}</p>
+      <div className={styles.note}>
+        <Annotation>{accroches.heroAnnotation}</Annotation>
+      </div>
+
+      {profil.paragraphes.map((texte) => (
+        <p className={styles.paragraphe} key={texte}>
+          {texte}
+        </p>
+      ))}
 
       <TitreSection>{accroches.methode}</TitreSection>
-      <p className={styles.paragraphe}>{profil.differenciationIaAugmentee}</p>
+      {profil.differenciationIaAugmentee.map((texte) => (
+        <p className={styles.paragraphe} key={texte}>
+          {texte}
+        </p>
+      ))}
 
       <TitreSection>{accroches.formation}</TitreSection>
       <FormationListe formations={formation} />

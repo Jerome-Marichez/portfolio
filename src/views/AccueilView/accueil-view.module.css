@@ -57,8 +57,10 @@
   margin-top: var(--e2);
 }
 
+/* L'annotation suit l'intitule : le `gap` de `.propos` fait deja l'ecart, on ne
+   le double pas. */
 .note {
-  margin-top: var(--e3);
+  margin: 0;
 }
 
 .tasse {
@@ -76,7 +78,11 @@
   max-width: var(--colonne);
   color: var(--encre-douce);
   font-size: var(--t-grand);
-  line-height: 1.65;
+  line-height: var(--lh-lecture);
+}
+
+.paragraphe + .paragraphe {
+  margin-top: var(--e3);
 }
 
 .axes {
