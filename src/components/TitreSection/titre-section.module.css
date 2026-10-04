@@ -10,6 +10,12 @@
   color: var(--encre);
 }
 
+.compact {
+  /* Colle a la ligne qui le precede (la periode d'une experience) : `--e1` au
+     dessus, `--e2` en dessous, au lieu des `--e6` et `--e3` des sections. */
+  margin-block: var(--e1) var(--e2);
+}
+
 .marqueur {
   flex-shrink: 0;
   color: var(--cafe-sourd);

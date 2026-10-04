@@ -18,7 +18,7 @@ interface IBarreActionsProps {
  */
 export function BarreActions({ variante }: IBarreActionsProps) {
   const actions = (
-    <div className={styles.rangee}>
+    <div className={variante === 'tete' ? `${styles.rangee} ${styles.tete}` : styles.rangee}>
       <Bouton href="/cv-jerome-marichez.pdf" ton="primaire" telechargement="cv-jerome-marichez.pdf">
         Télécharger le CV (PDF)
       </Bouton>

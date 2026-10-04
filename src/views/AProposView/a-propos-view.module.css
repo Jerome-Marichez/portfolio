@@ -1,5 +1,5 @@
 .bloc {
-  padding-block: var(--e6);
+  padding-block: var(--e6) 0;
 }
 
 /* L'annotation reste sous le titre, avant le profil. */

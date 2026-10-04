@@ -4,10 +4,18 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--e2);
-  margin-top: var(--e3);
 }
 
-/* La barre de fin est une section : meme rythme vertical que les autres. */
+/* Barre de tete : meme ecart au dessus et au dessous (`--e4`), qu'elle suive le
+   titre, un chapo ou des paragraphes. Les marges se confondent avec celles des
+   voisins, l'ecart reel est donc le plus grand des deux. */
+.tete {
+  margin-block: var(--e4);
+}
+
+/* La barre de fin est une section : son titre porte `--e6` au dessus, et les
+   vues ne laissent aucun espace sous leur contenu, donc l'ecart est le meme
+   partout. */
 .fin {
   padding-block: 0 var(--e6);
 }

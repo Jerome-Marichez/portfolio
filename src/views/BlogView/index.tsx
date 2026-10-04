@@ -16,8 +16,8 @@ export function BlogView() {
     <>
       <section className={`cadre ${styles.bloc}`}>
         <TitrePage>Blog</TitrePage>
-        <BarreActions variante="tete" />
         <p className={styles.chapo}>{descriptions.blog}</p>
+        <BarreActions variante="tete" />
         <ul className={styles.liste}>
           {articles.map((article) => (
             <li className={styles.item} key={article.slug}>
