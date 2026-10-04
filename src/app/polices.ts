@@ -14,7 +14,7 @@ import { Fira_Code, Shadows_Into_Light } from 'next/font/google'
 
 export const policeCode = Fira_Code({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
+  weight: ['400', '500', '600'],
   variable: '--police-code',
   display: 'swap',
 })
