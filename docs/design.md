@@ -197,6 +197,15 @@ Ces refus sont dans le contrat de direction, ils ne se rediscutent pas au cas pa
 - **Aucune barre de progression en pourcentage** sur les compétences : elle inventerait
   une précision que personne ne peut mesurer.
 
+## Le titre de page
+
+Les six pages intérieures (À propos, Parcours, Projets, Compétences, Blog, Contact)
+rendent leur `h1` par le composant `TitrePage` : `--t-section`, poids 500, `--encre`.
+Le titre ne porte aucune marge haute, c'est la section qui porte `padding-block:
+var(--e6)`. Un écart fixe de `--e4` le sépare de ce qui suit, et le contenu qui suit
+(chapo, liste, coordonnées) ne rajoute pas de marge haute. L'accueil garde son titre
+`TitreMachine`, qui est voulu.
+
 ## Typographie
 
 | Police | Rôle |

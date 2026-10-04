@@ -1,20 +1,9 @@
-/* Le titre de page est un h1, pas un TitreSection : celui-ci rend un h2, et une
-   page sans titre de premier niveau est cassee pour un lecteur d'ecran comme pour
-   un moteur, meme si elle s'affiche correctement. */
-
-.titre {
-  font-size: var(--t-section);
-  font-weight: 500;
-  color: var(--encre);
-}
-
 .bloc {
-  padding-block: var(--e6) var(--e6);
+  padding-block: var(--e6);
 }
 
 .chapo {
   max-width: var(--colonne);
-  margin-top: var(--e3);
   color: var(--encre-douce);
   font-size: var(--t-chapo);
   line-height: var(--lh-lecture);

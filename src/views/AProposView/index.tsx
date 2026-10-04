@@ -1,6 +1,7 @@
 import { Annotation } from '@/components/Annotation'
 import { CertificationListe } from '@/components/CertificationListe'
 import { FormationListe } from '@/components/FormationListe'
+import { TitrePage } from '@/components/TitrePage'
 import { TitreSection } from '@/components/TitreSection'
 import { accroches } from '@/contenu/accroches'
 import { certifications } from '@/contenu/certifications'
@@ -15,8 +16,8 @@ import styles from './a-propos-view.module.css'
  */
 export function AProposView() {
   return (
-    <section className="cadre">
-      <h1 className={styles.titre}>À propos</h1>
+    <section className={`cadre ${styles.bloc}`}>
+      <TitrePage>À propos</TitrePage>
 
       <div className={styles.note}>
         <Annotation>{accroches.heroAnnotation}</Annotation>
