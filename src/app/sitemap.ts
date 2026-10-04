@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next'
+import { articles } from '@/contenu/blog'
 import { navigation } from '@/contenu/navigation'
 
 const RACINE = 'https://jeromemarichez.fr'
@@ -22,10 +23,21 @@ export const dynamic = 'force-static'
 export default function sitemap(): MetadataRoute.Sitemap {
   const dateDeSortie = new Date()
 
-  return navigation.map((entree) => ({
+  const pages: MetadataRoute.Sitemap = navigation.map((entree) => ({
     url: `${RACINE}${entree.href}`,
     lastModified: dateDeSortie,
     changeFrequency: 'monthly',
     priority: entree.href === '/' ? 1 : 0.7,
   }))
+
+  // Les articles ne sont pas dans la navigation (elle ne pointe que vers la liste) :
+  // sans cette boucle, le moteur ne les decouvrirait que par les liens internes.
+  const pagesArticles: MetadataRoute.Sitemap = articles.map((article) => ({
+    url: `${RACINE}/blog/${article.slug}/`,
+    lastModified: new Date(article.datePublication),
+    changeFrequency: 'yearly',
+    priority: 0.6,
+  }))
+
+  return [...pages, ...pagesArticles]
 }
