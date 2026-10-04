@@ -98,3 +98,7 @@
     transition: none;
   }
 }
+
+.cv {
+  margin-top: var(--e4);
+}

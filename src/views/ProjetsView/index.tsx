@@ -1,3 +1,4 @@
+import { BarreActions } from '@/components/BarreActions'
 import { ProjetFiche } from '@/components/ProjetFiche'
 import { TitrePage } from '@/components/TitrePage'
 import { projets } from '@/contenu/projets'
@@ -13,13 +14,17 @@ import styles from './projets-view.module.css'
  */
 export function ProjetsView() {
   return (
-    <section className={`cadre ${styles.bloc}`}>
-      <TitrePage>Les projets en détail</TitrePage>
-      <div className={styles.liste}>
-        {projets.map((projet) => (
-          <ProjetFiche key={projet.titre} projet={projet} />
-        ))}
-      </div>
-    </section>
+    <>
+      <section className={`cadre ${styles.bloc}`}>
+        <TitrePage>Les projets en détail</TitrePage>
+        <BarreActions variante="tete" />
+        <div className={styles.liste}>
+          {projets.map((projet) => (
+            <ProjetFiche key={projet.titre} projet={projet} />
+          ))}
+        </div>
+      </section>
+      <BarreActions variante="fin" />
+    </>
   )
 }

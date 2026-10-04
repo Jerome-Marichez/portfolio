@@ -1,3 +1,4 @@
+import { BarreActions } from '@/components/BarreActions'
 import { Bouton } from '@/components/Bouton'
 import { MurDeStack } from '@/components/MurDeStack'
 import { TitrePage } from '@/components/TitrePage'
@@ -19,6 +20,7 @@ export function CompetencesView() {
     <>
       <section className={`cadre ${styles.ouverture}`}>
         <TitrePage>Compétences</TitrePage>
+        <BarreActions variante="tete" />
         <p className={styles.chapo}>{accroches.competencesChapo}</p>
       </section>
 
@@ -31,12 +33,14 @@ export function CompetencesView() {
           servi à trancher.
         </p>
         <div className={styles.actions}>
-          <Bouton href="/projets/" ton="primaire">
-            Les projets en détail
-          </Bouton>
+          {/* Secondaire : la barre de fin, juste dessous, porte le seul primaire
+              de l'ecran (le CV). */}
+          <Bouton href="/projets/">Les projets en détail</Bouton>
           <Bouton href="/parcours/">Le parcours</Bouton>
         </div>
       </section>
+
+      <BarreActions variante="fin" />
     </>
   )
 }

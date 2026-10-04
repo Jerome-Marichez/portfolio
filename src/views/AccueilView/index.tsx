@@ -1,5 +1,6 @@
 import { Annotation } from '@/components/Annotation'
 import { AxeListe } from '@/components/AxeListe'
+import { BarreActions } from '@/components/BarreActions'
 import { Bouton } from '@/components/Bouton'
 import { Mug } from '@/components/Mug'
 import { TitreMachine } from '@/components/TitreMachine'
@@ -46,16 +47,7 @@ export function AccueilView() {
             <span>{profil.localisation}</span>
           </p>
 
-          <div className={styles.actions}>
-            <Bouton
-              href="/cv-jerome-marichez.pdf"
-              ton="primaire"
-              telechargement="cv-jerome-marichez.pdf"
-            >
-              Télécharger le CV
-            </Bouton>
-            <Bouton href="/parcours/">Voir le parcours</Bouton>
-          </div>
+          <BarreActions variante="tete" />
         </div>
 
         <div className={styles.tasse}>
@@ -90,6 +82,7 @@ export function AccueilView() {
           <Bouton href="/projets/" ton="primaire">
             Les projets en détail
           </Bouton>
+          <Bouton href="/parcours/">Voir le parcours</Bouton>
           <Bouton href="/competences/">Les compétences</Bouton>
           <Bouton href="/contact/">Me joindre</Bouton>
         </div>
