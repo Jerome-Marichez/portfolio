@@ -47,8 +47,8 @@ chiffre. Il fait deux choses : il télécharge le CV, ou il descend lire le parc
 sur-titre. Dessous, les quatre axes présentés comme un commentaire de code sur quatre
 lignes, chacun avec sa preuve chiffrée en fin de ligne. Sous les axes, deux actions
 visibles, « Télécharger le CV » en action primaire dans le café plein, « Voir le
-parcours » en action secondaire au filet. À droite, le mug qui fume, seule chose vivante
-de l'écran, dont la vapeur monte en continu et dont le café tourne au survol. Un filet
+parcours » en action secondaire au filet. À droite, la tasse, seule chose vivante
+de l'écran, dont le café tourne en continu et dont l'anse vise le curseur. Un filet
 horizontal ferme le premier écran et porte, en très petit, la position et la
 disponibilité.
 
@@ -65,8 +65,8 @@ review, the verdict, DESIGN.md, and every shipping raster carrying its provenanc
 
 ## Moment mémorable
 
-Le mug. Il fume en continu, sa vapeur est le seul mouvement permanent du site, et le
-café tourne quand on le survole. C'est la signature du portfolio d'origine, reprise et
+La tasse. Son café tourne en continu, c'est le seul mouvement permanent du site, et son
+anse vise le curseur. C'est la signature du portfolio d'origine, reprise et
 tenue proprement : `prefers-reduced-motion` l'arrête, et un mécanisme de mise en pause
 explicite existe (WCAG 2.2.2).
 

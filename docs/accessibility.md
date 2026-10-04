@@ -133,7 +133,7 @@ menée sur le site CV :
 |--------------|------|
 | Clavier complet sur les six pages, de l'évitement au pied de page | à réaliser |
 | Lecteur d'écran sur les six pages | à réaliser |
-| WCAG 2.2.2 : le bouton de pause arrête réellement la vapeur du mug | à réaliser |
+| WCAG 2.2.2 : le bouton de pause arrête réellement le café qui tourne dans la tasse | à réaliser |
 | `prefers-reduced-motion` : les trois composants animés respectent la préférence | à réaliser |
 | Pertinence des intitulés de liens, notamment ceux du pied de page | à réaliser |
 | La densité du mur de stack reste lisible en zoom 200 % | à réaliser |

@@ -7,7 +7,7 @@ import styles from './bouton-mouvement.module.css'
  * Mise en pause explicite du mouvement, exigee par WCAG 2.2.2.
  *
  * `prefers-reduced-motion` couvre le visiteur qui a regle son systeme. Ce
- * bouton couvre celui qui ne l'a pas fait et qui veut quand meme que la vapeur
+ * bouton couvre celui qui ne l'a pas fait et qui veut quand meme que le mouvement
  * s'arrete. Il pose `data-mouvement` sur la racine, ou la feuille globale met
  * toutes les animations en pause.
  *

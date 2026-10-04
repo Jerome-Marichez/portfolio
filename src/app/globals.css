@@ -163,7 +163,7 @@ body {
 /* ==========================================================================
    Mouvement
    --------------------------------------------------------------------------
-   Le site a un seul mouvement permanent, la vapeur du mug. Deux interrupteurs
+   Le site a un seul mouvement permanent, le cafe qui tourne dans le mug. Deux interrupteurs
    l'arretent : la preference systeme, et le bouton de mise en pause explicite
    exige par WCAG 2.2.2, qui pose `data-mouvement="pause"` sur la racine.
    ========================================================================== */
