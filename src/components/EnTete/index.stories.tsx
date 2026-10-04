@@ -37,3 +37,8 @@ export const OngletParcoursActif: Story = {
     },
   },
 }
+
+/** Sous 52rem le logo devient le bouton de menu (voir `MenuMobile`). */
+export const Mobile: Story = {
+  globals: { viewport: { value: 'mobile1', isRotated: false } },
+}

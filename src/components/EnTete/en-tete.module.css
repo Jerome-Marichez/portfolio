@@ -54,6 +54,11 @@
 
 /* ---- Les onglets --------------------------------------------------------- */
 
+.navigation {
+  flex: 1;
+  min-width: 0;
+}
+
 .onglets {
   display: flex;
   align-items: stretch;
@@ -113,6 +118,12 @@
 }
 
 @media (max-width: 52rem) {
+  /* Le logo et la barre cedent la place au logo-bouton de `MenuMobile`. */
+  .marque,
+  .navigation {
+    display: none;
+  }
+
   /* Sous cette largeur le nom de fichier n'apporte plus rien et vole la place
      du libelle, qui est l'information utile. */
   .fichier {
