@@ -1,0 +1,10 @@
+.bloc {
+  padding-block: var(--e6);
+}
+
+.phrase {
+  max-width: var(--colonne);
+  margin-bottom: var(--e4);
+  color: var(--encre-douce);
+  font-size: var(--t-chapo);
+}

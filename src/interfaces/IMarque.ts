@@ -7,6 +7,11 @@
 export interface IMarque {
   nom: string
   url: string
+  /**
+   * Libellé accessible du lien quand la cible n'est pas le site de la marque
+   * (une fiche d'application, par exemple). Absent : « Voir le site de <nom> ».
+   */
+  libelleLien?: string
   logo: {
     fichier: string
     largeur: number

@@ -107,8 +107,10 @@
   line-height: 1.2;
 }
 
+/* `--encre-douce` et non `--encre-faible` : ce dernier tombe a 4,45:1 sur
+   `--fond-releve` (audit 1.4.0, issue #56), sous le seuil de 4,5:1. */
 .fichier {
-  color: var(--encre-faible);
+  color: var(--encre-douce);
   font-size: var(--t-micro);
   line-height: 1.2;
 }

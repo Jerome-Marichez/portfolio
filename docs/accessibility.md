@@ -2,9 +2,8 @@
 
 ## Objectif
 
-Conformité **WCAG 2.1 AA** sur les six pages du site, pas seulement sur les parcours
-principaux : le site en compte six, les couvrir toutes coûte moins cher que de choisir
-lesquelles sacrifier.
+Conformité **WCAG 2.2 AA** sur toutes les pages du site, pas seulement sur les parcours
+principaux : les couvrir toutes coûte moins cher que de choisir lesquelles sacrifier.
 
 **Le plancher d'accessibilité est à 95 et ne bouge pas**, là où celui de la performance a
 été abaissé à 80. Une performance tolérée à 82 n'excuse aucune régression
@@ -31,7 +30,9 @@ d'accessibilité.
   `button` (`aria-expanded`, `aria-controls`). Pas de piège de focus : Échap ferme le
   panneau et rend le focus au logo, un clic sur un lien ou un changement de route le
   ferme aussi. Fermé, le panneau est `hidden` : ni visible ni focusable. Cibles tactiles
-  d'au moins 44 px.
+  d'au moins 44 px. Le hamburger placé à côté du `JM` est un `svg` `aria-hidden="true"` :
+  le nom (« JM, menu », qui commence par le texte visible, WCAG 2.5.3) et l'état (`aria-expanded`) restent portés par le
+  bouton, l'icône n'est qu'un indice visuel, jamais le seul porteur d'information.
 - **Images** : `alt` pertinent, ou `alt=""` si décorative. Le mug est un `svg`
   décoratif par défaut (`role="presentation"` et `aria-hidden`), et il ne devient une
   image nommée que si on lui passe une description.
@@ -93,10 +94,33 @@ Restent hors de portée d'axe, et donc à la charge de l'audit manuel :
 
 ### Les pages contrôlées
 
-**Les six routes du site**, sans exception : `/`, `/a-propos/`, `/parcours/`, `/projets/`,
-`/competences/`, `/contact/`. La liste vit dans
-[`scripts/budgets/pages.mjs`](../scripts/budgets/pages.mjs), partagée avec les budgets de
-performance, parce qu'un gabarit non mesuré est un gabarit non protégé.
+**Neuf pages**, sans exception : `/`, `/a-propos/`, `/parcours/`, `/projets/`,
+`/competences/`, `/contact/`, `/blog/`, un article du blog, plus la **404**
+(`/page-inexistante/`). Les huit premières vivent dans
+[`scripts/budgets/pages.mjs`](../scripts/budgets/pages.mjs), partagées avec les budgets de
+performance. La 404 (`PAGES_AXE_SEUL`) est contrôlée par axe **seulement** : servie en
+statut 404 et en `noindex`, elle échouerait au SEO de Lighthouse pour une raison voulue.
+Elle ne contourne aucun seuil, elle garde le contrôle d'accessibilité complet.
+
+**Chaque page est mesurée à deux tailles**, 800 x 600 et 1440 x 900. À 800 px la barre
+d'onglets de l'en-tête est masquée au profit du menu mobile : un contraste défaillant dans
+cette barre échappait au contrôle (issue #56).
+
+### Corrigé après l'audit du train 1.4.0 (issue #56)
+
+Audit mené dans Chromium avec axe-core, à 1440 x 900 et 390 x 844. Aucun défaut bloquant,
+cinq majeurs et trois mineurs, tous corrigés.
+
+| Réf. | Défaut | Correction |
+|------|--------|------------|
+| M1 | Nom de fichier de l'en-tête à 4,45:1 sur `--fond-releve` | `--encre-douce` (au moins 7:1), en-tête et panneau mobile ; contrôle axe élargi à 1440 x 900 |
+| M2 | Le menu mobile ouvrait la page défilée vers le bas | `scroll-padding-top` égal à la hauteur réelle de l'en-tête sous `52rem` |
+| M3 | Titre et intitulé de l'accueil coupés par l'espacement WCAG 1.4.12 | Retour à la ligne permis entre les mots, une ligne sans cet espacement |
+| M4 | Nom accessible du logo sans « JM » (WCAG 2.5.3) | « JM, menu » et « JM, Jérôme Marichez, accueil » |
+| M5 | 404 par défaut de Next, en anglais | `not-found.tsx` en français, `noindex`, contrôlée par axe |
+| m1 | Pause du mouvement : libellé et `aria-pressed` encodaient l'état deux fois | Libellé fixe, `aria-pressed` seul |
+| m3 | Logo Prézage annoncé « Voir le site » | « Voir l'application Prézage sur Google Play » |
+| m6 | `main#contenu` sans `tabindex` | `tabIndex={-1}`, sans contour sur `main` |
 
 ### Le relevé du 2026-09-20
 
@@ -136,8 +160,8 @@ menée sur le site CV :
 
 | Vérification | État |
 |--------------|------|
-| Clavier complet sur les six pages, de l'évitement au pied de page | à réaliser |
-| Lecteur d'écran sur les six pages | à réaliser |
+| Clavier complet sur toutes les pages, de l'évitement au pied de page | à réaliser |
+| Lecteur d'écran sur toutes les pages | à réaliser |
 | WCAG 2.2.2 : le bouton de pause arrête réellement le café qui tourne dans la tasse | à réaliser |
 | `prefers-reduced-motion` : les trois composants animés respectent la préférence | à réaliser |
 | Pertinence des intitulés de liens, notamment ceux du pied de page | à réaliser |

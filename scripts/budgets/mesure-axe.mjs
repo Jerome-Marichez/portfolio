@@ -19,11 +19,14 @@ import { ETIQUETTES_AXE, IMPACTS_BLOQUANTS } from './pages.mjs'
  * Analyse une page et rend `{ url, bloquantes, mineures }`.
  * Une violation bloquante (`critical` ou `serious`) fait échouer le budget.
  *
- * @param {{ navigateur: object, url: string }} contexte
+ * @param {{ navigateur: object, url: string, viewport?: { largeur: number, hauteur: number } }} contexte
  */
-export async function analyserPage({ navigateur, url }) {
+export async function analyserPage({ navigateur, url, viewport }) {
   const onglet = await navigateur.newPage()
   try {
+    if (viewport) {
+      await onglet.setViewport({ width: viewport.largeur, height: viewport.hauteur })
+    }
     // `networkidle0` : les polices et la scène animée doivent être en place, sinon on
     // audite un état intermédiaire que personne ne voit jamais.
     await onglet.goto(url, { waitUntil: 'networkidle0', timeout: 60_000 })
@@ -40,7 +43,7 @@ export async function analyserPage({ navigateur, url }) {
     })
 
     return {
-      url,
+      url: viewport ? `${url} (${viewport.largeur} x ${viewport.hauteur})` : url,
       bloquantes: resultat.violations
         .filter((v) => IMPACTS_BLOQUANTS.includes(v.impact))
         .map(decrire),

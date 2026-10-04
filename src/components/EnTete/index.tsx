@@ -25,7 +25,7 @@ export function EnTete() {
   return (
     <header className={styles.entete}>
       <div className={styles.barre}>
-        <Link href="/" className={styles.marque} aria-label="Jérôme Marichez, accueil">
+        <Link href="/" className={styles.marque} aria-label="JM, Jérôme Marichez, accueil">
           <span className={styles.chevron}>&lt;</span>
           <span className={styles.initiales}>JM</span>
           <span className={styles.chevron}>/&gt;</span>

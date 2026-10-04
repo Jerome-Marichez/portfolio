@@ -95,6 +95,32 @@ export const ETIQUETTES_AXE = [
 ]
 
 /**
+ * Les tailles de fenêtre où axe mesure chaque page. Une seule taille ne suffit pas :
+ * à 800 x 600 la barre d'onglets de l'en-tête est masquée (menu mobile), et un contraste
+ * défaillant dans cette barre échappait au contrôle (issue #56, audit 1.4.0). Le contrôle
+ * ne perd aucune mesure : 800 x 600 reste, 1440 x 900 s'y ajoute.
+ */
+export const VIEWPORTS_AXE = [
+  { largeur: 800, hauteur: 600 },
+  { largeur: 1440, hauteur: 900 },
+]
+
+/**
+ * Pages contrôlées par axe **seulement**, hors Lighthouse. La 404 est servie avec le
+ * statut 404 et en `noindex` : Lighthouse y échouerait au SEO (statut HTTP non
+ * réussi, page non indexable) pour une raison voulue, pas pour un défaut. Elle garde
+ * pourtant le contrôle d'accessibilité, qui n'a aucune raison d'en être exempté.
+ * `/page-inexistante/` est servie par le gabarit `not-found.tsx` (`404.html`).
+ */
+export const PAGES_AXE_SEUL = [
+  {
+    id: '404',
+    chemin: '/page-inexistante/',
+    pourquoi: 'la page introuvable, `noindex` et statut 404 : contrôlée par axe, pas Lighthouse',
+  },
+]
+
+/**
  * Les pages mesurées. **Les huit routes du site, sans exception.**
  *
  * Le site en comptait six : les mesurer toutes coûte moins cher que de choisir

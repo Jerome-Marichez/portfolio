@@ -25,7 +25,7 @@
 
 .corps {
   max-width: var(--colonne);
-  padding-block: var(--e5) var(--e6);
+  padding-block: var(--e5) 0;
   color: var(--encre-douce);
   line-height: var(--lh-lecture);
 }
@@ -89,6 +89,7 @@
 
 .source {
   max-width: var(--colonne);
+  margin-top: var(--e6);
   padding-top: var(--e4);
   border-top: var(--largeur-filet) solid var(--filet);
   color: var(--encre-faible);

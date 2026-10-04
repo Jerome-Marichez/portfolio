@@ -39,6 +39,7 @@ export const marques: Record<IdMarque, IMarque> = {
   prezage: {
     nom: 'Prézage',
     url: 'https://play.google.com/store/apps/details?id=fr.acetelecom.monavenir&hl=fr',
+    libelleLien: "Voir l'application Prézage sur Google Play",
     logo: { fichier: '/marques/prezage.png', ...GABARIT },
   },
   verhoeven: {

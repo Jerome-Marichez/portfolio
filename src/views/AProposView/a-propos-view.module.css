@@ -1,10 +1,5 @@
 .bloc {
-  padding-block: var(--e6);
-}
-
-/* L'annotation reste sous le titre, avant le profil. */
-.note {
-  margin-bottom: var(--e4);
+  padding-block: var(--e6) 0;
 }
 
 .paragraphe {

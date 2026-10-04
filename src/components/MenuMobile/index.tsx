@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useId, useRef, useState } from 'react'
+import { IconeMenu } from '@/components/IconeMenu'
 import { navigation } from '@/contenu/navigation'
 import styles from './menu-mobile.module.css'
 
@@ -46,12 +47,13 @@ export function MenuMobile() {
         data-ouvert={ouvert || undefined}
         aria-expanded={ouvert}
         aria-controls={idPanneau}
-        aria-label="Menu, Jérôme Marichez"
+        aria-label="JM, menu"
         onClick={() => setOuvertSur(ouvert ? undefined : chemin)}
       >
         <span className={styles.chevron}>&lt;</span>
         <span className={styles.initiales}>JM</span>
         <span className={`${styles.chevron} ${styles.fermant}`}>/&gt;</span>
+        <IconeMenu ouvert={ouvert} />
       </button>
 
       <nav id={idPanneau} className={styles.panneau} aria-label="Menu mobile" hidden={!ouvert}>
